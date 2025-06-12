@@ -1,10 +1,11 @@
 import { Tabs } from 'expo-router';
-import { 
+import {
   TrendingUp,
   Bell,
   Activity,
   BarChart3,
-  Settings
+  Settings,
+  Brain
 } from 'lucide-react-native';
 
 export default function TabLayout() {
@@ -52,6 +53,15 @@ export default function TabLayout() {
           title: 'Trading',
           tabBarIcon: ({ size, color }) => (
             <Activity size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="strategies"
+        options={{
+          title: 'Strategies',
+          tabBarIcon: ({ size, color }) => (
+            <Brain size={size} color={color} />
           ),
         }}
       />
