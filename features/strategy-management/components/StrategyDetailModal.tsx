@@ -84,86 +84,86 @@ export default function StrategyDetailModal({
     <ScrollView
       style={styles.tabContent}
       showsVerticalScrollIndicator={false}
-      data-oid="63jpjuj"
+      data-oid="qwl7n1d"
     >
       {/* Description */}
-      <View style={styles.section} data-oid="o.1i4e9">
-        <Text style={styles.sectionTitle} data-oid="2v6uqcm">
+      <View style={styles.section} data-oid="xqs8npw">
+        <Text style={styles.sectionTitle} data-oid="-e63u2a">
           Description
         </Text>
-        <Text style={styles.description} data-oid="ami7ul-">
+        <Text style={styles.description} data-oid="wvwhp30">
           {strategy.description}
         </Text>
       </View>
 
       {/* Performance Metrics */}
-      <View style={styles.section} data-oid="r573sdd">
-        <Text style={styles.sectionTitle} data-oid="1i88o91">
+      <View style={styles.section} data-oid="2o1rjki">
+        <Text style={styles.sectionTitle} data-oid="8-si1z2">
           Performance Metrics
         </Text>
-        <View style={styles.metricsGrid} data-oid="m50d3f0">
-          <View style={styles.metricCard} data-oid="w:-2quq">
-            <TrendingUp size={20} color="#10B981" data-oid="baj1jzk" />
-            <Text style={styles.metricLabel} data-oid="40teb05">
+        <View style={styles.metricsGrid} data-oid="eb:u0cj">
+          <View style={styles.metricCard} data-oid="xuye6cb">
+            <TrendingUp size={20} color="#10B981" data-oid="hnju2m:" />
+            <Text style={styles.metricLabel} data-oid="ayo_e46">
               Total Return
             </Text>
             <Text
               style={[styles.metricValue, { color: '#10B981' }]}
-              data-oid="okdgus6"
+              data-oid="qz0--g0"
             >
               {formatPercentage(strategy.performance.totalReturn)}
             </Text>
           </View>
 
-          <View style={styles.metricCard} data-oid="33a_w26">
-            <Target size={20} color="#3B82F6" data-oid="lpa55iq" />
-            <Text style={styles.metricLabel} data-oid="ag5ias9">
+          <View style={styles.metricCard} data-oid="mywrn-s">
+            <Target size={20} color="#3B82F6" data-oid="ni-r:c4" />
+            <Text style={styles.metricLabel} data-oid=".168kva">
               Win Rate
             </Text>
-            <Text style={styles.metricValue} data-oid="ct6z82f">
+            <Text style={styles.metricValue} data-oid="rx03bw6">
               {strategy.performance.winRate.toFixed(1)}%
             </Text>
           </View>
 
-          <View style={styles.metricCard} data-oid="eypxxij">
-            <TrendingDown size={20} color="#EF4444" data-oid="-4uo-dn" />
-            <Text style={styles.metricLabel} data-oid="dm2wlz-">
+          <View style={styles.metricCard} data-oid="mdfv6ir">
+            <TrendingDown size={20} color="#EF4444" data-oid="ms6_tk5" />
+            <Text style={styles.metricLabel} data-oid="kcwdsl4">
               Max Drawdown
             </Text>
             <Text
               style={[styles.metricValue, { color: '#EF4444' }]}
-              data-oid="0:tb:n3"
+              data-oid="k0zeni:"
             >
               {formatPercentage(strategy.performance.maxDrawdown)}
             </Text>
           </View>
 
-          <View style={styles.metricCard} data-oid="k5b9osi">
-            <BarChart3 size={20} color="#F59E0B" data-oid="qywonud" />
-            <Text style={styles.metricLabel} data-oid="vb0_0jo">
+          <View style={styles.metricCard} data-oid="9nmb1fl">
+            <BarChart3 size={20} color="#F59E0B" data-oid="lqf1zgg" />
+            <Text style={styles.metricLabel} data-oid="cir3.82">
               Sharpe Ratio
             </Text>
-            <Text style={styles.metricValue} data-oid="w7m::5k">
+            <Text style={styles.metricValue} data-oid="8h4wn63">
               {strategy.performance.sharpeRatio.toFixed(2)}
             </Text>
           </View>
 
-          <View style={styles.metricCard} data-oid="1ha1fr4">
-            <Clock size={20} color="#8B5CF6" data-oid="pig3tw6" />
-            <Text style={styles.metricLabel} data-oid="707ogvt">
+          <View style={styles.metricCard} data-oid="c-f30e_">
+            <Clock size={20} color="#8B5CF6" data-oid="p53xli3" />
+            <Text style={styles.metricLabel} data-oid="ipto-t0">
               Avg Duration
             </Text>
-            <Text style={styles.metricValue} data-oid="3argncw">
+            <Text style={styles.metricValue} data-oid="a7vfr.y">
               {formatDuration(strategy.performance.avgTradeDuration)}
             </Text>
           </View>
 
-          <View style={styles.metricCard} data-oid="jajgid3">
-            <Calendar size={20} color="#06B6D4" data-oid="hdz-apg" />
-            <Text style={styles.metricLabel} data-oid=":pb4:qd">
+          <View style={styles.metricCard} data-oid="v62e9k5">
+            <Calendar size={20} color="#06B6D4" data-oid="0a738td" />
+            <Text style={styles.metricLabel} data-oid="l16t9q0">
               Total Trades
             </Text>
-            <Text style={styles.metricValue} data-oid="qhcf5j5">
+            <Text style={styles.metricValue} data-oid="b-4mqcl">
               {strategy.performance.totalTrades}
             </Text>
           </View>
@@ -171,14 +171,14 @@ export default function StrategyDetailModal({
       </View>
 
       {/* Timeframes */}
-      <View style={styles.section} data-oid="stewi2v">
-        <Text style={styles.sectionTitle} data-oid="8xwg5yf">
+      <View style={styles.section} data-oid=":otkzaa">
+        <Text style={styles.sectionTitle} data-oid="-w2k8hu">
           Supported Timeframes
         </Text>
-        <View style={styles.timeframes} data-oid="kgyiseg">
+        <View style={styles.timeframes} data-oid="nl7flxu">
           {strategy.timeframe.map((tf, index) => (
-            <View key={index} style={styles.timeframeBadge} data-oid="vnk44:-">
-              <Text style={styles.timeframeText} data-oid="rq95:p:">
+            <View key={index} style={styles.timeframeBadge} data-oid="dgx15w:">
+              <Text style={styles.timeframeText} data-oid="1qw.voh">
                 {tf}
               </Text>
             </View>
@@ -187,14 +187,14 @@ export default function StrategyDetailModal({
       </View>
 
       {/* Tags */}
-      <View style={styles.section} data-oid="rk:qrwr">
-        <Text style={styles.sectionTitle} data-oid="gijgma:">
+      <View style={styles.section} data-oid="gjex7kk">
+        <Text style={styles.sectionTitle} data-oid="des9p0r">
           Tags
         </Text>
-        <View style={styles.tags} data-oid="k5p8dqn">
+        <View style={styles.tags} data-oid="pg2zudz">
           {strategy.tags.map((tag, index) => (
-            <View key={index} style={styles.tag} data-oid="qg.9otd">
-              <Text style={styles.tagText} data-oid="-_k3cvm">
+            <View key={index} style={styles.tag} data-oid="34tooxk">
+              <Text style={styles.tagText} data-oid="zb0myvo">
                 {tag}
               </Text>
             </View>
@@ -203,11 +203,11 @@ export default function StrategyDetailModal({
       </View>
 
       {/* Backtest Period */}
-      <View style={styles.section} data-oid="nw8u25:">
-        <Text style={styles.sectionTitle} data-oid="demdcy.">
+      <View style={styles.section} data-oid="6_d.nyv">
+        <Text style={styles.sectionTitle} data-oid="y-.ozp.">
           Backtest Period
         </Text>
-        <Text style={styles.backtestPeriod} data-oid="ztliv4o">
+        <Text style={styles.backtestPeriod} data-oid="x-08lt-">
           {strategy.performance.backtestPeriod}
         </Text>
       </View>
@@ -218,37 +218,37 @@ export default function StrategyDetailModal({
     <ScrollView
       style={styles.tabContent}
       showsVerticalScrollIndicator={false}
-      data-oid="6ihxsv_"
+      data-oid="hv10u5p"
     >
-      <View style={styles.section} data-oid="hc0snvr">
-        <View style={styles.scriptHeader} data-oid="uygdjs6">
-          <Text style={styles.sectionTitle} data-oid="51_s0tl">
+      <View style={styles.section} data-oid="9byh3zu">
+        <View style={styles.scriptHeader} data-oid="1n037k.">
+          <Text style={styles.sectionTitle} data-oid="mzwd_.k">
             Pine Script Code
           </Text>
           <TouchableOpacity
             style={styles.copyScriptButton}
             onPress={() => onCopy(strategy.script)}
-            data-oid="0wb.re0"
+            data-oid="vdf:mr2"
           >
-            <Copy size={16} color="#FFFFFF" data-oid="zafh6c6" />
-            <Text style={styles.copyScriptText} data-oid="b:7iyfl">
+            <Copy size={16} color="#FFFFFF" data-oid=".ykthi7" />
+            <Text style={styles.copyScriptText} data-oid="_hv6:1_">
               Copy Script
             </Text>
           </TouchableOpacity>
         </View>
-        <View style={styles.codeContainer} data-oid="l8:xcv0">
-          <Text style={styles.codeText} data-oid="23xsfhh">
+        <View style={styles.codeContainer} data-oid="sn:1:92">
+          <Text style={styles.codeText} data-oid="p643j1s">
             {strategy.script}
           </Text>
         </View>
       </View>
 
-      <View style={styles.section} data-oid="3msxifh">
-        <Text style={styles.sectionTitle} data-oid="pxlpbyf">
+      <View style={styles.section} data-oid="kswq_15">
+        <Text style={styles.sectionTitle} data-oid="5yez656">
           Alert Template
         </Text>
-        <View style={styles.alertTemplateContainer} data-oid=".gdeqz3">
-          <Text style={styles.alertTemplateText} data-oid="2v7qcma">
+        <View style={styles.alertTemplateContainer} data-oid="msu4bp-">
+          <Text style={styles.alertTemplateText} data-oid="_ajf2_7">
             {strategy.alertTemplate}
           </Text>
         </View>
@@ -260,75 +260,75 @@ export default function StrategyDetailModal({
     <ScrollView
       style={styles.tabContent}
       showsVerticalScrollIndicator={false}
-      data-oid="x8nw0m-"
+      data-oid="z27uggj"
     >
-      <View style={styles.section} data-oid="6tffuh2">
-        <Text style={styles.sectionTitle} data-oid="c9ntsma">
+      <View style={styles.section} data-oid="ooz4dn7">
+        <Text style={styles.sectionTitle} data-oid="keexjuf">
           Setup Instructions
         </Text>
-        <View style={styles.setupSteps} data-oid="s6ak-ox">
-          <View style={styles.setupStep} data-oid="ji0-i36">
-            <View style={styles.stepNumber} data-oid="ns--45z">
-              <Text style={styles.stepNumberText} data-oid="lbui__r">
+        <View style={styles.setupSteps} data-oid="s1rrwqv">
+          <View style={styles.setupStep} data-oid="hb:qr87">
+            <View style={styles.stepNumber} data-oid="vc114yh">
+              <Text style={styles.stepNumberText} data-oid="rkur2wh">
                 1
               </Text>
             </View>
-            <View style={styles.stepContent} data-oid="rrlcit1">
-              <Text style={styles.stepTitle} data-oid="e7fhodq">
+            <View style={styles.stepContent} data-oid="a1ss7gd">
+              <Text style={styles.stepTitle} data-oid="yw1g.:8">
                 Copy Pine Script
               </Text>
-              <Text style={styles.stepDescription} data-oid="ojmp.st">
+              <Text style={styles.stepDescription} data-oid="vl6zb9i">
                 Copy the Pine Script code and paste it into TradingView's Pine
                 Editor
               </Text>
             </View>
           </View>
 
-          <View style={styles.setupStep} data-oid=".g.1og-">
-            <View style={styles.stepNumber} data-oid="qdz3fr_">
-              <Text style={styles.stepNumberText} data-oid="y88id9-">
+          <View style={styles.setupStep} data-oid="ufk0a25">
+            <View style={styles.stepNumber} data-oid="jc3s2e5">
+              <Text style={styles.stepNumberText} data-oid=":38hjle">
                 2
               </Text>
             </View>
-            <View style={styles.stepContent} data-oid="qr5olmg">
-              <Text style={styles.stepTitle} data-oid="3a9q2s_">
+            <View style={styles.stepContent} data-oid="jg0ukjj">
+              <Text style={styles.stepTitle} data-oid="e6cvyxk">
                 Add to Chart
               </Text>
-              <Text style={styles.stepDescription} data-oid="i-.zzet">
+              <Text style={styles.stepDescription} data-oid=".zxb3z1">
                 Save and add the strategy to your chart with your preferred
                 settings
               </Text>
             </View>
           </View>
 
-          <View style={styles.setupStep} data-oid=".j-1omw">
-            <View style={styles.stepNumber} data-oid="gnrpe_d">
-              <Text style={styles.stepNumberText} data-oid="auds.82">
+          <View style={styles.setupStep} data-oid="t8hyph0">
+            <View style={styles.stepNumber} data-oid="mph1.i3">
+              <Text style={styles.stepNumberText} data-oid="f58et:i">
                 3
               </Text>
             </View>
-            <View style={styles.stepContent} data-oid="xfklo2x">
-              <Text style={styles.stepTitle} data-oid="dbiuppn">
+            <View style={styles.stepContent} data-oid="j6ov7ku">
+              <Text style={styles.stepTitle} data-oid="rjqdara">
                 Create Alerts
               </Text>
-              <Text style={styles.stepDescription} data-oid="br_:mcu">
+              <Text style={styles.stepDescription} data-oid="vtq6k5h">
                 Set up alerts using the provided template to receive
                 notifications
               </Text>
             </View>
           </View>
 
-          <View style={styles.setupStep} data-oid="ib155mu">
-            <View style={styles.stepNumber} data-oid="fht29bw">
-              <Text style={styles.stepNumberText} data-oid="beztwp9">
+          <View style={styles.setupStep} data-oid="t411o4d">
+            <View style={styles.stepNumber} data-oid="cnvw1sc">
+              <Text style={styles.stepNumberText} data-oid="4hy1vmr">
                 4
               </Text>
             </View>
-            <View style={styles.stepContent} data-oid="wzinf8l">
-              <Text style={styles.stepTitle} data-oid="gfow.so">
+            <View style={styles.stepContent} data-oid="617kfib">
+              <Text style={styles.stepTitle} data-oid="qsscvry">
                 Configure Automation
               </Text>
-              <Text style={styles.stepDescription} data-oid="8b0x_6c">
+              <Text style={styles.stepDescription} data-oid="mifw5t:">
                 Connect alerts to TradeSync-AI for automated trading (optional)
               </Text>
             </View>
@@ -336,9 +336,9 @@ export default function StrategyDetailModal({
         </View>
       </View>
 
-      <TouchableOpacity style={styles.setupButton} data-oid=".0fkcfr">
-        <Zap size={20} color="#FFFFFF" data-oid="gn9cg2f" />
-        <Text style={styles.setupButtonText} data-oid="ro-krj8">
+      <TouchableOpacity style={styles.setupButton} data-oid="3r3aqi1">
+        <Zap size={20} color="#FFFFFF" data-oid="_8127zn" />
+        <Text style={styles.setupButtonText} data-oid="a3p_ncv">
           Setup Automated Trading
         </Text>
       </TouchableOpacity>
@@ -350,34 +350,34 @@ export default function StrategyDetailModal({
       visible={visible}
       animationType="slide"
       presentationStyle="fullScreen"
-      data-oid="p2zy0l."
+      data-oid="0vl.y7m"
     >
-      <View style={styles.container} data-oid="jvzfijt">
+      <View style={styles.container} data-oid="nlqzlfb">
         {/* Header */}
-        <View style={styles.header} data-oid="mhknto8">
-          <View style={styles.headerLeft} data-oid="ci4yult">
-            <Text style={styles.title} data-oid="-hzw-6t">
+        <View style={styles.header} data-oid="iz:4282">
+          <View style={styles.headerLeft} data-oid="z:cdim9">
+            <Text style={styles.title} data-oid="huo:zbi">
               {strategy.name}
             </Text>
-            <View style={styles.headerInfo} data-oid="gtp37rq">
+            <View style={styles.headerInfo} data-oid="3q.un15">
               <View
                 style={[
                   styles.riskBadge,
                   { backgroundColor: getRiskBgColor(strategy.riskLevel) },
                 ]}
-                data-oid=":d6pcgd"
+                data-oid=":57n0yh"
               >
                 <Text
                   style={[
                     styles.riskText,
                     { color: getRiskColor(strategy.riskLevel) },
                   ]}
-                  data-oid="tb:77fw"
+                  data-oid="p-migrp"
                 >
                   {strategy.riskLevel.toUpperCase()}
                 </Text>
               </View>
-              <Text style={styles.category} data-oid="4rnplnh">
+              <Text style={styles.category} data-oid="jsqcpdl">
                 {strategy.category}
               </Text>
             </View>
@@ -385,25 +385,25 @@ export default function StrategyDetailModal({
           <TouchableOpacity
             style={styles.closeButton}
             onPress={onClose}
-            data-oid="3jabrg1"
+            data-oid="p7.3n34"
           >
-            <X size={24} color="#9CA3AF" data-oid="_0.qtd8" />
+            <X size={24} color="#9CA3AF" data-oid="s0x0jhf" />
           </TouchableOpacity>
         </View>
 
         {/* Tabs */}
-        <View style={styles.tabs} data-oid="7pqouwh">
+        <View style={styles.tabs} data-oid="9e8-e-t">
           <TouchableOpacity
             style={[styles.tab, activeTab === 'overview' && styles.activeTab]}
             onPress={() => setActiveTab('overview')}
-            data-oid="1lsvqvn"
+            data-oid="74:2sth"
           >
             <Text
               style={[
                 styles.tabText,
                 activeTab === 'overview' && styles.activeTabText,
               ]}
-              data-oid="pf-6zd-"
+              data-oid="8idu0l8"
             >
               Overview
             </Text>
@@ -411,14 +411,14 @@ export default function StrategyDetailModal({
           <TouchableOpacity
             style={[styles.tab, activeTab === 'script' && styles.activeTab]}
             onPress={() => setActiveTab('script')}
-            data-oid="lqma888"
+            data-oid="opk-dst"
           >
             <Text
               style={[
                 styles.tabText,
                 activeTab === 'script' && styles.activeTabText,
               ]}
-              data-oid="goam2aj"
+              data-oid="0fujye-"
             >
               Script
             </Text>
@@ -426,14 +426,14 @@ export default function StrategyDetailModal({
           <TouchableOpacity
             style={[styles.tab, activeTab === 'setup' && styles.activeTab]}
             onPress={() => setActiveTab('setup')}
-            data-oid="2m:_c3f"
+            data-oid="acsackv"
           >
             <Text
               style={[
                 styles.tabText,
                 activeTab === 'setup' && styles.activeTabText,
               ]}
-              data-oid="m8.-fzr"
+              data-oid="fa-_ffu"
             >
               Setup
             </Text>

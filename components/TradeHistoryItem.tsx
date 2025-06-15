@@ -33,78 +33,78 @@ export default function TradeHistoryItem({
   }[status];
 
   return (
-    <View style={styles.container} data-oid="53oca5k">
-      <View style={styles.header} data-oid="7ubqh5e">
-        <View style={styles.symbolContainer} data-oid="r_v3z6z">
+    <View style={styles.container} data-oid="9t51i7v">
+      <View style={styles.header} data-oid="d5m1qvq">
+        <View style={styles.symbolContainer} data-oid="ng:qpfp">
           <View
             style={[styles.typeIndicator, { backgroundColor: typeColor }]}
-            data-oid="usq0xld"
+            data-oid="snehr6b"
           >
             {isBuy ? (
-              <TrendingUp size={16} color="#FFFFFF" data-oid="qvg09c-" />
+              <TrendingUp size={16} color="#FFFFFF" data-oid=".rl0hh2" />
             ) : (
-              <TrendingDown size={16} color="#FFFFFF" data-oid="8hsfxeu" />
+              <TrendingDown size={16} color="#FFFFFF" data-oid="xpbwaky" />
             )}
           </View>
-          <View data-oid="zd9z4bc">
-            <Text style={styles.symbol} data-oid="5q8.i7q">
+          <View data-oid="vsil13f">
+            <Text style={styles.symbol} data-oid="m7i0puo">
               {symbol}
             </Text>
             <Text
               style={[styles.type, { color: typeColor }]}
-              data-oid="jm3fm65"
+              data-oid="c5zwlj-"
             >
               {type}
             </Text>
           </View>
         </View>
 
-        <View style={styles.statusContainer} data-oid="cm5a1ru">
+        <View style={styles.statusContainer} data-oid="evfca.w">
           <View
             style={[styles.statusDot, { backgroundColor: statusColor }]}
-            data-oid="zt55ti-"
+            data-oid="hi.b3:9"
           />
 
           <Text
             style={[styles.status, { color: statusColor }]}
-            data-oid="uyndnr."
+            data-oid="48bsyjo"
           >
             {status}
           </Text>
         </View>
       </View>
 
-      <View style={styles.detailsContainer} data-oid="gk7-a3j">
-        <View style={styles.detailRow} data-oid="a6rkj9j">
-          <Text style={styles.detailLabel} data-oid="w7ukkx8">
+      <View style={styles.detailsContainer} data-oid="xd2l7ak">
+        <View style={styles.detailRow} data-oid="-otcj0s">
+          <Text style={styles.detailLabel} data-oid="eh9854t">
             Amount
           </Text>
-          <Text style={styles.detailValue} data-oid="pc-lhs8">
+          <Text style={styles.detailValue} data-oid="6asnd94">
             {amount.toFixed(8)} {symbol}
           </Text>
         </View>
 
-        <View style={styles.detailRow} data-oid="ojto73h">
-          <Text style={styles.detailLabel} data-oid="gqofhc5">
+        <View style={styles.detailRow} data-oid="zgvor0-">
+          <Text style={styles.detailLabel} data-oid="rbakwie">
             Price
           </Text>
-          <Text style={styles.detailValue} data-oid="_sr2u5z">
+          <Text style={styles.detailValue} data-oid="ym8f9of">
             ${price.toLocaleString()}
           </Text>
         </View>
 
-        <View style={styles.detailRow} data-oid="_ns7_kf">
-          <Text style={styles.detailLabel} data-oid="q276kkz">
+        <View style={styles.detailRow} data-oid="2:kmvjj">
+          <Text style={styles.detailLabel} data-oid="jdgzb:h">
             Total
           </Text>
-          <Text style={styles.detailValue} data-oid="9vu1v_z">
+          <Text style={styles.detailValue} data-oid="on0::bb">
             ${total.toLocaleString()}
           </Text>
         </View>
 
         {pnl !== undefined && (
-          <View style={styles.detailRow} data-oid="u-5mdao">
-            <Text style={styles.detailLabel} data-oid="c6srbft">
+          <View style={styles.detailRow} data-oid="pkl6ub.">
+            <Text style={styles.detailLabel} data-oid="f.8m-r6">
               P&L
             </Text>
             <Text
@@ -112,7 +112,7 @@ export default function TradeHistoryItem({
                 styles.detailValue,
                 { color: pnl >= 0 ? '#10B981' : '#EF4444' },
               ]}
-              data-oid="trx:2-n"
+              data-oid="g4skm39"
             >
               {pnl >= 0 ? '+' : ''}${pnl.toFixed(2)}
             </Text>
@@ -120,9 +120,9 @@ export default function TradeHistoryItem({
         )}
       </View>
 
-      <View style={styles.timestampContainer} data-oid="-qdfue9">
-        <Clock size={14} color="#6B7280" data-oid="d65--av" />
-        <Text style={styles.timestamp} data-oid="l1_eaky">
+      <View style={styles.timestampContainer} data-oid=":p0dfa_">
+        <Clock size={14} color="#6B7280" data-oid="em20v5l" />
+        <Text style={styles.timestamp} data-oid="axic276">
           {timestamp.toLocaleDateString()} {timestamp.toLocaleTimeString()}
         </Text>
       </View>
