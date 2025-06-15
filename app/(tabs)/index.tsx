@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  View, 
-  Text, 
-  StyleSheet, 
-  ScrollView, 
-  RefreshControl, 
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  RefreshControl,
   TouchableOpacity,
   Dimensions,
-  Modal
+  Modal,
 } from 'react-native';
-import { TrendingUp, Plus, Activity, RefreshCw, Zap } from 'lucide-react-native';
+import {
+  TrendingUp,
+  Plus,
+  Activity,
+  RefreshCw,
+  Zap,
+} from 'lucide-react-native';
 import PortfolioSummary from '@/components/PortfolioSummary';
 import PriceCard from '@/components/PriceCard';
 import AutoTradeMonitor from '@/components/AutoTradeMonitor';
@@ -48,7 +54,7 @@ export default function PortfolioScreen() {
       currentPrice: 71200,
       value: 38679.04,
       pnl: 2009.04,
-      pnlPercent: 5.48
+      pnlPercent: 5.48,
     },
     {
       symbol: 'ETH',
@@ -58,7 +64,7 @@ export default function PortfolioScreen() {
       currentPrice: 4125,
       value: 34031.25,
       pnl: 2268.75,
-      pnlPercent: 7.14
+      pnlPercent: 7.14,
     },
     {
       symbol: 'SOL',
@@ -68,7 +74,7 @@ export default function PortfolioScreen() {
       currentPrice: 210,
       value: 26250,
       pnl: 3125,
-      pnlPercent: 13.51
+      pnlPercent: 13.51,
     },
     {
       symbol: 'ADA',
@@ -78,8 +84,8 @@ export default function PortfolioScreen() {
       currentPrice: 0.95,
       value: 2375,
       pnl: 325,
-      pnlPercent: 15.85
-    }
+      pnlPercent: 15.85,
+    },
   ]);
 
   const [watchlist] = useState<MarketData[]>([
@@ -89,7 +95,7 @@ export default function PortfolioScreen() {
       price: 71200,
       change: 1850,
       changePercent: 2.67,
-      volume: '23.8B'
+      volume: '23.8B',
     },
     {
       symbol: 'ETH',
@@ -97,7 +103,7 @@ export default function PortfolioScreen() {
       price: 4125,
       change: -125,
       changePercent: -2.94,
-      volume: '12.4B'
+      volume: '12.4B',
     },
     {
       symbol: 'BNB',
@@ -105,7 +111,7 @@ export default function PortfolioScreen() {
       price: 685,
       change: 25,
       changePercent: 3.79,
-      volume: '1.2B'
+      volume: '1.2B',
     },
     {
       symbol: 'XRP',
@@ -113,8 +119,8 @@ export default function PortfolioScreen() {
       price: 2.15,
       change: -0.08,
       changePercent: -3.59,
-      volume: '8.9B'
-    }
+      volume: '8.9B',
+    },
   ]);
 
   const totalValue = holdings.reduce((sum, holding) => sum + holding.value, 0);
@@ -133,11 +139,11 @@ export default function PortfolioScreen() {
 
   return (
     <View style={styles.container}>
-      <ScrollView 
+      <ScrollView
         style={styles.scrollView}
         refreshControl={
-          <RefreshControl 
-            refreshing={refreshing} 
+          <RefreshControl
+            refreshing={refreshing}
             onRefresh={onRefresh}
             tintColor="#10B981"
           />
@@ -150,7 +156,7 @@ export default function PortfolioScreen() {
             <Text style={styles.title}>Portfolio Overview</Text>
           </View>
           <View style={styles.headerActions}>
-            <TouchableOpacity 
+            <TouchableOpacity
               style={styles.autoTradeButton}
               onPress={() => setShowAutoTradeMonitor(true)}
             >
@@ -178,27 +184,46 @@ export default function PortfolioScreen() {
               <Text style={styles.addButtonText}>Add</Text>
             </TouchableOpacity>
           </View>
-          
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.holdingsScroll}>
+
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            style={styles.holdingsScroll}
+          >
             {holdings.map((holding, index) => (
-              <View key={holding.symbol} style={[styles.holdingCard, { marginLeft: index === 0 ? 16 : 0 }]}>
+              <View
+                key={holding.symbol}
+                style={[
+                  styles.holdingCard,
+                  { marginLeft: index === 0 ? 16 : 0 },
+                ]}
+              >
                 <View style={styles.holdingHeader}>
                   <Text style={styles.holdingSymbol}>{holding.symbol}</Text>
-                  <Text style={[
-                    styles.holdingPnL,
-                    { color: holding.pnl >= 0 ? '#10B981' : '#EF4444' }
-                  ]}>
+                  <Text
+                    style={[
+                      styles.holdingPnL,
+                      { color: holding.pnl >= 0 ? '#10B981' : '#EF4444' },
+                    ]}
+                  >
                     {holding.pnl >= 0 ? '+' : ''}${holding.pnl.toFixed(2)}
                   </Text>
                 </View>
                 <Text style={styles.holdingName}>{holding.name}</Text>
-                <Text style={styles.holdingAmount}>{holding.amount} {holding.symbol}</Text>
-                <Text style={styles.holdingValue}>${holding.value.toLocaleString()}</Text>
-                <Text style={[
-                  styles.holdingPercent,
-                  { color: holding.pnlPercent >= 0 ? '#10B981' : '#EF4444' }
-                ]}>
-                  {holding.pnlPercent >= 0 ? '+' : ''}{holding.pnlPercent.toFixed(2)}%
+                <Text style={styles.holdingAmount}>
+                  {holding.amount} {holding.symbol}
+                </Text>
+                <Text style={styles.holdingValue}>
+                  ${holding.value.toLocaleString()}
+                </Text>
+                <Text
+                  style={[
+                    styles.holdingPercent,
+                    { color: holding.pnlPercent >= 0 ? '#10B981' : '#EF4444' },
+                  ]}
+                >
+                  {holding.pnlPercent >= 0 ? '+' : ''}
+                  {holding.pnlPercent.toFixed(2)}%
                 </Text>
               </View>
             ))}
@@ -212,7 +237,7 @@ export default function PortfolioScreen() {
               <Text style={styles.viewAllText}>View All</Text>
             </TouchableOpacity>
           </View>
-          
+
           <View style={styles.watchlistGrid}>
             {watchlist.map((coin) => (
               <View key={coin.symbol} style={styles.watchlistItem}>
@@ -236,7 +261,7 @@ export default function PortfolioScreen() {
               <Activity size={24} color="#10B981" />
               <Text style={styles.actionText}>Start Trading</Text>
             </TouchableOpacity>
-            <TouchableOpacity 
+            <TouchableOpacity
               style={styles.actionCard}
               onPress={() => setShowAutoTradeMonitor(true)}
             >
@@ -252,7 +277,7 @@ export default function PortfolioScreen() {
         animationType="slide"
         presentationStyle="fullScreen"
       >
-        <AutoTradeMonitor 
+        <AutoTradeMonitor
           isVisible={showAutoTradeMonitor}
           onClose={() => setShowAutoTradeMonitor(false)}
         />

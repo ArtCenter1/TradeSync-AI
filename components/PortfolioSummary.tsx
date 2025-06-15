@@ -15,7 +15,7 @@ export default function PortfolioSummary({
   dayChange,
   dayChangePercent,
   totalPnL,
-  activeAlerts
+  activeAlerts,
 }: PortfolioSummaryProps) {
   const isPositiveDay = dayChange >= 0;
   const isPositiveTotal = totalPnL >= 0;
@@ -28,11 +28,12 @@ export default function PortfolioSummary({
         <View style={styles.valueSection}>
           <Text style={styles.label}>Total Portfolio Value</Text>
           <Text style={styles.totalValue}>${totalValue.toLocaleString()}</Text>
-          
+
           <View style={styles.changeRow}>
             <TrendingUp size={16} color={dayColor} />
             <Text style={[styles.dayChange, { color: dayColor }]}>
-              {isPositiveDay ? '+' : ''}${dayChange.toFixed(2)} ({dayChangePercent.toFixed(2)}%)
+              {isPositiveDay ? '+' : ''}${dayChange.toFixed(2)} (
+              {dayChangePercent.toFixed(2)}%)
             </Text>
             <Text style={styles.timeframe}>Today</Text>
           </View>

@@ -1,19 +1,32 @@
 import React, { useState } from 'react';
-import { 
-  View, 
-  Text, 
-  StyleSheet, 
-  ScrollView, 
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
   TouchableOpacity,
   TextInput,
   Switch,
-  Alert
+  Alert,
 } from 'react-native';
-import { Settings, Webhook, Zap, Shield, TrendingUp, Bell, Key, Copy, ExternalLink, TriangleAlert as AlertTriangle } from 'lucide-react-native';
+import {
+  Settings,
+  Webhook,
+  Zap,
+  Shield,
+  TrendingUp,
+  Bell,
+  Key,
+  Copy,
+  ExternalLink,
+  TriangleAlert as AlertTriangle,
+} from 'lucide-react-native';
 
 export default function SettingsScreen() {
   const [autoTradingEnabled, setAutoTradingEnabled] = useState(false);
-  const [webhookUrl] = useState('https://api.cryptotrader.pro/webhook/tradingview');
+  const [webhookUrl] = useState(
+    'https://api.cryptotrader.pro/webhook/tradingview',
+  );
   const [apiKey, setApiKey] = useState('ct_live_1234567890abcdef');
   const [maxTradeAmount, setMaxTradeAmount] = useState('1000');
   const [maxDailyTrades, setMaxDailyTrades] = useState('10');
@@ -29,10 +42,10 @@ export default function SettingsScreen() {
   };
 
   const toggleSymbol = (symbol: string) => {
-    setEnabledSymbols(prev => 
-      prev.includes(symbol) 
-        ? prev.filter(s => s !== symbol)
-        : [...prev, symbol]
+    setEnabledSymbols((prev) =>
+      prev.includes(symbol)
+        ? prev.filter((s) => s !== symbol)
+        : [...prev, symbol],
     );
   };
 
@@ -43,14 +56,17 @@ export default function SettingsScreen() {
         <Text style={styles.subtitle}>Configure auto-trading and alerts</Text>
       </View>
 
-      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        style={styles.scrollView}
+        showsVerticalScrollIndicator={false}
+      >
         {/* TradingView Integration */}
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <TrendingUp size={20} color="#10B981" />
             <Text style={styles.sectionTitle}>TradingView Integration</Text>
           </View>
-          
+
           <View style={styles.card}>
             <View style={styles.cardHeader}>
               <Text style={styles.cardTitle}>Auto-Trading</Text>
@@ -70,7 +86,10 @@ export default function SettingsScreen() {
             <View style={styles.cardHeader}>
               <Webhook size={18} color="#3B82F6" />
               <Text style={styles.cardTitle}>Webhook URL</Text>
-              <TouchableOpacity onPress={copyWebhookUrl} style={styles.copyButton}>
+              <TouchableOpacity
+                onPress={copyWebhookUrl}
+                style={styles.copyButton}
+              >
                 <Copy size={16} color="#9CA3AF" />
               </TouchableOpacity>
             </View>
@@ -97,6 +116,7 @@ export default function SettingsScreen() {
               placeholderTextColor="#6B7280"
               secureTextEntry
             />
+
             <Text style={styles.cardDescription}>
               Your secure API key for trade execution
             </Text>
@@ -183,7 +203,9 @@ export default function SettingsScreen() {
             </View>
             {enableTakeProfit && (
               <View style={styles.inputGroup}>
-                <Text style={styles.inputLabel}>Take Profit Percentage (%)</Text>
+                <Text style={styles.inputLabel}>
+                  Take Profit Percentage (%)
+                </Text>
                 <TextInput
                   style={styles.input}
                   value={takeProfitPercentage}
@@ -210,23 +232,29 @@ export default function SettingsScreen() {
               Select which cryptocurrencies to auto-trade
             </Text>
             <View style={styles.symbolGrid}>
-              {['BTC', 'ETH', 'SOL', 'ADA', 'DOT', 'AVAX', 'MATIC', 'LINK'].map((symbol) => (
-                <TouchableOpacity
-                  key={symbol}
-                  style={[
-                    styles.symbolChip,
-                    enabledSymbols.includes(symbol) && styles.symbolChipActive
-                  ]}
-                  onPress={() => toggleSymbol(symbol)}
-                >
-                  <Text style={[
-                    styles.symbolChipText,
-                    enabledSymbols.includes(symbol) && styles.symbolChipTextActive
-                  ]}>
-                    {symbol}
-                  </Text>
-                </TouchableOpacity>
-              ))}
+              {['BTC', 'ETH', 'SOL', 'ADA', 'DOT', 'AVAX', 'MATIC', 'LINK'].map(
+                (symbol) => (
+                  <TouchableOpacity
+                    key={symbol}
+                    style={[
+                      styles.symbolChip,
+                      enabledSymbols.includes(symbol) &&
+                        styles.symbolChipActive,
+                    ]}
+                    onPress={() => toggleSymbol(symbol)}
+                  >
+                    <Text
+                      style={[
+                        styles.symbolChipText,
+                        enabledSymbols.includes(symbol) &&
+                          styles.symbolChipTextActive,
+                      ]}
+                    >
+                      {symbol}
+                    </Text>
+                  </TouchableOpacity>
+                ),
+              )}
             </View>
           </View>
         </View>
@@ -248,7 +276,9 @@ export default function SettingsScreen() {
               <View style={styles.formatItem}>
                 <Text style={styles.formatTitle}>Detailed Format</Text>
                 <Text style={styles.formatExample}>
-                  {"{{strategy.order.action}} {{ticker}} price={{close}} sl={{strategy.position_avg_price*0.95}}"}
+                  {
+                    '{{strategy.order.action}} {{ticker}} price={{close}} sl={{strategy.position_avg_price*0.95}}'
+                  }
                 </Text>
               </View>
               <View style={styles.formatItem}>
@@ -265,19 +295,23 @@ export default function SettingsScreen() {
         <View style={styles.section}>
           <View style={styles.statusCard}>
             <View style={styles.statusHeader}>
-              <View style={[
-                styles.statusIndicator,
-                { backgroundColor: autoTradingEnabled ? '#10B981' : '#6B7280' }
-              ]} />
+              <View
+                style={[
+                  styles.statusIndicator,
+                  {
+                    backgroundColor: autoTradingEnabled ? '#10B981' : '#6B7280',
+                  },
+                ]}
+              />
+
               <Text style={styles.statusTitle}>
                 Auto-Trading {autoTradingEnabled ? 'Active' : 'Inactive'}
               </Text>
             </View>
             <Text style={styles.statusDescription}>
-              {autoTradingEnabled 
+              {autoTradingEnabled
                 ? 'Ready to receive and execute TradingView alerts'
-                : 'Enable auto-trading to start receiving alerts'
-              }
+                : 'Enable auto-trading to start receiving alerts'}
             </Text>
             {autoTradingEnabled && (
               <View style={styles.warningContainer}>

@@ -21,7 +21,12 @@ interface AIChatProps {
   onStrategyRecommend: (strategy: Strategy) => void;
 }
 
-export default function AIChat({ isVisible, onClose, strategies, onStrategyRecommend }: AIChatProps) {
+export default function AIChat({
+  isVisible,
+  onClose,
+  strategies,
+  onStrategyRecommend,
+}: AIChatProps) {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       id: '1',
@@ -47,27 +52,47 @@ export default function AIChat({ isVisible, onClose, strategies, onStrategyRecom
     const lowerMessage = userMessage.toLowerCase();
 
     // Risk assessment responses
-    if (lowerMessage.includes('beginner') || lowerMessage.includes('new') || lowerMessage.includes('start')) {
+    if (
+      lowerMessage.includes('beginner') ||
+      lowerMessage.includes('new') ||
+      lowerMessage.includes('start')
+    ) {
       return mockChatResponses.riskAssessment;
     }
 
     // Strategy recommendation
-    if (lowerMessage.includes('recommend') || lowerMessage.includes('suggest') || lowerMessage.includes('best')) {
+    if (
+      lowerMessage.includes('recommend') ||
+      lowerMessage.includes('suggest') ||
+      lowerMessage.includes('best')
+    ) {
       return mockChatResponses.strategyRecommendation;
     }
 
     // Explanation requests
-    if (lowerMessage.includes('how') || lowerMessage.includes('explain') || lowerMessage.includes('work')) {
+    if (
+      lowerMessage.includes('how') ||
+      lowerMessage.includes('explain') ||
+      lowerMessage.includes('work')
+    ) {
       return mockChatResponses.explanation;
     }
 
     // Risk management
-    if (lowerMessage.includes('risk') || lowerMessage.includes('safe') || lowerMessage.includes('loss')) {
+    if (
+      lowerMessage.includes('risk') ||
+      lowerMessage.includes('safe') ||
+      lowerMessage.includes('loss')
+    ) {
       return mockChatResponses.riskManagement;
     }
 
     // Backtesting
-    if (lowerMessage.includes('backtest') || lowerMessage.includes('performance') || lowerMessage.includes('result')) {
+    if (
+      lowerMessage.includes('backtest') ||
+      lowerMessage.includes('performance') ||
+      lowerMessage.includes('result')
+    ) {
       return mockChatResponses.backtesting;
     }
 
@@ -86,7 +111,7 @@ export default function AIChat({ isVisible, onClose, strategies, onStrategyRecom
       status: 'sent',
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    setMessages((prev) => [...prev, userMessage]);
     setInputText('');
     setIsTyping(true);
 
@@ -100,7 +125,7 @@ export default function AIChat({ isVisible, onClose, strategies, onStrategyRecom
         status: 'delivered',
       };
 
-      setMessages(prev => [...prev, aiResponse]);
+      setMessages((prev) => [...prev, aiResponse]);
       setIsTyping(false);
     }, 1500);
   };
@@ -111,30 +136,46 @@ export default function AIChat({ isVisible, onClose, strategies, onStrategyRecom
 
   const suggestions = [
     "I'm a beginner, what strategy should I start with?",
-    "Show me low-risk strategies",
-    "How do I set up automated trading?",
+    'Show me low-risk strategies',
+    'How do I set up automated trading?',
     "What's the best timeframe for scalping?",
-    "Explain risk management",
+    'Explain risk management',
   ];
 
   const renderMessage = (message: ChatMessage) => {
     const isUser = message.role === 'user';
 
     return (
-      <View key={message.id} style={[styles.messageContainer, isUser && styles.userMessageContainer]}>
-        <View style={[styles.messageAvatar, isUser ? styles.userAvatar : styles.aiAvatar]}>
+      <View
+        key={message.id}
+        style={[styles.messageContainer, isUser && styles.userMessageContainer]}
+      >
+        <View
+          style={[
+            styles.messageAvatar,
+            isUser ? styles.userAvatar : styles.aiAvatar,
+          ]}
+        >
           {isUser ? (
             <User size={16} color="#FFFFFF" />
           ) : (
             <Bot size={16} color="#FFFFFF" />
           )}
         </View>
-        <View style={[styles.messageBubble, isUser ? styles.userBubble : styles.aiBubble]}>
+        <View
+          style={[
+            styles.messageBubble,
+            isUser ? styles.userBubble : styles.aiBubble,
+          ]}
+        >
           <Text style={[styles.messageText, isUser && styles.userMessageText]}>
             {message.content}
           </Text>
           <Text style={styles.messageTime}>
-            {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+            {message.timestamp.toLocaleTimeString([], {
+              hour: '2-digit',
+              minute: '2-digit',
+            })}
           </Text>
         </View>
       </View>
@@ -146,7 +187,9 @@ export default function AIChat({ isVisible, onClose, strategies, onStrategyRecom
       <View style={[styles.messageAvatar, styles.aiAvatar]}>
         <Bot size={16} color="#FFFFFF" />
       </View>
-      <View style={[styles.messageBubble, styles.aiBubble, styles.typingBubble]}>
+      <View
+        style={[styles.messageBubble, styles.aiBubble, styles.typingBubble]}
+      >
         <View style={styles.typingIndicator}>
           <ActivityIndicator size="small" color="#9CA3AF" />
           <Text style={styles.typingText}>AI is thinking...</Text>
@@ -221,12 +264,16 @@ export default function AIChat({ isVisible, onClose, strategies, onStrategyRecom
           multiline
           maxLength={500}
         />
+
         <TouchableOpacity
-          style={[styles.sendButton, !inputText.trim() && styles.sendButtonDisabled]}
+          style={[
+            styles.sendButton,
+            !inputText.trim() && styles.sendButtonDisabled,
+          ]}
           onPress={handleSendMessage}
           disabled={!inputText.trim() || isTyping}
         >
-          <Send size={20} color={!inputText.trim() ? "#6B7280" : "#FFFFFF"} />
+          <Send size={20} color={!inputText.trim() ? '#6B7280' : '#FFFFFF'} />
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>

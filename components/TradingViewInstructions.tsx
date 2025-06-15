@@ -1,13 +1,26 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
-import { ExternalLink, Copy, CircleCheck as CheckCircle } from 'lucide-react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
+import {
+  ExternalLink,
+  Copy,
+  CircleCheck as CheckCircle,
+} from 'lucide-react-native';
 
 interface TradingViewInstructionsProps {
   webhookUrl: string;
   onClose: () => void;
 }
 
-export default function TradingViewInstructions({ webhookUrl, onClose }: TradingViewInstructionsProps) {
+export default function TradingViewInstructions({
+  webhookUrl,
+  onClose,
+}: TradingViewInstructionsProps) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -19,20 +32,24 @@ export default function TradingViewInstructions({ webhookUrl, onClose }: Trading
 
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Step 1: Create Your Trading Strategy</Text>
+          <Text style={styles.sectionTitle}>
+            Step 1: Create Your Trading Strategy
+          </Text>
           <Text style={styles.description}>
-            First, create or open your trading strategy/indicator in TradingView Pine Script editor.
+            First, create or open your trading strategy/indicator in TradingView
+            Pine Script editor.
           </Text>
         </View>
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Step 2: Add Alert Conditions</Text>
           <Text style={styles.description}>
-            In your Pine Script, add alert conditions using the `alertcondition()` function:
+            In your Pine Script, add alert conditions using the
+            `alertcondition()` function:
           </Text>
           <View style={styles.codeBlock}>
             <Text style={styles.code}>
-{`// Example: RSI Buy Signal
+              {`// Example: RSI Buy Signal
 rsi = ta.rsi(close, 14)
 buy_signal = ta.crossover(rsi, 30)
 alertcondition(buy_signal, "Buy Signal", "BUY {{ticker}}")
@@ -51,19 +68,25 @@ alertcondition(sell_signal, "Sell Signal", "SELL {{ticker}}")`}
               <View style={styles.stepNumber}>
                 <Text style={styles.stepNumberText}>1</Text>
               </View>
-              <Text style={styles.stepText}>Right-click on your chart and select "Add Alert"</Text>
+              <Text style={styles.stepText}>
+                Right-click on your chart and select "Add Alert"
+              </Text>
             </View>
             <View style={styles.step}>
               <View style={styles.stepNumber}>
                 <Text style={styles.stepNumberText}>2</Text>
               </View>
-              <Text style={styles.stepText}>Choose your indicator/strategy from the dropdown</Text>
+              <Text style={styles.stepText}>
+                Choose your indicator/strategy from the dropdown
+              </Text>
             </View>
             <View style={styles.step}>
               <View style={styles.stepNumber}>
                 <Text style={styles.stepNumberText}>3</Text>
               </View>
-              <Text style={styles.stepText}>Select the alert condition (Buy Signal, Sell Signal, etc.)</Text>
+              <Text style={styles.stepText}>
+                Select the alert condition (Buy Signal, Sell Signal, etc.)
+              </Text>
             </View>
           </View>
         </View>
@@ -91,14 +114,17 @@ alertcondition(sell_signal, "Sell Signal", "SELL {{ticker}}")`}
           <Text style={styles.description}>
             Use one of these message formats in the alert message field:
           </Text>
-          
+
           <View style={styles.formatSection}>
             <Text style={styles.formatTitle}>Simple Format (Recommended)</Text>
             <View style={styles.codeBlock}>
-              <Text style={styles.code}>{"{{strategy.order.action}} {{ticker}}"}</Text>
+              <Text style={styles.code}>
+                {'{{strategy.order.action}} {{ticker}}'}
+              </Text>
             </View>
             <Text style={styles.formatDescription}>
-              This will send "BUY BTCUSDT" or "SELL BTCUSDT" based on your signal.
+              This will send "BUY BTCUSDT" or "SELL BTCUSDT" based on your
+              signal.
             </Text>
           </View>
 
@@ -106,7 +132,7 @@ alertcondition(sell_signal, "Sell Signal", "SELL {{ticker}}")`}
             <Text style={styles.formatTitle}>JSON Format (Advanced)</Text>
             <View style={styles.codeBlock}>
               <Text style={styles.code}>
-{`{
+                {`{
   "action": "{{strategy.order.action}}",
   "symbol": "{{ticker}}",
   "price": {{close}},
@@ -115,7 +141,8 @@ alertcondition(sell_signal, "Sell Signal", "SELL {{ticker}}")`}
               </Text>
             </View>
             <Text style={styles.formatDescription}>
-              Provides more detailed information including current price and signal type.
+              Provides more detailed information including current price and
+              signal type.
             </Text>
           </View>
         </View>
@@ -125,15 +152,21 @@ alertcondition(sell_signal, "Sell Signal", "SELL {{ticker}}")`}
           <View style={styles.testSection}>
             <View style={styles.testStep}>
               <CheckCircle size={16} color="#10B981" />
-              <Text style={styles.testText}>Create a test alert with a simple condition</Text>
+              <Text style={styles.testText}>
+                Create a test alert with a simple condition
+              </Text>
             </View>
             <View style={styles.testStep}>
               <CheckCircle size={16} color="#10B981" />
-              <Text style={styles.testText}>Trigger the alert manually to test webhook delivery</Text>
+              <Text style={styles.testText}>
+                Trigger the alert manually to test webhook delivery
+              </Text>
             </View>
             <View style={styles.testStep}>
               <CheckCircle size={16} color="#10B981" />
-              <Text style={styles.testText}>Check the Auto-Trade Monitor for received signals</Text>
+              <Text style={styles.testText}>
+                Check the Auto-Trade Monitor for received signals
+              </Text>
             </View>
           </View>
         </View>
@@ -141,11 +174,10 @@ alertcondition(sell_signal, "Sell Signal", "SELL {{ticker}}")`}
         <View style={styles.warningSection}>
           <Text style={styles.warningTitle}>⚠️ Important Notes</Text>
           <Text style={styles.warningText}>
-            • Always test with small amounts first{'\n'}
-            • Monitor your trades regularly{'\n'}
-            • Set appropriate stop-loss and take-profit levels{'\n'}
-            • TradingView alerts require a Pro subscription for webhooks{'\n'}
-            • Never share your webhook URL publicly
+            • Always test with small amounts first{'\n'}• Monitor your trades
+            regularly{'\n'}• Set appropriate stop-loss and take-profit levels
+            {'\n'}• TradingView alerts require a Pro subscription for webhooks
+            {'\n'}• Never share your webhook URL publicly
           </Text>
         </View>
       </ScrollView>

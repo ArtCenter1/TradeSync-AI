@@ -37,23 +37,33 @@ export default function StrategyDetailModal({
   onClose,
   onCopy,
 }: StrategyDetailModalProps) {
-  const [activeTab, setActiveTab] = useState<'overview' | 'script' | 'setup'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'script' | 'setup'>(
+    'overview',
+  );
 
   const getRiskColor = (riskLevel: string) => {
     switch (riskLevel) {
-      case 'low': return '#10B981';
-      case 'medium': return '#F59E0B';
-      case 'high': return '#EF4444';
-      default: return '#6B7280';
+      case 'low':
+        return '#10B981';
+      case 'medium':
+        return '#F59E0B';
+      case 'high':
+        return '#EF4444';
+      default:
+        return '#6B7280';
     }
   };
 
   const getRiskBgColor = (riskLevel: string) => {
     switch (riskLevel) {
-      case 'low': return '#064E3B';
-      case 'medium': return '#78350F';
-      case 'high': return '#7F1D1D';
-      default: return '#374151';
+      case 'low':
+        return '#064E3B';
+      case 'medium':
+        return '#78350F';
+      case 'high':
+        return '#7F1D1D';
+      default:
+        return '#374151';
     }
   };
 
@@ -159,7 +169,9 @@ export default function StrategyDetailModal({
       {/* Backtest Period */}
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Backtest Period</Text>
-        <Text style={styles.backtestPeriod}>{strategy.performance.backtestPeriod}</Text>
+        <Text style={styles.backtestPeriod}>
+          {strategy.performance.backtestPeriod}
+        </Text>
       </View>
     </ScrollView>
   );
@@ -203,7 +215,8 @@ export default function StrategyDetailModal({
             <View style={styles.stepContent}>
               <Text style={styles.stepTitle}>Copy Pine Script</Text>
               <Text style={styles.stepDescription}>
-                Copy the Pine Script code and paste it into TradingView's Pine Editor
+                Copy the Pine Script code and paste it into TradingView's Pine
+                Editor
               </Text>
             </View>
           </View>
@@ -215,7 +228,8 @@ export default function StrategyDetailModal({
             <View style={styles.stepContent}>
               <Text style={styles.stepTitle}>Add to Chart</Text>
               <Text style={styles.stepDescription}>
-                Save and add the strategy to your chart with your preferred settings
+                Save and add the strategy to your chart with your preferred
+                settings
               </Text>
             </View>
           </View>
@@ -227,7 +241,8 @@ export default function StrategyDetailModal({
             <View style={styles.stepContent}>
               <Text style={styles.stepTitle}>Create Alerts</Text>
               <Text style={styles.stepDescription}>
-                Set up alerts using the provided template to receive notifications
+                Set up alerts using the provided template to receive
+                notifications
               </Text>
             </View>
           </View>
@@ -254,15 +269,29 @@ export default function StrategyDetailModal({
   );
 
   return (
-    <Modal visible={visible} animationType="slide" presentationStyle="fullScreen">
+    <Modal
+      visible={visible}
+      animationType="slide"
+      presentationStyle="fullScreen"
+    >
       <View style={styles.container}>
         {/* Header */}
         <View style={styles.header}>
           <View style={styles.headerLeft}>
             <Text style={styles.title}>{strategy.name}</Text>
             <View style={styles.headerInfo}>
-              <View style={[styles.riskBadge, { backgroundColor: getRiskBgColor(strategy.riskLevel) }]}>
-                <Text style={[styles.riskText, { color: getRiskColor(strategy.riskLevel) }]}>
+              <View
+                style={[
+                  styles.riskBadge,
+                  { backgroundColor: getRiskBgColor(strategy.riskLevel) },
+                ]}
+              >
+                <Text
+                  style={[
+                    styles.riskText,
+                    { color: getRiskColor(strategy.riskLevel) },
+                  ]}
+                >
                   {strategy.riskLevel.toUpperCase()}
                 </Text>
               </View>
@@ -280,7 +309,12 @@ export default function StrategyDetailModal({
             style={[styles.tab, activeTab === 'overview' && styles.activeTab]}
             onPress={() => setActiveTab('overview')}
           >
-            <Text style={[styles.tabText, activeTab === 'overview' && styles.activeTabText]}>
+            <Text
+              style={[
+                styles.tabText,
+                activeTab === 'overview' && styles.activeTabText,
+              ]}
+            >
               Overview
             </Text>
           </TouchableOpacity>
@@ -288,7 +322,12 @@ export default function StrategyDetailModal({
             style={[styles.tab, activeTab === 'script' && styles.activeTab]}
             onPress={() => setActiveTab('script')}
           >
-            <Text style={[styles.tabText, activeTab === 'script' && styles.activeTabText]}>
+            <Text
+              style={[
+                styles.tabText,
+                activeTab === 'script' && styles.activeTabText,
+              ]}
+            >
               Script
             </Text>
           </TouchableOpacity>
@@ -296,7 +335,12 @@ export default function StrategyDetailModal({
             style={[styles.tab, activeTab === 'setup' && styles.activeTab]}
             onPress={() => setActiveTab('setup')}
           >
-            <Text style={[styles.tabText, activeTab === 'setup' && styles.activeTabText]}>
+            <Text
+              style={[
+                styles.tabText,
+                activeTab === 'setup' && styles.activeTabText,
+              ]}
+            >
               Setup
             </Text>
           </TouchableOpacity>

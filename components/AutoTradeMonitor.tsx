@@ -1,6 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
-import { Activity, TrendingUp, TrendingDown, Clock, CircleCheck as CheckCircle, Circle as XCircle, Zap } from 'lucide-react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
+import {
+  Activity,
+  TrendingUp,
+  TrendingDown,
+  Clock,
+  CircleCheck as CheckCircle,
+  Circle as XCircle,
+  Zap,
+} from 'lucide-react-native';
 
 interface AutoTrade {
   id: string;
@@ -20,7 +34,10 @@ interface AutoTradeMonitorProps {
   onClose: () => void;
 }
 
-export default function AutoTradeMonitor({ isVisible, onClose }: AutoTradeMonitorProps) {
+export default function AutoTradeMonitor({
+  isVisible,
+  onClose,
+}: AutoTradeMonitorProps) {
   const [autoTrades, setAutoTrades] = useState<AutoTrade[]>([
     {
       id: '1',
@@ -32,7 +49,7 @@ export default function AutoTradeMonitor({ isVisible, onClose }: AutoTradeMonito
       status: 'EXECUTED',
       timestamp: new Date('2024-01-15T14:30:00Z'),
       source: 'TRADINGVIEW',
-      pnl: 145.50
+      pnl: 145.5,
     },
     {
       id: '2',
@@ -44,7 +61,7 @@ export default function AutoTradeMonitor({ isVisible, onClose }: AutoTradeMonito
       status: 'EXECUTED',
       timestamp: new Date('2024-01-15T13:15:00Z'),
       source: 'TRADINGVIEW',
-      pnl: -85.25
+      pnl: -85.25,
     },
     {
       id: '3',
@@ -55,7 +72,7 @@ export default function AutoTradeMonitor({ isVisible, onClose }: AutoTradeMonito
       amount: 25,
       status: 'PENDING',
       timestamp: new Date('2024-01-15T14:45:00Z'),
-      source: 'TRADINGVIEW'
+      source: 'TRADINGVIEW',
     },
     {
       id: '4',
@@ -66,22 +83,24 @@ export default function AutoTradeMonitor({ isVisible, onClose }: AutoTradeMonito
       amount: 1000,
       status: 'FAILED',
       timestamp: new Date('2024-01-15T12:20:00Z'),
-      source: 'TRADINGVIEW'
-    }
+      source: 'TRADINGVIEW',
+    },
   ]);
 
   const [stats, setStats] = useState({
     totalTrades: 15,
     successRate: 73.3,
     totalPnL: 1250.75,
-    todayTrades: 4
+    todayTrades: 4,
   });
 
   if (!isVisible) return null;
 
-  const executedTrades = autoTrades.filter(t => t.status === 'EXECUTED').length;
-  const pendingTrades = autoTrades.filter(t => t.status === 'PENDING').length;
-  const failedTrades = autoTrades.filter(t => t.status === 'FAILED').length;
+  const executedTrades = autoTrades.filter(
+    (t) => t.status === 'EXECUTED',
+  ).length;
+  const pendingTrades = autoTrades.filter((t) => t.status === 'PENDING').length;
+  const failedTrades = autoTrades.filter((t) => t.status === 'FAILED').length;
 
   return (
     <View style={styles.container}>
@@ -89,7 +108,8 @@ export default function AutoTradeMonitor({ isVisible, onClose }: AutoTradeMonito
         <View>
           <Text style={styles.title}>Auto-Trade Monitor</Text>
           <Text style={styles.subtitle}>
-            {executedTrades} executed • {pendingTrades} pending • {failedTrades} failed
+            {executedTrades} executed • {pendingTrades} pending • {failedTrades}{' '}
+            failed
           </Text>
         </View>
         <TouchableOpacity onPress={onClose} style={styles.closeButton}>
@@ -110,17 +130,22 @@ export default function AutoTradeMonitor({ isVisible, onClose }: AutoTradeMonito
         </View>
         <View style={styles.statCard}>
           <Zap size={18} color="#F59E0B" />
-          <Text style={[
-            styles.statValue,
-            { color: stats.totalPnL >= 0 ? '#10B981' : '#EF4444' }
-          ]}>
+          <Text
+            style={[
+              styles.statValue,
+              { color: stats.totalPnL >= 0 ? '#10B981' : '#EF4444' },
+            ]}
+          >
             ${stats.totalPnL.toFixed(2)}
           </Text>
           <Text style={styles.statLabel}>Total P&L</Text>
         </View>
       </View>
 
-      <ScrollView style={styles.tradesList} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        style={styles.tradesList}
+        showsVerticalScrollIndicator={false}
+      >
         {autoTrades.map((trade) => (
           <AutoTradeItem key={trade.id} trade={trade} />
         ))}
@@ -139,20 +164,22 @@ function AutoTradeItem({ trade }: AutoTradeItemProps) {
   const statusColor = {
     EXECUTED: '#10B981',
     PENDING: '#F59E0B',
-    FAILED: '#EF4444'
+    FAILED: '#EF4444',
   }[trade.status];
 
   const StatusIcon = {
     EXECUTED: CheckCircle,
     PENDING: Clock,
-    FAILED: XCircle
+    FAILED: XCircle,
   }[trade.status];
 
   return (
     <View style={styles.tradeCard}>
       <View style={styles.tradeHeader}>
         <View style={styles.tradeSymbol}>
-          <View style={[styles.actionIndicator, { backgroundColor: actionColor }]}>
+          <View
+            style={[styles.actionIndicator, { backgroundColor: actionColor }]}
+          >
             {isBuy ? (
               <TrendingUp size={14} color="#FFFFFF" />
             ) : (
@@ -161,13 +188,17 @@ function AutoTradeItem({ trade }: AutoTradeItemProps) {
           </View>
           <View>
             <Text style={styles.symbol}>{trade.symbol}</Text>
-            <Text style={[styles.action, { color: actionColor }]}>{trade.action}</Text>
+            <Text style={[styles.action, { color: actionColor }]}>
+              {trade.action}
+            </Text>
           </View>
         </View>
-        
+
         <View style={styles.statusContainer}>
           <StatusIcon size={16} color={statusColor} />
-          <Text style={[styles.status, { color: statusColor }]}>{trade.status}</Text>
+          <Text style={[styles.status, { color: statusColor }]}>
+            {trade.status}
+          </Text>
         </View>
       </View>
 
@@ -179,11 +210,15 @@ function AutoTradeItem({ trade }: AutoTradeItemProps) {
       <View style={styles.tradeDetails}>
         <View style={styles.detailRow}>
           <Text style={styles.detailLabel}>Price</Text>
-          <Text style={styles.detailValue}>${trade.price.toLocaleString()}</Text>
+          <Text style={styles.detailValue}>
+            ${trade.price.toLocaleString()}
+          </Text>
         </View>
         <View style={styles.detailRow}>
           <Text style={styles.detailLabel}>Amount</Text>
-          <Text style={styles.detailValue}>{trade.amount} {trade.symbol}</Text>
+          <Text style={styles.detailValue}>
+            {trade.amount} {trade.symbol}
+          </Text>
         </View>
         <View style={styles.detailRow}>
           <Text style={styles.detailLabel}>Total</Text>
@@ -194,10 +229,12 @@ function AutoTradeItem({ trade }: AutoTradeItemProps) {
         {trade.pnl !== undefined && (
           <View style={styles.detailRow}>
             <Text style={styles.detailLabel}>P&L</Text>
-            <Text style={[
-              styles.detailValue,
-              { color: trade.pnl >= 0 ? '#10B981' : '#EF4444' }
-            ]}>
+            <Text
+              style={[
+                styles.detailValue,
+                { color: trade.pnl >= 0 ? '#10B981' : '#EF4444' },
+              ]}
+            >
               {trade.pnl >= 0 ? '+' : ''}${trade.pnl.toFixed(2)}
             </Text>
           </View>
@@ -209,7 +246,8 @@ function AutoTradeItem({ trade }: AutoTradeItemProps) {
           <Text style={styles.sourceText}>{trade.source}</Text>
         </View>
         <Text style={styles.timestamp}>
-          {trade.timestamp.toLocaleDateString()} {trade.timestamp.toLocaleTimeString()}
+          {trade.timestamp.toLocaleDateString()}{' '}
+          {trade.timestamp.toLocaleTimeString()}
         </Text>
       </View>
     </View>

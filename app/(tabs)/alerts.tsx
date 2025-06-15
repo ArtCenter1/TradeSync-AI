@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { 
-  View, 
-  Text, 
-  StyleSheet, 
-  ScrollView, 
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
   TouchableOpacity,
   Modal,
   TextInput,
-  Alert
+  Alert,
 } from 'react-native';
 import { Plus, Settings, Filter, Bell, Zap } from 'lucide-react-native';
 import AlertCard from '@/components/AlertCard';
@@ -33,7 +33,7 @@ export default function AlertsScreen() {
       targetPrice: 70000,
       currentPrice: 71200,
       isActive: true,
-      triggeredAt: new Date('2024-01-15T10:30:00Z')
+      triggeredAt: new Date('2024-01-15T10:30:00Z'),
     },
     {
       id: '2',
@@ -42,7 +42,7 @@ export default function AlertsScreen() {
       condition: 'Price falls below $4,000',
       targetPrice: 4000,
       currentPrice: 4125,
-      isActive: true
+      isActive: true,
     },
     {
       id: '3',
@@ -51,47 +51,45 @@ export default function AlertsScreen() {
       condition: 'RSI drops below 30',
       targetPrice: 200,
       currentPrice: 210,
-      isActive: false
+      isActive: false,
     },
     {
       id: '4',
       symbol: 'ADA',
       type: 'BUY',
       condition: 'Volume increases by 200%',
-      targetPrice: 1.00,
+      targetPrice: 1.0,
       currentPrice: 0.95,
-      isActive: true
-    }
+      isActive: true,
+    },
   ]);
 
   const [showCreateModal, setShowCreateModal] = useState(false);
-  const [filterActive, setFilterActive] = useState<'all' | 'active' | 'triggered'>('all');
+  const [filterActive, setFilterActive] = useState<
+    'all' | 'active' | 'triggered'
+  >('all');
 
   const handleToggleAlert = (id: string) => {
-    setAlerts(alerts.map(alert => 
-      alert.id === id 
-        ? { ...alert, isActive: !alert.isActive }
-        : alert
-    ));
-  };
-
-  const handleAlertOptions = (id: string) => {
-    Alert.alert(
-      'Alert Options',
-      'What would you like to do?',
-      [
-        { text: 'Edit', onPress: () => console.log('Edit alert', id) },
-        { text: 'Delete', style: 'destructive', onPress: () => deleteAlert(id) },
-        { text: 'Cancel', style: 'cancel' }
-      ]
+    setAlerts(
+      alerts.map((alert) =>
+        alert.id === id ? { ...alert, isActive: !alert.isActive } : alert,
+      ),
     );
   };
 
-  const deleteAlert = (id: string) => {
-    setAlerts(alerts.filter(alert => alert.id !== id));
+  const handleAlertOptions = (id: string) => {
+    Alert.alert('Alert Options', 'What would you like to do?', [
+      { text: 'Edit', onPress: () => console.log('Edit alert', id) },
+      { text: 'Delete', style: 'destructive', onPress: () => deleteAlert(id) },
+      { text: 'Cancel', style: 'cancel' },
+    ]);
   };
 
-  const filteredAlerts = alerts.filter(alert => {
+  const deleteAlert = (id: string) => {
+    setAlerts(alerts.filter((alert) => alert.id !== id));
+  };
+
+  const filteredAlerts = alerts.filter((alert) => {
     switch (filterActive) {
       case 'active':
         return alert.isActive && !alert.triggeredAt;
@@ -102,8 +100,10 @@ export default function AlertsScreen() {
     }
   });
 
-  const activeAlertsCount = alerts.filter(a => a.isActive && !a.triggeredAt).length;
-  const triggeredAlertsCount = alerts.filter(a => a.triggeredAt).length;
+  const activeAlertsCount = alerts.filter(
+    (a) => a.isActive && !a.triggeredAt,
+  ).length;
+  const triggeredAlertsCount = alerts.filter((a) => a.triggeredAt).length;
 
   return (
     <View style={styles.container}>
@@ -134,33 +134,57 @@ export default function AlertsScreen() {
 
       <View style={styles.controls}>
         <View style={styles.filterContainer}>
-          <TouchableOpacity 
-            style={[styles.filterButton, filterActive === 'all' && styles.filterButtonActive]}
+          <TouchableOpacity
+            style={[
+              styles.filterButton,
+              filterActive === 'all' && styles.filterButtonActive,
+            ]}
             onPress={() => setFilterActive('all')}
           >
-            <Text style={[styles.filterText, filterActive === 'all' && styles.filterTextActive]}>
+            <Text
+              style={[
+                styles.filterText,
+                filterActive === 'all' && styles.filterTextActive,
+              ]}
+            >
               All
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity 
-            style={[styles.filterButton, filterActive === 'active' && styles.filterButtonActive]}
+          <TouchableOpacity
+            style={[
+              styles.filterButton,
+              filterActive === 'active' && styles.filterButtonActive,
+            ]}
             onPress={() => setFilterActive('active')}
           >
-            <Text style={[styles.filterText, filterActive === 'active' && styles.filterTextActive]}>
+            <Text
+              style={[
+                styles.filterText,
+                filterActive === 'active' && styles.filterTextActive,
+              ]}
+            >
               Active
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity 
-            style={[styles.filterButton, filterActive === 'triggered' && styles.filterButtonActive]}
+          <TouchableOpacity
+            style={[
+              styles.filterButton,
+              filterActive === 'triggered' && styles.filterButtonActive,
+            ]}
             onPress={() => setFilterActive('triggered')}
           >
-            <Text style={[styles.filterText, filterActive === 'triggered' && styles.filterTextActive]}>
+            <Text
+              style={[
+                styles.filterText,
+                filterActive === 'triggered' && styles.filterTextActive,
+              ]}
+            >
               Triggered
             </Text>
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.createButton}
           onPress={() => setShowCreateModal(true)}
         >
@@ -168,7 +192,10 @@ export default function AlertsScreen() {
         </TouchableOpacity>
       </View>
 
-      <ScrollView style={styles.alertsList} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        style={styles.alertsList}
+        showsVerticalScrollIndicator={false}
+      >
         {filteredAlerts.length === 0 ? (
           <View style={styles.emptyState}>
             <Bell size={48} color="#4B5563" />
@@ -176,7 +203,7 @@ export default function AlertsScreen() {
             <Text style={styles.emptyDescription}>
               Create your first alert to get notified about price movements
             </Text>
-            <TouchableOpacity 
+            <TouchableOpacity
               style={styles.emptyButton}
               onPress={() => setShowCreateModal(true)}
             >
@@ -202,7 +229,7 @@ export default function AlertsScreen() {
         )}
       </ScrollView>
 
-      <CreateAlertModal 
+      <CreateAlertModal
         visible={showCreateModal}
         onClose={() => setShowCreateModal(false)}
         onCreateAlert={(newAlert) => {
@@ -220,7 +247,11 @@ interface CreateAlertModalProps {
   onCreateAlert: (alert: Omit<Alert, 'id'>) => void;
 }
 
-function CreateAlertModal({ visible, onClose, onCreateAlert }: CreateAlertModalProps) {
+function CreateAlertModal({
+  visible,
+  onClose,
+  onCreateAlert,
+}: CreateAlertModalProps) {
   const [symbol, setSymbol] = useState('');
   const [type, setType] = useState<'BUY' | 'SELL'>('BUY');
   const [condition, setCondition] = useState('');
@@ -238,7 +269,7 @@ function CreateAlertModal({ visible, onClose, onCreateAlert }: CreateAlertModalP
       condition,
       targetPrice: parseFloat(targetPrice),
       currentPrice: parseFloat(targetPrice) * 0.95, // Mock current price
-      isActive: true
+      isActive: true,
     });
 
     // Reset form
@@ -281,19 +312,35 @@ function CreateAlertModal({ visible, onClose, onCreateAlert }: CreateAlertModalP
           <View style={styles.inputGroup}>
             <Text style={styles.inputLabel}>Alert Type</Text>
             <View style={styles.typeSelector}>
-              <TouchableOpacity 
-                style={[styles.typeButton, type === 'BUY' && styles.typeButtonActive]}
+              <TouchableOpacity
+                style={[
+                  styles.typeButton,
+                  type === 'BUY' && styles.typeButtonActive,
+                ]}
                 onPress={() => setType('BUY')}
               >
-                <Text style={[styles.typeText, type === 'BUY' && styles.typeTextActive]}>
+                <Text
+                  style={[
+                    styles.typeText,
+                    type === 'BUY' && styles.typeTextActive,
+                  ]}
+                >
                   BUY
                 </Text>
               </TouchableOpacity>
-              <TouchableOpacity 
-                style={[styles.typeButton, type === 'SELL' && styles.typeButtonActive]}
+              <TouchableOpacity
+                style={[
+                  styles.typeButton,
+                  type === 'SELL' && styles.typeButtonActive,
+                ]}
                 onPress={() => setType('SELL')}
               >
-                <Text style={[styles.typeText, type === 'SELL' && styles.typeTextActive]}>
+                <Text
+                  style={[
+                    styles.typeText,
+                    type === 'SELL' && styles.typeTextActive,
+                  ]}
+                >
                   SELL
                 </Text>
               </TouchableOpacity>

@@ -1,6 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { TrendingUp, TrendingDown, Copy, Clock, Target, BarChart3 } from 'lucide-react-native';
+import {
+  TrendingUp,
+  TrendingDown,
+  Copy,
+  Clock,
+  Target,
+  BarChart3,
+} from 'lucide-react-native';
 import { Strategy } from '../types';
 
 interface StrategyCardProps {
@@ -9,22 +16,34 @@ interface StrategyCardProps {
   onCopy: (script: string) => void;
 }
 
-export default function StrategyCard({ strategy, onPress, onCopy }: StrategyCardProps) {
+export default function StrategyCard({
+  strategy,
+  onPress,
+  onCopy,
+}: StrategyCardProps) {
   const getRiskColor = (riskLevel: string) => {
     switch (riskLevel) {
-      case 'low': return '#10B981';
-      case 'medium': return '#F59E0B';
-      case 'high': return '#EF4444';
-      default: return '#6B7280';
+      case 'low':
+        return '#10B981';
+      case 'medium':
+        return '#F59E0B';
+      case 'high':
+        return '#EF4444';
+      default:
+        return '#6B7280';
     }
   };
 
   const getRiskBgColor = (riskLevel: string) => {
     switch (riskLevel) {
-      case 'low': return '#064E3B';
-      case 'medium': return '#78350F';
-      case 'high': return '#7F1D1D';
-      default: return '#374151';
+      case 'low':
+        return '#064E3B';
+      case 'medium':
+        return '#78350F';
+      case 'high':
+        return '#7F1D1D';
+      default:
+        return '#374151';
     }
   };
 
@@ -42,21 +61,31 @@ export default function StrategyCard({ strategy, onPress, onCopy }: StrategyCard
   };
 
   return (
-    <TouchableOpacity 
-      style={styles.container} 
+    <TouchableOpacity
+      style={styles.container}
       onPress={() => onPress(strategy)}
       activeOpacity={0.8}
     >
       <View style={styles.header}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>{strategy.name}</Text>
-          <View style={[styles.riskBadge, { backgroundColor: getRiskBgColor(strategy.riskLevel) }]}>
-            <Text style={[styles.riskText, { color: getRiskColor(strategy.riskLevel) }]}>
+          <View
+            style={[
+              styles.riskBadge,
+              { backgroundColor: getRiskBgColor(strategy.riskLevel) },
+            ]}
+          >
+            <Text
+              style={[
+                styles.riskText,
+                { color: getRiskColor(strategy.riskLevel) },
+              ]}
+            >
               {strategy.riskLevel.toUpperCase()}
             </Text>
           </View>
         </View>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.copyButton}
           onPress={() => onCopy(strategy.script)}
         >
@@ -110,7 +139,9 @@ export default function StrategyCard({ strategy, onPress, onCopy }: StrategyCard
             </View>
           ))}
           {strategy.timeframe.length > 3 && (
-            <Text style={styles.moreTimeframes}>+{strategy.timeframe.length - 3}</Text>
+            <Text style={styles.moreTimeframes}>
+              +{strategy.timeframe.length - 3}
+            </Text>
           )}
         </View>
 

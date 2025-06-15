@@ -10,10 +10,19 @@ import {
   RefreshControl,
   Modal,
 } from 'react-native';
-import { Search, MessageCircle, Brain, Copy, CheckCircle } from 'lucide-react-native';
+import {
+  Search,
+  MessageCircle,
+  Brain,
+  Copy,
+  CheckCircle,
+} from 'lucide-react-native';
 import * as Clipboard from 'expo-clipboard';
 import { mockStrategies } from '@/features/strategy-management/data/mockStrategies';
-import { Strategy, StrategyFilters as StrategyFiltersType } from '@/features/strategy-management/types';
+import {
+  Strategy,
+  StrategyFilters as StrategyFiltersType,
+} from '@/features/strategy-management/types';
 import StrategyCard from '@/features/strategy-management/components/StrategyCard';
 import StrategyFilters from '@/features/strategy-management/components/StrategyFilters';
 import StrategyDetailModal from '@/features/strategy-management/components/StrategyDetailModal';
@@ -21,11 +30,14 @@ import AIChat from '@/features/strategy-management/components/AIChat';
 
 export default function StrategiesScreen() {
   const [strategies, setStrategies] = useState<Strategy[]>(mockStrategies);
-  const [filteredStrategies, setFilteredStrategies] = useState<Strategy[]>(mockStrategies);
+  const [filteredStrategies, setFilteredStrategies] =
+    useState<Strategy[]>(mockStrategies);
   const [searchQuery, setSearchQuery] = useState('');
   const [filters, setFilters] = useState<StrategyFiltersType>({});
   const [refreshing, setRefreshing] = useState(false);
-  const [selectedStrategy, setSelectedStrategy] = useState<Strategy | null>(null);
+  const [selectedStrategy, setSelectedStrategy] = useState<Strategy | null>(
+    null,
+  );
   const [showAIChat, setShowAIChat] = useState(false);
   const [copiedScript, setCopiedScript] = useState<string | null>(null);
 
@@ -40,26 +52,30 @@ export default function StrategiesScreen() {
           strategy.name.toLowerCase().includes(query) ||
           strategy.description.toLowerCase().includes(query) ||
           strategy.tags.some((tag) => tag.toLowerCase().includes(query)) ||
-          strategy.category.toLowerCase().includes(query)
+          strategy.category.toLowerCase().includes(query),
       );
     }
 
     // Apply risk level filter
     if (filters.riskLevel) {
-      filtered = filtered.filter((strategy) => strategy.riskLevel === filters.riskLevel);
+      filtered = filtered.filter(
+        (strategy) => strategy.riskLevel === filters.riskLevel,
+      );
     }
 
     // Apply timeframe filter
     if (filters.timeframe) {
       filtered = filtered.filter((strategy) =>
-        strategy.timeframe.includes(filters.timeframe!)
+        strategy.timeframe.includes(filters.timeframe!),
       );
     }
 
     // Apply category filter
     if (filters.category) {
       filtered = filtered.filter((strategy) =>
-        strategy.category.toLowerCase().includes(filters.category!.toLowerCase())
+        strategy.category
+          .toLowerCase()
+          .includes(filters.category!.toLowerCase()),
       );
     }
 
@@ -168,7 +184,9 @@ export default function StrategiesScreen() {
               onPress={() => setShowAIChat(true)}
             >
               <MessageCircle size={16} color="#FFFFFF" />
-              <Text style={styles.aiSuggestText}>Ask AI for recommendations</Text>
+              <Text style={styles.aiSuggestText}>
+                Ask AI for recommendations
+              </Text>
             </TouchableOpacity>
           </View>
         ) : (

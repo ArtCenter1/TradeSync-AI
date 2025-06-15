@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
-import { 
-  View, 
-  Text, 
-  StyleSheet, 
-  ScrollView, 
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
   TouchableOpacity,
-  Dimensions 
+  Dimensions,
 } from 'react-native';
-import { 
-  TrendingUp, 
-  TrendingDown, 
-  BarChart3, 
-  PieChart, 
+import {
+  TrendingUp,
+  TrendingDown,
+  BarChart3,
+  PieChart,
   Target,
   Calendar,
-  DollarSign
+  DollarSign,
 } from 'lucide-react-native';
 
 const { width } = Dimensions.get('window');
@@ -36,13 +36,39 @@ interface TimeframeData {
 }
 
 export default function AnalyticsScreen() {
-  const [selectedTimeframe, setSelectedTimeframe] = useState<'24H' | '7D' | '30D' | '1Y'>('7D');
-  
+  const [selectedTimeframe, setSelectedTimeframe] = useState<
+    '24H' | '7D' | '30D' | '1Y'
+  >('7D');
+
   const timeframeData: Record<string, TimeframeData> = {
-    '24H': { period: '24H', pnl: 234.56, pnlPercent: 2.1, winRate: 75, totalTrades: 8 },
-    '7D': { period: '7D', pnl: 1456.78, pnlPercent: 12.4, winRate: 68, totalTrades: 24 },
-    '30D': { period: '30D', pnl: 5234.12, pnlPercent: 38.7, winRate: 72, totalTrades: 89 },
-    '1Y': { period: '1Y', pnl: 18750.45, pnlPercent: 124.8, winRate: 69, totalTrades: 312 }
+    '24H': {
+      period: '24H',
+      pnl: 234.56,
+      pnlPercent: 2.1,
+      winRate: 75,
+      totalTrades: 8,
+    },
+    '7D': {
+      period: '7D',
+      pnl: 1456.78,
+      pnlPercent: 12.4,
+      winRate: 68,
+      totalTrades: 24,
+    },
+    '30D': {
+      period: '30D',
+      pnl: 5234.12,
+      pnlPercent: 38.7,
+      winRate: 72,
+      totalTrades: 89,
+    },
+    '1Y': {
+      period: '1Y',
+      pnl: 18750.45,
+      pnlPercent: 124.8,
+      winRate: 69,
+      totalTrades: 312,
+    },
   };
 
   const currentData = timeframeData[selectedTimeframe];
@@ -53,36 +79,36 @@ export default function AnalyticsScreen() {
       value: `$${currentData.pnl.toLocaleString()}`,
       change: currentData.pnlPercent,
       icon: DollarSign,
-      color: currentData.pnl >= 0 ? '#10B981' : '#EF4444'
+      color: currentData.pnl >= 0 ? '#10B981' : '#EF4444',
     },
     {
       label: 'Win Rate',
       value: `${currentData.winRate}%`,
       change: 2.3,
       icon: Target,
-      color: '#10B981'
+      color: '#10B981',
     },
     {
       label: 'Total Trades',
       value: currentData.totalTrades.toString(),
       change: 15.2,
       icon: BarChart3,
-      color: '#3B82F6'
+      color: '#3B82F6',
     },
     {
       label: 'Avg Trade',
       value: `$${(currentData.pnl / currentData.totalTrades).toFixed(2)}`,
       change: 8.7,
       icon: TrendingUp,
-      color: '#F59E0B'
-    }
+      color: '#F59E0B',
+    },
   ];
 
   const topPerformers = [
-    { symbol: 'SOL', pnl: 2150.30, pnlPercent: 24.8, trades: 12 },
+    { symbol: 'SOL', pnl: 2150.3, pnlPercent: 24.8, trades: 12 },
     { symbol: 'BTC', pnl: 1875.45, pnlPercent: 18.2, trades: 8 },
     { symbol: 'ETH', pnl: 1234.67, pnlPercent: 15.7, trades: 15 },
-    { symbol: 'ADA', pnl: 567.89, pnlPercent: 12.3, trades: 18 }
+    { symbol: 'ADA', pnl: 567.89, pnlPercent: 12.3, trades: 18 },
   ];
 
   const recentAlerts = [
@@ -103,21 +129,26 @@ export default function AnalyticsScreen() {
         </TouchableOpacity>
       </View>
 
-      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        style={styles.scrollView}
+        showsVerticalScrollIndicator={false}
+      >
         <View style={styles.timeframeSelector}>
           {(['24H', '7D', '30D', '1Y'] as const).map((period) => (
             <TouchableOpacity
               key={period}
               style={[
                 styles.timeframeButton,
-                selectedTimeframe === period && styles.timeframeButtonActive
+                selectedTimeframe === period && styles.timeframeButtonActive,
               ]}
               onPress={() => setSelectedTimeframe(period)}
             >
-              <Text style={[
-                styles.timeframeText,
-                selectedTimeframe === period && styles.timeframeTextActive
-              ]}>
+              <Text
+                style={[
+                  styles.timeframeText,
+                  selectedTimeframe === period && styles.timeframeTextActive,
+                ]}
+              >
                 {period}
               </Text>
             </TouchableOpacity>
@@ -129,20 +160,30 @@ export default function AnalyticsScreen() {
             <View key={index} style={styles.metricCard}>
               <View style={styles.metricHeader}>
                 <metric.icon size={20} color={metric.color} />
-                <View style={[
-                  styles.changeIndicator,
-                  { backgroundColor: metric.change >= 0 ? '#10B981' + '20' : '#EF4444' + '20' }
-                ]}>
+                <View
+                  style={[
+                    styles.changeIndicator,
+                    {
+                      backgroundColor:
+                        metric.change >= 0
+                          ? '#10B981' + '20'
+                          : '#EF4444' + '20',
+                    },
+                  ]}
+                >
                   {metric.change >= 0 ? (
                     <TrendingUp size={12} color="#10B981" />
                   ) : (
                     <TrendingDown size={12} color="#EF4444" />
                   )}
-                  <Text style={[
-                    styles.changeText,
-                    { color: metric.change >= 0 ? '#10B981' : '#EF4444' }
-                  ]}>
-                    {metric.change >= 0 ? '+' : ''}{metric.change.toFixed(1)}%
+                  <Text
+                    style={[
+                      styles.changeText,
+                      { color: metric.change >= 0 ? '#10B981' : '#EF4444' },
+                    ]}
+                  >
+                    {metric.change >= 0 ? '+' : ''}
+                    {metric.change.toFixed(1)}%
                   </Text>
                 </View>
               </View>
@@ -172,7 +213,9 @@ export default function AnalyticsScreen() {
                 </View>
                 <View style={styles.performerInfo}>
                   <Text style={styles.performerSymbol}>{performer.symbol}</Text>
-                  <Text style={styles.performerTrades}>{performer.trades} trades</Text>
+                  <Text style={styles.performerTrades}>
+                    {performer.trades} trades
+                  </Text>
                 </View>
                 <View style={styles.performerMetrics}>
                   <Text style={styles.performerPnL}>
@@ -195,10 +238,12 @@ export default function AnalyticsScreen() {
                 <View style={styles.alertHeader}>
                   <View style={styles.alertSymbol}>
                     <Text style={styles.alertSymbolText}>{alert.symbol}</Text>
-                    <Text style={[
-                      styles.alertType,
-                      { color: alert.type === 'BUY' ? '#10B981' : '#EF4444' }
-                    ]}>
+                    <Text
+                      style={[
+                        styles.alertType,
+                        { color: alert.type === 'BUY' ? '#10B981' : '#EF4444' },
+                      ]}
+                    >
                       {alert.type}
                     </Text>
                   </View>
@@ -228,7 +273,7 @@ export default function AnalyticsScreen() {
                 </Text>
               </View>
             </View>
-            
+
             <View style={styles.insightCard}>
               <View style={styles.insightIcon}>
                 <Target size={20} color="#3B82F6" />
@@ -240,7 +285,7 @@ export default function AnalyticsScreen() {
                 </Text>
               </View>
             </View>
-            
+
             <View style={styles.insightCard}>
               <View style={styles.insightIcon}>
                 <BarChart3 size={20} color="#F59E0B" />

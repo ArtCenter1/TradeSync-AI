@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ScrollView,
+} from 'react-native';
 import { Filter, X } from 'lucide-react-native';
 import { StrategyFilters as FiltersType } from '../types';
 
@@ -33,8 +39,13 @@ const CATEGORIES = [
   { value: 'scalping', label: 'Scalping' },
 ];
 
-export default function StrategyFilters({ filters, onFiltersChange, onClear }: StrategyFiltersProps) {
-  const hasActiveFilters = filters.riskLevel || filters.timeframe || filters.category;
+export default function StrategyFilters({
+  filters,
+  onFiltersChange,
+  onClear,
+}: StrategyFiltersProps) {
+  const hasActiveFilters =
+    filters.riskLevel || filters.timeframe || filters.category;
 
   const handleRiskLevelChange = (riskLevel: 'low' | 'medium' | 'high') => {
     onFiltersChange({
@@ -72,7 +83,11 @@ export default function StrategyFilters({ filters, onFiltersChange, onClear }: S
         )}
       </View>
 
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.scrollView}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={styles.scrollView}
+      >
         <View style={styles.filtersContainer}>
           {/* Risk Level Filters */}
           <View style={styles.filterGroup}>
@@ -85,15 +100,19 @@ export default function StrategyFilters({ filters, onFiltersChange, onClear }: S
                     styles.filterOption,
                     filters.riskLevel === risk.value && [
                       styles.filterOptionActive,
-                      { borderColor: risk.color }
-                    ]
+                      { borderColor: risk.color },
+                    ],
                   ]}
-                  onPress={() => handleRiskLevelChange(risk.value as 'low' | 'medium' | 'high')}
+                  onPress={() =>
+                    handleRiskLevelChange(
+                      risk.value as 'low' | 'medium' | 'high',
+                    )
+                  }
                 >
                   <Text
                     style={[
                       styles.filterOptionText,
-                      filters.riskLevel === risk.value && { color: risk.color }
+                      filters.riskLevel === risk.value && { color: risk.color },
                     ]}
                   >
                     {risk.label}
@@ -112,14 +131,15 @@ export default function StrategyFilters({ filters, onFiltersChange, onClear }: S
                   key={tf.value}
                   style={[
                     styles.filterOption,
-                    filters.timeframe === tf.value && styles.filterOptionActive
+                    filters.timeframe === tf.value && styles.filterOptionActive,
                   ]}
                   onPress={() => handleTimeframeChange(tf.value)}
                 >
                   <Text
                     style={[
                       styles.filterOptionText,
-                      filters.timeframe === tf.value && styles.filterOptionActiveText
+                      filters.timeframe === tf.value &&
+                        styles.filterOptionActiveText,
                     ]}
                   >
                     {tf.label}
@@ -138,14 +158,15 @@ export default function StrategyFilters({ filters, onFiltersChange, onClear }: S
                   key={cat.value}
                   style={[
                     styles.filterOption,
-                    filters.category === cat.value && styles.filterOptionActive
+                    filters.category === cat.value && styles.filterOptionActive,
                   ]}
                   onPress={() => handleCategoryChange(cat.value)}
                 >
                   <Text
                     style={[
                       styles.filterOptionText,
-                      filters.category === cat.value && styles.filterOptionActiveText
+                      filters.category === cat.value &&
+                        styles.filterOptionActiveText,
                     ]}
                   >
                     {cat.label}

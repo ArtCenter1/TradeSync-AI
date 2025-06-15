@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
-import { 
-  View, 
-  Text, 
-  StyleSheet, 
-  ScrollView, 
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
   TouchableOpacity,
   TextInput,
   Modal,
-  Alert
+  Alert,
 } from 'react-native';
-import { 
-  Activity, 
-  TrendingUp, 
-  TrendingDown, 
-  Plus, 
+import {
+  Activity,
+  TrendingUp,
+  TrendingDown,
+  Plus,
   Search,
   Filter,
-  Clock
+  Clock,
 } from 'lucide-react-native';
 import TradeHistoryItem from '@/components/TradeHistoryItem';
 
@@ -55,7 +55,7 @@ export default function TradingScreen() {
       total: 7050,
       timestamp: new Date('2024-01-15T14:30:00Z'),
       pnl: 70,
-      status: 'COMPLETED'
+      status: 'COMPLETED',
     },
     {
       id: '2',
@@ -66,7 +66,7 @@ export default function TradingScreen() {
       total: 10500,
       timestamp: new Date('2024-01-15T13:15:00Z'),
       pnl: 300,
-      status: 'COMPLETED'
+      status: 'COMPLETED',
     },
     {
       id: '3',
@@ -76,7 +76,7 @@ export default function TradingScreen() {
       price: 205,
       total: 5125,
       timestamp: new Date('2024-01-15T11:45:00Z'),
-      status: 'PENDING'
+      status: 'PENDING',
     },
     {
       id: '4',
@@ -87,7 +87,7 @@ export default function TradingScreen() {
       total: 940,
       timestamp: new Date('2024-01-15T10:20:00Z'),
       pnl: 10,
-      status: 'COMPLETED'
+      status: 'COMPLETED',
     },
     {
       id: '5',
@@ -97,8 +97,8 @@ export default function TradingScreen() {
       price: 12.5,
       total: 625,
       timestamp: new Date('2024-01-15T09:30:00Z'),
-      status: 'FAILED'
-    }
+      status: 'FAILED',
+    },
   ]);
 
   const [pendingOrders] = useState<Trade[]>([
@@ -110,7 +110,7 @@ export default function TradingScreen() {
       price: 69000,
       total: 3450,
       timestamp: new Date('2024-01-15T15:00:00Z'),
-      status: 'PENDING'
+      status: 'PENDING',
     },
     {
       id: '7',
@@ -120,22 +120,23 @@ export default function TradingScreen() {
       price: 4300,
       total: 4300,
       timestamp: new Date('2024-01-15T14:45:00Z'),
-      status: 'PENDING'
-    }
+      status: 'PENDING',
+    },
   ]);
 
-  const filteredTrades = trades.filter(trade => 
-    trade.symbol.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredTrades = trades.filter((trade) =>
+    trade.symbol.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
-  const filteredOrders = pendingOrders.filter(order => 
-    order.symbol.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredOrders = pendingOrders.filter((order) =>
+    order.symbol.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
-  const completedTrades = trades.filter(t => t.status === 'COMPLETED').length;
-  const pendingCount = trades.filter(t => t.status === 'PENDING').length + pendingOrders.length;
+  const completedTrades = trades.filter((t) => t.status === 'COMPLETED').length;
+  const pendingCount =
+    trades.filter((t) => t.status === 'PENDING').length + pendingOrders.length;
   const totalVolume = trades
-    .filter(t => t.status === 'COMPLETED')
+    .filter((t) => t.status === 'COMPLETED')
     .reduce((sum, t) => sum + t.total, 0);
 
   return (
@@ -147,7 +148,7 @@ export default function TradingScreen() {
             {completedTrades} completed • {pendingCount} pending
           </Text>
         </View>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.tradeButton}
           onPress={() => setShowTradeModal(true)}
         >
@@ -168,7 +169,9 @@ export default function TradingScreen() {
         </View>
         <View style={styles.statCard}>
           <TrendingUp size={20} color="#3B82F6" />
-          <Text style={styles.statValue}>${(totalVolume / 1000).toFixed(1)}K</Text>
+          <Text style={styles.statValue}>
+            ${(totalVolume / 1000).toFixed(1)}K
+          </Text>
           <Text style={styles.statLabel}>Volume</Text>
         </View>
       </View>
@@ -190,25 +193,38 @@ export default function TradingScreen() {
       </View>
 
       <View style={styles.tabContainer}>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={[styles.tab, activeTab === 'history' && styles.tabActive]}
           onPress={() => setActiveTab('history')}
         >
-          <Text style={[styles.tabText, activeTab === 'history' && styles.tabTextActive]}>
+          <Text
+            style={[
+              styles.tabText,
+              activeTab === 'history' && styles.tabTextActive,
+            ]}
+          >
             History
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={[styles.tab, activeTab === 'orders' && styles.tabActive]}
           onPress={() => setActiveTab('orders')}
         >
-          <Text style={[styles.tabText, activeTab === 'orders' && styles.tabTextActive]}>
+          <Text
+            style={[
+              styles.tabText,
+              activeTab === 'orders' && styles.tabTextActive,
+            ]}
+          >
             Open Orders
           </Text>
         </TouchableOpacity>
       </View>
 
-      <ScrollView style={styles.tradesList} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        style={styles.tradesList}
+        showsVerticalScrollIndicator={false}
+      >
         {activeTab === 'history' ? (
           filteredTrades.length === 0 ? (
             <View style={styles.emptyState}>
@@ -234,38 +250,39 @@ export default function TradingScreen() {
               />
             ))
           )
+        ) : filteredOrders.length === 0 ? (
+          <View style={styles.emptyState}>
+            <Clock size={48} color="#4B5563" />
+            <Text style={styles.emptyTitle}>No open orders</Text>
+            <Text style={styles.emptyDescription}>
+              Your pending orders will appear here
+            </Text>
+          </View>
         ) : (
-          filteredOrders.length === 0 ? (
-            <View style={styles.emptyState}>
-              <Clock size={48} color="#4B5563" />
-              <Text style={styles.emptyTitle}>No open orders</Text>
-              <Text style={styles.emptyDescription}>
-                Your pending orders will appear here
-              </Text>
-            </View>
-          ) : (
-            filteredOrders.map((order) => (
-              <TradeHistoryItem
-                key={order.id}
-                id={order.id}
-                symbol={order.symbol}
-                type={order.type}
-                amount={order.amount}
-                price={order.price}
-                total={order.total}
-                timestamp={order.timestamp}
-                status={order.status}
-              />
-            ))
-          )
+          filteredOrders.map((order) => (
+            <TradeHistoryItem
+              key={order.id}
+              id={order.id}
+              symbol={order.symbol}
+              type={order.type}
+              amount={order.amount}
+              price={order.price}
+              total={order.total}
+              timestamp={order.timestamp}
+              status={order.status}
+            />
+          ))
         )}
       </ScrollView>
 
-      <TradeModal 
+      <TradeModal
         visible={showTradeModal}
         onClose={() => setShowTradeModal(false)}
         onExecuteTrade={(order) => {
-          Alert.alert('Trade Executed', `${order.type} order for ${order.amount} ${order.symbol} placed successfully`);
+          Alert.alert(
+            'Trade Executed',
+            `${order.type} order for ${order.amount} ${order.symbol} placed successfully`,
+          );
           setShowTradeModal(false);
         }}
       />
@@ -302,7 +319,7 @@ function TradeModal({ visible, onClose, onExecuteTrade }: TradeModalProps) {
       type,
       orderType,
       amount: parseFloat(amount),
-      price: orderType === 'LIMIT' ? parseFloat(price) : undefined
+      price: orderType === 'LIMIT' ? parseFloat(price) : undefined,
     });
 
     // Reset form
@@ -333,12 +350,20 @@ function TradeModal({ visible, onClose, onExecuteTrade }: TradeModalProps) {
             <Text style={styles.inputLabel}>Symbol</Text>
             <View style={styles.symbolSelector}>
               {['BTC', 'ETH', 'SOL', 'ADA'].map((s) => (
-                <TouchableOpacity 
+                <TouchableOpacity
                   key={s}
-                  style={[styles.symbolButton, symbol === s && styles.symbolButtonActive]}
+                  style={[
+                    styles.symbolButton,
+                    symbol === s && styles.symbolButtonActive,
+                  ]}
                   onPress={() => setSymbol(s)}
                 >
-                  <Text style={[styles.symbolText, symbol === s && styles.symbolTextActive]}>
+                  <Text
+                    style={[
+                      styles.symbolText,
+                      symbol === s && styles.symbolTextActive,
+                    ]}
+                  >
                     {s}
                   </Text>
                 </TouchableOpacity>
@@ -349,21 +374,45 @@ function TradeModal({ visible, onClose, onExecuteTrade }: TradeModalProps) {
           <View style={styles.inputGroup}>
             <Text style={styles.inputLabel}>Trade Type</Text>
             <View style={styles.typeSelector}>
-              <TouchableOpacity 
-                style={[styles.typeButton, type === 'BUY' && styles.buyButtonActive]}
+              <TouchableOpacity
+                style={[
+                  styles.typeButton,
+                  type === 'BUY' && styles.buyButtonActive,
+                ]}
                 onPress={() => setType('BUY')}
               >
-                <TrendingUp size={16} color={type === 'BUY' ? '#FFFFFF' : '#10B981'} />
-                <Text style={[styles.typeText, type === 'BUY' && styles.typeTextActive]}>
+                <TrendingUp
+                  size={16}
+                  color={type === 'BUY' ? '#FFFFFF' : '#10B981'}
+                />
+
+                <Text
+                  style={[
+                    styles.typeText,
+                    type === 'BUY' && styles.typeTextActive,
+                  ]}
+                >
                   BUY
                 </Text>
               </TouchableOpacity>
-              <TouchableOpacity 
-                style={[styles.typeButton, type === 'SELL' && styles.sellButtonActive]}
+              <TouchableOpacity
+                style={[
+                  styles.typeButton,
+                  type === 'SELL' && styles.sellButtonActive,
+                ]}
                 onPress={() => setType('SELL')}
               >
-                <TrendingDown size={16} color={type === 'SELL' ? '#FFFFFF' : '#EF4444'} />
-                <Text style={[styles.typeText, type === 'SELL' && styles.typeTextActive]}>
+                <TrendingDown
+                  size={16}
+                  color={type === 'SELL' ? '#FFFFFF' : '#EF4444'}
+                />
+
+                <Text
+                  style={[
+                    styles.typeText,
+                    type === 'SELL' && styles.typeTextActive,
+                  ]}
+                >
                   SELL
                 </Text>
               </TouchableOpacity>
@@ -373,19 +422,35 @@ function TradeModal({ visible, onClose, onExecuteTrade }: TradeModalProps) {
           <View style={styles.inputGroup}>
             <Text style={styles.inputLabel}>Order Type</Text>
             <View style={styles.orderTypeSelector}>
-              <TouchableOpacity 
-                style={[styles.orderTypeButton, orderType === 'MARKET' && styles.orderTypeButtonActive]}
+              <TouchableOpacity
+                style={[
+                  styles.orderTypeButton,
+                  orderType === 'MARKET' && styles.orderTypeButtonActive,
+                ]}
                 onPress={() => setOrderType('MARKET')}
               >
-                <Text style={[styles.orderTypeText, orderType === 'MARKET' && styles.orderTypeTextActive]}>
+                <Text
+                  style={[
+                    styles.orderTypeText,
+                    orderType === 'MARKET' && styles.orderTypeTextActive,
+                  ]}
+                >
                   Market
                 </Text>
               </TouchableOpacity>
-              <TouchableOpacity 
-                style={[styles.orderTypeButton, orderType === 'LIMIT' && styles.orderTypeButtonActive]}
+              <TouchableOpacity
+                style={[
+                  styles.orderTypeButton,
+                  orderType === 'LIMIT' && styles.orderTypeButtonActive,
+                ]}
                 onPress={() => setOrderType('LIMIT')}
               >
-                <Text style={[styles.orderTypeText, orderType === 'LIMIT' && styles.orderTypeTextActive]}>
+                <Text
+                  style={[
+                    styles.orderTypeText,
+                    orderType === 'LIMIT' && styles.orderTypeTextActive,
+                  ]}
+                >
                   Limit
                 </Text>
               </TouchableOpacity>
@@ -421,7 +486,10 @@ function TradeModal({ visible, onClose, onExecuteTrade }: TradeModalProps) {
           <View style={styles.estimateContainer}>
             <Text style={styles.estimateLabel}>Estimated Total</Text>
             <Text style={styles.estimateValue}>
-              ${amount && orderType === 'MARKET' ? (parseFloat(amount || '0') * 71200).toLocaleString() : '--'}
+              $
+              {amount && orderType === 'MARKET'
+                ? (parseFloat(amount || '0') * 71200).toLocaleString()
+                : '--'}
             </Text>
           </View>
         </ScrollView>

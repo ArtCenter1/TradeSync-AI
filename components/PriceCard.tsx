@@ -11,13 +11,13 @@ interface PriceCardProps {
   volume?: string;
 }
 
-export default function PriceCard({ 
-  symbol, 
-  name, 
-  price, 
-  change, 
+export default function PriceCard({
+  symbol,
+  name,
+  price,
+  change,
   changePercent,
-  volume 
+  volume,
 }: PriceCardProps) {
   const isPositive = change >= 0;
   const changeColor = isPositive ? '#10B981' : '#EF4444';
@@ -29,7 +29,12 @@ export default function PriceCard({
           <Text style={styles.symbol}>{symbol}</Text>
           <Text style={styles.name}>{name}</Text>
         </View>
-        <View style={[styles.changeContainer, { backgroundColor: changeColor + '20' }]}>
+        <View
+          style={[
+            styles.changeContainer,
+            { backgroundColor: changeColor + '20' },
+          ]}
+        >
           {isPositive ? (
             <TrendingUp size={16} color={changeColor} />
           ) : (
@@ -40,7 +45,7 @@ export default function PriceCard({
           </Text>
         </View>
       </View>
-      
+
       <View style={styles.priceContainer}>
         <Text style={styles.price}>${price.toLocaleString()}</Text>
         <Text style={[styles.change, { color: changeColor }]}>
@@ -48,9 +53,7 @@ export default function PriceCard({
         </Text>
       </View>
 
-      {volume && (
-        <Text style={styles.volume}>Vol: {volume}</Text>
-      )}
+      {volume && <Text style={styles.volume}>Vol: {volume}</Text>}
     </View>
   );
 }

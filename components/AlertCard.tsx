@@ -1,6 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { Bell, TrendingUp, TrendingDown, MoreHorizontal } from 'lucide-react-native';
+import {
+  Bell,
+  TrendingUp,
+  TrendingDown,
+  MoreHorizontal,
+} from 'lucide-react-native';
 
 interface AlertCardProps {
   id: string;
@@ -25,7 +30,7 @@ export default function AlertCard({
   isActive,
   triggeredAt,
   onToggle,
-  onOptions
+  onOptions,
 }: AlertCardProps) {
   const isBuy = type === 'BUY';
   const typeColor = isBuy ? '#10B981' : '#EF4444';
@@ -33,7 +38,7 @@ export default function AlertCard({
   const progress = Math.min((currentPrice / targetPrice) * 100, 100);
 
   return (
-    <TouchableOpacity 
+    <TouchableOpacity
       style={[styles.container, { borderLeftColor: typeColor }]}
       onPress={() => onToggle(id)}
     >
@@ -51,12 +56,15 @@ export default function AlertCard({
             <Text style={styles.type}>{type} SIGNAL</Text>
           </View>
         </View>
-        
+
         <View style={styles.statusContainer}>
-          <View style={[
-            styles.statusIndicator,
-            { backgroundColor: isActive ? '#10B981' : '#6B7280' }
-          ]} />
+          <View
+            style={[
+              styles.statusIndicator,
+              { backgroundColor: isActive ? '#10B981' : '#6B7280' },
+            ]}
+          />
+
           <TouchableOpacity onPress={() => onOptions(id)}>
             <MoreHorizontal size={20} color="#9CA3AF" />
           </TouchableOpacity>
@@ -71,22 +79,26 @@ export default function AlertCard({
       <View style={styles.priceContainer}>
         <View style={styles.priceRow}>
           <Text style={styles.priceLabel}>Target</Text>
-          <Text style={styles.targetPrice}>${targetPrice.toLocaleString()}</Text>
+          <Text style={styles.targetPrice}>
+            ${targetPrice.toLocaleString()}
+          </Text>
         </View>
         <View style={styles.priceRow}>
           <Text style={styles.priceLabel}>Current</Text>
-          <Text style={styles.currentPrice}>${currentPrice.toLocaleString()}</Text>
+          <Text style={styles.currentPrice}>
+            ${currentPrice.toLocaleString()}
+          </Text>
         </View>
       </View>
 
       {!isTriggered && (
         <View style={styles.progressContainer}>
           <View style={styles.progressBar}>
-            <View 
+            <View
               style={[
                 styles.progressFill,
-                { width: `${progress}%`, backgroundColor: typeColor }
-              ]} 
+                { width: `${progress}%`, backgroundColor: typeColor },
+              ]}
             />
           </View>
           <Text style={styles.progressText}>{progress.toFixed(1)}%</Text>

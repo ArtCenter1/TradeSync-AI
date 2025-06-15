@@ -5,7 +5,7 @@ import {
   Activity,
   BarChart3,
   Settings,
-  Brain
+  Brain,
 } from 'lucide-react-native';
 
 export default function TabLayout() {
@@ -28,7 +28,8 @@ export default function TabLayout() {
           fontFamily: 'Inter-Medium',
           marginTop: 4,
         },
-      }}>
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
@@ -38,15 +39,15 @@ export default function TabLayout() {
           ),
         }}
       />
+
       <Tabs.Screen
         name="alerts"
         options={{
           title: 'Alerts',
-          tabBarIcon: ({ size, color }) => (
-            <Bell size={size} color={color} />
-          ),
+          tabBarIcon: ({ size, color }) => <Bell size={size} color={color} />,
         }}
       />
+
       <Tabs.Screen
         name="trading"
         options={{
@@ -56,15 +57,15 @@ export default function TabLayout() {
           ),
         }}
       />
+
       <Tabs.Screen
         name="strategies"
         options={{
           title: 'Strategies',
-          tabBarIcon: ({ size, color }) => (
-            <Brain size={size} color={color} />
-          ),
+          tabBarIcon: ({ size, color }) => <Brain size={size} color={color} />,
         }}
       />
+
       <Tabs.Screen
         name="analytics"
         options={{
@@ -74,6 +75,7 @@ export default function TabLayout() {
           ),
         }}
       />
+
       <Tabs.Screen
         name="settings"
         options={{

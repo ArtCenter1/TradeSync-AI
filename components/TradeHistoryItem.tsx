@@ -22,14 +22,14 @@ export default function TradeHistoryItem({
   total,
   timestamp,
   pnl,
-  status
+  status,
 }: TradeHistoryItemProps) {
   const isBuy = type === 'BUY';
   const typeColor = isBuy ? '#10B981' : '#EF4444';
   const statusColor = {
     COMPLETED: '#10B981',
     PENDING: '#F59E0B',
-    FAILED: '#EF4444'
+    FAILED: '#EF4444',
   }[status];
 
   return (
@@ -48,7 +48,7 @@ export default function TradeHistoryItem({
             <Text style={[styles.type, { color: typeColor }]}>{type}</Text>
           </View>
         </View>
-        
+
         <View style={styles.statusContainer}>
           <View style={[styles.statusDot, { backgroundColor: statusColor }]} />
           <Text style={[styles.status, { color: statusColor }]}>{status}</Text>
@@ -58,14 +58,16 @@ export default function TradeHistoryItem({
       <View style={styles.detailsContainer}>
         <View style={styles.detailRow}>
           <Text style={styles.detailLabel}>Amount</Text>
-          <Text style={styles.detailValue}>{amount.toFixed(8)} {symbol}</Text>
+          <Text style={styles.detailValue}>
+            {amount.toFixed(8)} {symbol}
+          </Text>
         </View>
-        
+
         <View style={styles.detailRow}>
           <Text style={styles.detailLabel}>Price</Text>
           <Text style={styles.detailValue}>${price.toLocaleString()}</Text>
         </View>
-        
+
         <View style={styles.detailRow}>
           <Text style={styles.detailLabel}>Total</Text>
           <Text style={styles.detailValue}>${total.toLocaleString()}</Text>
@@ -74,10 +76,12 @@ export default function TradeHistoryItem({
         {pnl !== undefined && (
           <View style={styles.detailRow}>
             <Text style={styles.detailLabel}>P&L</Text>
-            <Text style={[
-              styles.detailValue,
-              { color: pnl >= 0 ? '#10B981' : '#EF4444' }
-            ]}>
+            <Text
+              style={[
+                styles.detailValue,
+                { color: pnl >= 0 ? '#10B981' : '#EF4444' },
+              ]}
+            >
               {pnl >= 0 ? '+' : ''}${pnl.toFixed(2)}
             </Text>
           </View>
