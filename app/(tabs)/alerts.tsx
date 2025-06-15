@@ -106,46 +106,58 @@ export default function AlertsScreen() {
   const triggeredAlertsCount = alerts.filter((a) => a.triggeredAt).length;
 
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <View>
-          <Text style={styles.title}>Trading Alerts</Text>
-          <Text style={styles.subtitle}>
+    <View style={styles.container} data-oid="xtf.:37">
+      <View style={styles.header} data-oid="cugaywl">
+        <View data-oid="es19zup">
+          <Text style={styles.title} data-oid="0d4bzrl">
+            Trading Alerts
+          </Text>
+          <Text style={styles.subtitle} data-oid="u5fi:fy">
             {activeAlertsCount} active • {triggeredAlertsCount} triggered today
           </Text>
         </View>
-        <TouchableOpacity style={styles.settingsButton}>
-          <Settings size={24} color="#9CA3AF" />
+        <TouchableOpacity style={styles.settingsButton} data-oid="9kgdi8b">
+          <Settings size={24} color="#9CA3AF" data-oid="4w:v-zc" />
         </TouchableOpacity>
       </View>
 
-      <View style={styles.statsContainer}>
-        <View style={styles.statCard}>
-          <Bell size={20} color="#10B981" />
-          <Text style={styles.statValue}>{activeAlertsCount}</Text>
-          <Text style={styles.statLabel}>Active Alerts</Text>
+      <View style={styles.statsContainer} data-oid="ycqthx1">
+        <View style={styles.statCard} data-oid="tdn4yn1">
+          <Bell size={20} color="#10B981" data-oid="zhu-y7q" />
+          <Text style={styles.statValue} data-oid="z9cxucl">
+            {activeAlertsCount}
+          </Text>
+          <Text style={styles.statLabel} data-oid="3-scj5a">
+            Active Alerts
+          </Text>
         </View>
-        <View style={styles.statCard}>
-          <Zap size={20} color="#F59E0B" />
-          <Text style={styles.statValue}>{triggeredAlertsCount}</Text>
-          <Text style={styles.statLabel}>Triggered Today</Text>
+        <View style={styles.statCard} data-oid="5tt0-ni">
+          <Zap size={20} color="#F59E0B" data-oid="b88oyj_" />
+          <Text style={styles.statValue} data-oid="lx59o94">
+            {triggeredAlertsCount}
+          </Text>
+          <Text style={styles.statLabel} data-oid="7azhv_e">
+            Triggered Today
+          </Text>
         </View>
       </View>
 
-      <View style={styles.controls}>
-        <View style={styles.filterContainer}>
+      <View style={styles.controls} data-oid="6dtcai7">
+        <View style={styles.filterContainer} data-oid=".wnxj51">
           <TouchableOpacity
             style={[
               styles.filterButton,
               filterActive === 'all' && styles.filterButtonActive,
             ]}
             onPress={() => setFilterActive('all')}
+            data-oid="rffivne"
           >
             <Text
               style={[
                 styles.filterText,
                 filterActive === 'all' && styles.filterTextActive,
               ]}
+              data-oid="q43fhuy"
             >
               All
             </Text>
@@ -156,12 +168,14 @@ export default function AlertsScreen() {
               filterActive === 'active' && styles.filterButtonActive,
             ]}
             onPress={() => setFilterActive('active')}
+            data-oid="2fsg74i"
           >
             <Text
               style={[
                 styles.filterText,
                 filterActive === 'active' && styles.filterTextActive,
               ]}
+              data-oid="oow5grn"
             >
               Active
             </Text>
@@ -172,12 +186,14 @@ export default function AlertsScreen() {
               filterActive === 'triggered' && styles.filterButtonActive,
             ]}
             onPress={() => setFilterActive('triggered')}
+            data-oid="0r59wfu"
           >
             <Text
               style={[
                 styles.filterText,
                 filterActive === 'triggered' && styles.filterTextActive,
               ]}
+              data-oid="6osapya"
             >
               Triggered
             </Text>
@@ -187,27 +203,34 @@ export default function AlertsScreen() {
         <TouchableOpacity
           style={styles.createButton}
           onPress={() => setShowCreateModal(true)}
+          data-oid="savetx7"
         >
-          <Plus size={20} color="#FFFFFF" />
+          <Plus size={20} color="#FFFFFF" data-oid="2y6531e" />
         </TouchableOpacity>
       </View>
 
       <ScrollView
         style={styles.alertsList}
         showsVerticalScrollIndicator={false}
+        data-oid="0l0j6i_"
       >
         {filteredAlerts.length === 0 ? (
-          <View style={styles.emptyState}>
-            <Bell size={48} color="#4B5563" />
-            <Text style={styles.emptyTitle}>No alerts found</Text>
-            <Text style={styles.emptyDescription}>
+          <View style={styles.emptyState} data-oid="zjkz2kz">
+            <Bell size={48} color="#4B5563" data-oid="v8ig88u" />
+            <Text style={styles.emptyTitle} data-oid="0m1vivf">
+              No alerts found
+            </Text>
+            <Text style={styles.emptyDescription} data-oid="1c43h9d">
               Create your first alert to get notified about price movements
             </Text>
             <TouchableOpacity
               style={styles.emptyButton}
               onPress={() => setShowCreateModal(true)}
+              data-oid="fd41hhx"
             >
-              <Text style={styles.emptyButtonText}>Create Alert</Text>
+              <Text style={styles.emptyButtonText} data-oid="5zci69_">
+                Create Alert
+              </Text>
             </TouchableOpacity>
           </View>
         ) : (
@@ -224,6 +247,7 @@ export default function AlertsScreen() {
               triggeredAt={alert.triggeredAt}
               onToggle={handleToggleAlert}
               onOptions={handleAlertOptions}
+              data-oid="eyi_wl:"
             />
           ))
         )}
@@ -236,6 +260,7 @@ export default function AlertsScreen() {
           setAlerts([...alerts, { ...newAlert, id: Date.now().toString() }]);
           setShowCreateModal(false);
         }}
+        data-oid="jg1fcgg"
       />
     </View>
   );
@@ -284,21 +309,30 @@ function CreateAlertModal({
       animationType="slide"
       presentationStyle="pageSheet"
       onRequestClose={onClose}
+      data-oid=":.5yv_g"
     >
-      <View style={styles.modalContainer}>
-        <View style={styles.modalHeader}>
-          <TouchableOpacity onPress={onClose}>
-            <Text style={styles.modalCancel}>Cancel</Text>
+      <View style={styles.modalContainer} data-oid="0fwwb9e">
+        <View style={styles.modalHeader} data-oid=".pc71m9">
+          <TouchableOpacity onPress={onClose} data-oid="..i2q7e">
+            <Text style={styles.modalCancel} data-oid="dekwcb:">
+              Cancel
+            </Text>
           </TouchableOpacity>
-          <Text style={styles.modalTitle}>Create Alert</Text>
-          <TouchableOpacity onPress={handleCreate}>
-            <Text style={styles.modalCreate}>Create</Text>
+          <Text style={styles.modalTitle} data-oid="kvvmc84">
+            Create Alert
+          </Text>
+          <TouchableOpacity onPress={handleCreate} data-oid="ep7c7hp">
+            <Text style={styles.modalCreate} data-oid="930vjez">
+              Create
+            </Text>
           </TouchableOpacity>
         </View>
 
-        <ScrollView style={styles.modalContent}>
-          <View style={styles.inputGroup}>
-            <Text style={styles.inputLabel}>Symbol</Text>
+        <ScrollView style={styles.modalContent} data-oid=":4vs.4_">
+          <View style={styles.inputGroup} data-oid="22rrar6">
+            <Text style={styles.inputLabel} data-oid=":t:jiuz">
+              Symbol
+            </Text>
             <TextInput
               style={styles.input}
               value={symbol}
@@ -306,24 +340,29 @@ function CreateAlertModal({
               placeholder="BTC, ETH, SOL..."
               placeholderTextColor="#6B7280"
               autoCapitalize="characters"
+              data-oid="g7fkp.l"
             />
           </View>
 
-          <View style={styles.inputGroup}>
-            <Text style={styles.inputLabel}>Alert Type</Text>
-            <View style={styles.typeSelector}>
+          <View style={styles.inputGroup} data-oid="pa4v8pp">
+            <Text style={styles.inputLabel} data-oid="88fqy7x">
+              Alert Type
+            </Text>
+            <View style={styles.typeSelector} data-oid="xl1:cr4">
               <TouchableOpacity
                 style={[
                   styles.typeButton,
                   type === 'BUY' && styles.typeButtonActive,
                 ]}
                 onPress={() => setType('BUY')}
+                data-oid="owzebdu"
               >
                 <Text
                   style={[
                     styles.typeText,
                     type === 'BUY' && styles.typeTextActive,
                   ]}
+                  data-oid="zwurize"
                 >
                   BUY
                 </Text>
@@ -334,12 +373,14 @@ function CreateAlertModal({
                   type === 'SELL' && styles.typeButtonActive,
                 ]}
                 onPress={() => setType('SELL')}
+                data-oid="88_3sam"
               >
                 <Text
                   style={[
                     styles.typeText,
                     type === 'SELL' && styles.typeTextActive,
                   ]}
+                  data-oid="_w91phu"
                 >
                   SELL
                 </Text>
@@ -347,8 +388,10 @@ function CreateAlertModal({
             </View>
           </View>
 
-          <View style={styles.inputGroup}>
-            <Text style={styles.inputLabel}>Condition</Text>
+          <View style={styles.inputGroup} data-oid="02daetx">
+            <Text style={styles.inputLabel} data-oid="sozc16l">
+              Condition
+            </Text>
             <TextInput
               style={styles.input}
               value={condition}
@@ -356,11 +399,14 @@ function CreateAlertModal({
               placeholder="Price crosses above $50,000"
               placeholderTextColor="#6B7280"
               multiline
+              data-oid="nnqixbz"
             />
           </View>
 
-          <View style={styles.inputGroup}>
-            <Text style={styles.inputLabel}>Target Price</Text>
+          <View style={styles.inputGroup} data-oid="2v.bt8v">
+            <Text style={styles.inputLabel} data-oid="1yaiv0n">
+              Target Price
+            </Text>
             <TextInput
               style={styles.input}
               value={targetPrice}
@@ -368,6 +414,7 @@ function CreateAlertModal({
               placeholder="50000"
               placeholderTextColor="#6B7280"
               keyboardType="numeric"
+              data-oid="068ep04"
             />
           </View>
         </ScrollView>

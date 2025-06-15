@@ -23,37 +23,54 @@ export default function PriceCard({
   const changeColor = isPositive ? '#10B981' : '#EF4444';
 
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <View style={styles.symbolContainer}>
-          <Text style={styles.symbol}>{symbol}</Text>
-          <Text style={styles.name}>{name}</Text>
+    <View style={styles.container} data-oid="o88:kgs">
+      <View style={styles.header} data-oid=":9h:g_u">
+        <View style={styles.symbolContainer} data-oid="02eumzq">
+          <Text style={styles.symbol} data-oid="j6h-xl:">
+            {symbol}
+          </Text>
+          <Text style={styles.name} data-oid="hb4ac72">
+            {name}
+          </Text>
         </View>
         <View
           style={[
             styles.changeContainer,
             { backgroundColor: changeColor + '20' },
           ]}
+          data-oid="_negh3u"
         >
           {isPositive ? (
-            <TrendingUp size={16} color={changeColor} />
+            <TrendingUp size={16} color={changeColor} data-oid="_cobzfk" />
           ) : (
-            <TrendingDown size={16} color={changeColor} />
+            <TrendingDown size={16} color={changeColor} data-oid="az9pr3r" />
           )}
-          <Text style={[styles.changePercent, { color: changeColor }]}>
+          <Text
+            style={[styles.changePercent, { color: changeColor }]}
+            data-oid="-6xlyhl"
+          >
             {changePercent.toFixed(2)}%
           </Text>
         </View>
       </View>
 
-      <View style={styles.priceContainer}>
-        <Text style={styles.price}>${price.toLocaleString()}</Text>
-        <Text style={[styles.change, { color: changeColor }]}>
+      <View style={styles.priceContainer} data-oid="-s.y4g3">
+        <Text style={styles.price} data-oid="ze942-9">
+          ${price.toLocaleString()}
+        </Text>
+        <Text
+          style={[styles.change, { color: changeColor }]}
+          data-oid="3ekcg6a"
+        >
           {isPositive ? '+' : ''}${change.toFixed(2)}
         </Text>
       </View>
 
-      {volume && <Text style={styles.volume}>Vol: {volume}</Text>}
+      {volume && (
+        <Text style={styles.volume} data-oid="zntsgpz">
+          Vol: {volume}
+        </Text>
+      )}
     </View>
   );
 }

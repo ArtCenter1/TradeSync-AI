@@ -124,32 +124,36 @@ export default function StrategiesScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} data-oid="orazd3y">
       {/* Header */}
-      <View style={styles.header}>
-        <View>
-          <Text style={styles.title}>Trading Strategies</Text>
-          <Text style={styles.subtitle}>
+      <View style={styles.header} data-oid="vfqhbtp">
+        <View data-oid="2cf_a30">
+          <Text style={styles.title} data-oid="xn6_y7t">
+            Trading Strategies
+          </Text>
+          <Text style={styles.subtitle} data-oid="oju1x6s">
             {getFilteredCount()} of {strategies.length} strategies
           </Text>
         </View>
         <TouchableOpacity
           style={styles.aiChatButton}
           onPress={() => setShowAIChat(true)}
+          data-oid="yplhu6_"
         >
-          <Brain size={20} color="#FFFFFF" />
+          <Brain size={20} color="#FFFFFF" data-oid="kedbrbp" />
         </TouchableOpacity>
       </View>
 
       {/* Search Bar */}
-      <View style={styles.searchContainer}>
-        <Search size={20} color="#9CA3AF" />
+      <View style={styles.searchContainer} data-oid="mnymxv1">
+        <Search size={20} color="#9CA3AF" data-oid="-mb8cav" />
         <TextInput
           style={styles.searchInput}
           placeholder="Search strategies, tags, or categories..."
           placeholderTextColor="#6B7280"
           value={searchQuery}
           onChangeText={setSearchQuery}
+          data-oid="0m4n__w"
         />
       </View>
 
@@ -158,6 +162,7 @@ export default function StrategiesScreen() {
         filters={filters}
         onFiltersChange={handleFiltersChange}
         onClear={handleClearFilters}
+        data-oid="nqk5ajb"
       />
 
       {/* Strategy List */}
@@ -168,23 +173,28 @@ export default function StrategiesScreen() {
             refreshing={refreshing}
             onRefresh={handleRefresh}
             tintColor="#10B981"
+            data-oid="8axy.nr"
           />
         }
         showsVerticalScrollIndicator={false}
+        data-oid="vhbzne3"
       >
         {filteredStrategies.length === 0 ? (
-          <View style={styles.emptyState}>
-            <Brain size={48} color="#4B5563" />
-            <Text style={styles.emptyTitle}>No strategies found</Text>
-            <Text style={styles.emptyDescription}>
+          <View style={styles.emptyState} data-oid="qjl64sv">
+            <Brain size={48} color="#4B5563" data-oid="sff.3ca" />
+            <Text style={styles.emptyTitle} data-oid="qg-p56e">
+              No strategies found
+            </Text>
+            <Text style={styles.emptyDescription} data-oid="i981jag">
               Try adjusting your search or filters to find strategies
             </Text>
             <TouchableOpacity
               style={styles.aiSuggestButton}
               onPress={() => setShowAIChat(true)}
+              data-oid="sf.wzxf"
             >
-              <MessageCircle size={16} color="#FFFFFF" />
-              <Text style={styles.aiSuggestText}>
+              <MessageCircle size={16} color="#FFFFFF" data-oid="knibads" />
+              <Text style={styles.aiSuggestText} data-oid="qpr1j0n">
                 Ask AI for recommendations
               </Text>
             </TouchableOpacity>
@@ -196,12 +206,13 @@ export default function StrategiesScreen() {
               strategy={strategy}
               onPress={handleStrategyPress}
               onCopy={handleCopyScript}
+              data-oid=":l3g72f"
             />
           ))
         )}
 
         {/* Bottom spacing */}
-        <View style={styles.bottomSpacing} />
+        <View style={styles.bottomSpacing} data-oid="3yujyp8" />
       </ScrollView>
 
       {/* Strategy Detail Modal */}
@@ -211,6 +222,7 @@ export default function StrategiesScreen() {
           visible={!!selectedStrategy}
           onClose={() => setSelectedStrategy(null)}
           onCopy={handleCopyScript}
+          data-oid="n2-jg.-"
         />
       )}
 
@@ -219,12 +231,14 @@ export default function StrategiesScreen() {
         visible={showAIChat}
         animationType="slide"
         presentationStyle="fullScreen"
+        data-oid="vrw-h83"
       >
         <AIChat
           isVisible={showAIChat}
           onClose={() => setShowAIChat(false)}
           strategies={strategies}
           onStrategyRecommend={handleStrategyPress}
+          data-oid="4me-cjm"
         />
       </Modal>
     </View>

@@ -35,11 +35,15 @@ export default function RootLayout() {
 
   return (
     <>
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
+      <Stack screenOptions={{ headerShown: false }} data-oid="e-q260t">
+        <Stack.Screen
+          name="(tabs)"
+          options={{ headerShown: false }}
+          data-oid="53_35la"
+        />
+        <Stack.Screen name="+not-found" data-oid="j79e3hk" />
       </Stack>
-      <StatusBar style="light" />
+      <StatusBar style="light" data-oid="rlxoq33" />
     </>
   );
 }

@@ -103,51 +103,71 @@ export default function AutoTradeMonitor({
   const failedTrades = autoTrades.filter((t) => t.status === 'FAILED').length;
 
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <View>
-          <Text style={styles.title}>Auto-Trade Monitor</Text>
-          <Text style={styles.subtitle}>
+    <View style={styles.container} data-oid="4mwh8uq">
+      <View style={styles.header} data-oid="2ne5ss9">
+        <View data-oid="x9fhv39">
+          <Text style={styles.title} data-oid="qxi5vgy">
+            Auto-Trade Monitor
+          </Text>
+          <Text style={styles.subtitle} data-oid="7eszq60">
             {executedTrades} executed • {pendingTrades} pending • {failedTrades}{' '}
             failed
           </Text>
         </View>
-        <TouchableOpacity onPress={onClose} style={styles.closeButton}>
-          <Text style={styles.closeText}>Close</Text>
+        <TouchableOpacity
+          onPress={onClose}
+          style={styles.closeButton}
+          data-oid="f1jmxgw"
+        >
+          <Text style={styles.closeText} data-oid="x0vldyk">
+            Close
+          </Text>
         </TouchableOpacity>
       </View>
 
-      <View style={styles.statsContainer}>
-        <View style={styles.statCard}>
-          <Activity size={18} color="#10B981" />
-          <Text style={styles.statValue}>{stats.totalTrades}</Text>
-          <Text style={styles.statLabel}>Total Trades</Text>
+      <View style={styles.statsContainer} data-oid="f-_4q8x">
+        <View style={styles.statCard} data-oid="oal36jc">
+          <Activity size={18} color="#10B981" data-oid="9u3s1c2" />
+          <Text style={styles.statValue} data-oid="frq6s6n">
+            {stats.totalTrades}
+          </Text>
+          <Text style={styles.statLabel} data-oid="58lbinu">
+            Total Trades
+          </Text>
         </View>
-        <View style={styles.statCard}>
-          <TrendingUp size={18} color="#3B82F6" />
-          <Text style={styles.statValue}>{stats.successRate}%</Text>
-          <Text style={styles.statLabel}>Success Rate</Text>
+        <View style={styles.statCard} data-oid="4kqdkv6">
+          <TrendingUp size={18} color="#3B82F6" data-oid="amqt5u0" />
+          <Text style={styles.statValue} data-oid="hpy9ryf">
+            {stats.successRate}%
+          </Text>
+          <Text style={styles.statLabel} data-oid="a_coote">
+            Success Rate
+          </Text>
         </View>
-        <View style={styles.statCard}>
-          <Zap size={18} color="#F59E0B" />
+        <View style={styles.statCard} data-oid="o9gesx5">
+          <Zap size={18} color="#F59E0B" data-oid="x_4bw1w" />
           <Text
             style={[
               styles.statValue,
               { color: stats.totalPnL >= 0 ? '#10B981' : '#EF4444' },
             ]}
+            data-oid="aqzf3v5"
           >
             ${stats.totalPnL.toFixed(2)}
           </Text>
-          <Text style={styles.statLabel}>Total P&L</Text>
+          <Text style={styles.statLabel} data-oid="bvo.n92">
+            Total P&L
+          </Text>
         </View>
       </View>
 
       <ScrollView
         style={styles.tradesList}
         showsVerticalScrollIndicator={false}
+        data-oid="plwiq2:"
       >
         {autoTrades.map((trade) => (
-          <AutoTradeItem key={trade.id} trade={trade} />
+          <AutoTradeItem key={trade.id} trade={trade} data-oid="_fk:b7v" />
         ))}
       </ScrollView>
     </View>
@@ -174,66 +194,88 @@ function AutoTradeItem({ trade }: AutoTradeItemProps) {
   }[trade.status];
 
   return (
-    <View style={styles.tradeCard}>
-      <View style={styles.tradeHeader}>
-        <View style={styles.tradeSymbol}>
+    <View style={styles.tradeCard} data-oid="ejxop:.">
+      <View style={styles.tradeHeader} data-oid="0y3s6ck">
+        <View style={styles.tradeSymbol} data-oid="1r0sb3t">
           <View
             style={[styles.actionIndicator, { backgroundColor: actionColor }]}
+            data-oid="7m47qkq"
           >
             {isBuy ? (
-              <TrendingUp size={14} color="#FFFFFF" />
+              <TrendingUp size={14} color="#FFFFFF" data-oid="4k8y80r" />
             ) : (
-              <TrendingDown size={14} color="#FFFFFF" />
+              <TrendingDown size={14} color="#FFFFFF" data-oid="c8xk_fx" />
             )}
           </View>
-          <View>
-            <Text style={styles.symbol}>{trade.symbol}</Text>
-            <Text style={[styles.action, { color: actionColor }]}>
+          <View data-oid="atum1wq">
+            <Text style={styles.symbol} data-oid=":pl_o-q">
+              {trade.symbol}
+            </Text>
+            <Text
+              style={[styles.action, { color: actionColor }]}
+              data-oid="6wdhxe2"
+            >
               {trade.action}
             </Text>
           </View>
         </View>
 
-        <View style={styles.statusContainer}>
-          <StatusIcon size={16} color={statusColor} />
-          <Text style={[styles.status, { color: statusColor }]}>
+        <View style={styles.statusContainer} data-oid="lflsuji">
+          <StatusIcon size={16} color={statusColor} data-oid="ubvagcv" />
+          <Text
+            style={[styles.status, { color: statusColor }]}
+            data-oid="5j208rq"
+          >
             {trade.status}
           </Text>
         </View>
       </View>
 
-      <View style={styles.signalContainer}>
-        <Text style={styles.signalLabel}>Signal</Text>
-        <Text style={styles.signal}>{trade.signal}</Text>
+      <View style={styles.signalContainer} data-oid="iwhaag1">
+        <Text style={styles.signalLabel} data-oid="hxco75l">
+          Signal
+        </Text>
+        <Text style={styles.signal} data-oid="zz882hb">
+          {trade.signal}
+        </Text>
       </View>
 
-      <View style={styles.tradeDetails}>
-        <View style={styles.detailRow}>
-          <Text style={styles.detailLabel}>Price</Text>
-          <Text style={styles.detailValue}>
+      <View style={styles.tradeDetails} data-oid="..0-p_:">
+        <View style={styles.detailRow} data-oid="1ymb:6.">
+          <Text style={styles.detailLabel} data-oid="m-swhni">
+            Price
+          </Text>
+          <Text style={styles.detailValue} data-oid="bf-duct">
             ${trade.price.toLocaleString()}
           </Text>
         </View>
-        <View style={styles.detailRow}>
-          <Text style={styles.detailLabel}>Amount</Text>
-          <Text style={styles.detailValue}>
+        <View style={styles.detailRow} data-oid="p2ot00d">
+          <Text style={styles.detailLabel} data-oid="s_1ceoy">
+            Amount
+          </Text>
+          <Text style={styles.detailValue} data-oid="6u6:u8.">
             {trade.amount} {trade.symbol}
           </Text>
         </View>
-        <View style={styles.detailRow}>
-          <Text style={styles.detailLabel}>Total</Text>
-          <Text style={styles.detailValue}>
+        <View style={styles.detailRow} data-oid="9cgi8.3">
+          <Text style={styles.detailLabel} data-oid="959iilx">
+            Total
+          </Text>
+          <Text style={styles.detailValue} data-oid="kc9vpyh">
             ${(trade.price * trade.amount).toLocaleString()}
           </Text>
         </View>
         {trade.pnl !== undefined && (
-          <View style={styles.detailRow}>
-            <Text style={styles.detailLabel}>P&L</Text>
+          <View style={styles.detailRow} data-oid="jdgy_hb">
+            <Text style={styles.detailLabel} data-oid="-4_ienu">
+              P&L
+            </Text>
             <Text
               style={[
                 styles.detailValue,
                 { color: trade.pnl >= 0 ? '#10B981' : '#EF4444' },
               ]}
+              data-oid="b-utapb"
             >
               {trade.pnl >= 0 ? '+' : ''}${trade.pnl.toFixed(2)}
             </Text>
@@ -241,11 +283,13 @@ function AutoTradeItem({ trade }: AutoTradeItemProps) {
         )}
       </View>
 
-      <View style={styles.tradeFooter}>
-        <View style={styles.sourceTag}>
-          <Text style={styles.sourceText}>{trade.source}</Text>
+      <View style={styles.tradeFooter} data-oid="d8s7t9:">
+        <View style={styles.sourceTag} data-oid="3xc0c_i">
+          <Text style={styles.sourceText} data-oid="t..660t">
+            {trade.source}
+          </Text>
         </View>
-        <Text style={styles.timestamp}>
+        <Text style={styles.timestamp} data-oid="_:naxp.">
           {trade.timestamp.toLocaleDateString()}{' '}
           {trade.timestamp.toLocaleTimeString()}
         </Text>

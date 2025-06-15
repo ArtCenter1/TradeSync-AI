@@ -65,21 +65,26 @@ export default function StrategyCard({
       style={styles.container}
       onPress={() => onPress(strategy)}
       activeOpacity={0.8}
+      data-oid="58j67nn"
     >
-      <View style={styles.header}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>{strategy.name}</Text>
+      <View style={styles.header} data-oid="bdu9_1m">
+        <View style={styles.titleContainer} data-oid="9q-7w9r">
+          <Text style={styles.title} data-oid="8fjh4_j">
+            {strategy.name}
+          </Text>
           <View
             style={[
               styles.riskBadge,
               { backgroundColor: getRiskBgColor(strategy.riskLevel) },
             ]}
+            data-oid="-1.upgf"
           >
             <Text
               style={[
                 styles.riskText,
                 { color: getRiskColor(strategy.riskLevel) },
               ]}
+              data-oid=".hoblsd"
             >
               {strategy.riskLevel.toUpperCase()}
             </Text>
@@ -88,75 +93,94 @@ export default function StrategyCard({
         <TouchableOpacity
           style={styles.copyButton}
           onPress={() => onCopy(strategy.script)}
+          data-oid="jfn92sz"
         >
-          <Copy size={18} color="#9CA3AF" />
+          <Copy size={18} color="#9CA3AF" data-oid="0byl8on" />
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.description} numberOfLines={2}>
+      <Text style={styles.description} numberOfLines={2} data-oid="m.0txgl">
         {strategy.description}
       </Text>
 
-      <View style={styles.metricsContainer}>
-        <View style={styles.metric}>
-          <TrendingUp size={16} color="#10B981" />
-          <Text style={styles.metricLabel}>Return</Text>
-          <Text style={[styles.metricValue, { color: '#10B981' }]}>
+      <View style={styles.metricsContainer} data-oid="cw6l2a4">
+        <View style={styles.metric} data-oid="g2uopmv">
+          <TrendingUp size={16} color="#10B981" data-oid="8o3pcsp" />
+          <Text style={styles.metricLabel} data-oid="sulammy">
+            Return
+          </Text>
+          <Text
+            style={[styles.metricValue, { color: '#10B981' }]}
+            data-oid="9zlzmqq"
+          >
             {formatPercentage(strategy.performance.totalReturn)}
           </Text>
         </View>
 
-        <View style={styles.metric}>
-          <Target size={16} color="#3B82F6" />
-          <Text style={styles.metricLabel}>Win Rate</Text>
-          <Text style={styles.metricValue}>
+        <View style={styles.metric} data-oid="snqh_en">
+          <Target size={16} color="#3B82F6" data-oid="16sw1pp" />
+          <Text style={styles.metricLabel} data-oid="f4ah4:j">
+            Win Rate
+          </Text>
+          <Text style={styles.metricValue} data-oid="821z9x8">
             {strategy.performance.winRate.toFixed(1)}%
           </Text>
         </View>
 
-        <View style={styles.metric}>
-          <TrendingDown size={16} color="#EF4444" />
-          <Text style={styles.metricLabel}>Max DD</Text>
-          <Text style={[styles.metricValue, { color: '#EF4444' }]}>
+        <View style={styles.metric} data-oid="i5nond9">
+          <TrendingDown size={16} color="#EF4444" data-oid="2m:3rhp" />
+          <Text style={styles.metricLabel} data-oid="o_4.5_r">
+            Max DD
+          </Text>
+          <Text
+            style={[styles.metricValue, { color: '#EF4444' }]}
+            data-oid="q8bnom6"
+          >
             {formatPercentage(strategy.performance.maxDrawdown)}
           </Text>
         </View>
 
-        <View style={styles.metric}>
-          <Clock size={16} color="#F59E0B" />
-          <Text style={styles.metricLabel}>Avg Duration</Text>
-          <Text style={styles.metricValue}>
+        <View style={styles.metric} data-oid="rma8ai2">
+          <Clock size={16} color="#F59E0B" data-oid="08zh:.i" />
+          <Text style={styles.metricLabel} data-oid="_ra.q1t">
+            Avg Duration
+          </Text>
+          <Text style={styles.metricValue} data-oid=":lqmm6f">
             {formatDuration(strategy.performance.avgTradeDuration)}
           </Text>
         </View>
       </View>
 
-      <View style={styles.footer}>
-        <View style={styles.timeframes}>
+      <View style={styles.footer} data-oid="v-xf57i">
+        <View style={styles.timeframes} data-oid="9dapluz">
           {strategy.timeframe.slice(0, 3).map((tf, index) => (
-            <View key={index} style={styles.timeframeBadge}>
-              <Text style={styles.timeframeText}>{tf}</Text>
+            <View key={index} style={styles.timeframeBadge} data-oid="8achafh">
+              <Text style={styles.timeframeText} data-oid=":9op2zs">
+                {tf}
+              </Text>
             </View>
           ))}
           {strategy.timeframe.length > 3 && (
-            <Text style={styles.moreTimeframes}>
+            <Text style={styles.moreTimeframes} data-oid="47.jl2a">
               +{strategy.timeframe.length - 3}
             </Text>
           )}
         </View>
 
-        <View style={styles.stats}>
-          <BarChart3 size={14} color="#6B7280" />
-          <Text style={styles.statsText}>
+        <View style={styles.stats} data-oid="77iled6">
+          <BarChart3 size={14} color="#6B7280" data-oid="hwfbixr" />
+          <Text style={styles.statsText} data-oid="cny:s2v">
             {strategy.performance.totalTrades} trades
           </Text>
         </View>
       </View>
 
-      <View style={styles.tags}>
+      <View style={styles.tags} data-oid="h3sx_f_">
         {strategy.tags.slice(0, 3).map((tag, index) => (
-          <View key={index} style={styles.tag}>
-            <Text style={styles.tagText}>{tag}</Text>
+          <View key={index} style={styles.tag} data-oid="..rw36y">
+            <Text style={styles.tagText} data-oid="qp4mi.7">
+              {tag}
+            </Text>
           </View>
         ))}
       </View>

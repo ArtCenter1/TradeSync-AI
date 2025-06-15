@@ -29,23 +29,28 @@ export default function TabLayout() {
           marginTop: 4,
         },
       }}
+      data-oid="h8ik603"
     >
       <Tabs.Screen
         name="index"
         options={{
           title: 'Portfolio',
           tabBarIcon: ({ size, color }) => (
-            <TrendingUp size={size} color={color} />
+            <TrendingUp size={size} color={color} data-oid="8qh-a83" />
           ),
         }}
+        data-oid="d6eepom"
       />
 
       <Tabs.Screen
         name="alerts"
         options={{
           title: 'Alerts',
-          tabBarIcon: ({ size, color }) => <Bell size={size} color={color} />,
+          tabBarIcon: ({ size, color }) => (
+            <Bell size={size} color={color} data-oid="7sdbl21" />
+          ),
         }}
+        data-oid="ul6rccg"
       />
 
       <Tabs.Screen
@@ -53,17 +58,21 @@ export default function TabLayout() {
         options={{
           title: 'Trading',
           tabBarIcon: ({ size, color }) => (
-            <Activity size={size} color={color} />
+            <Activity size={size} color={color} data-oid="8ua41uf" />
           ),
         }}
+        data-oid="extgri8"
       />
 
       <Tabs.Screen
         name="strategies"
         options={{
           title: 'Strategies',
-          tabBarIcon: ({ size, color }) => <Brain size={size} color={color} />,
+          tabBarIcon: ({ size, color }) => (
+            <Brain size={size} color={color} data-oid="th36bm2" />
+          ),
         }}
+        data-oid="dsyy1pc"
       />
 
       <Tabs.Screen
@@ -71,9 +80,10 @@ export default function TabLayout() {
         options={{
           title: 'Analytics',
           tabBarIcon: ({ size, color }) => (
-            <BarChart3 size={size} color={color} />
+            <BarChart3 size={size} color={color} data-oid="cc17vrp" />
           ),
         }}
+        data-oid="5oize9o"
       />
 
       <Tabs.Screen
@@ -81,9 +91,10 @@ export default function TabLayout() {
         options={{
           title: 'Settings',
           tabBarIcon: ({ size, color }) => (
-            <Settings size={size} color={color} />
+            <Settings size={size} color={color} data-oid="b.3il05" />
           ),
         }}
+        data-oid="ovkmvq6"
       />
     </Tabs>
   );

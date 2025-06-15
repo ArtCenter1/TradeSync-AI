@@ -118,22 +118,27 @@ export default function AnalyticsScreen() {
   ];
 
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <View>
-          <Text style={styles.title}>Analytics</Text>
-          <Text style={styles.subtitle}>Trading performance overview</Text>
+    <View style={styles.container} data-oid="-k3c_jw">
+      <View style={styles.header} data-oid="_6etp7w">
+        <View data-oid="s84p3io">
+          <Text style={styles.title} data-oid="veohp-y">
+            Analytics
+          </Text>
+          <Text style={styles.subtitle} data-oid="gx26eme">
+            Trading performance overview
+          </Text>
         </View>
-        <TouchableOpacity style={styles.exportButton}>
-          <Calendar size={20} color="#9CA3AF" />
+        <TouchableOpacity style={styles.exportButton} data-oid="42bux7f">
+          <Calendar size={20} color="#9CA3AF" data-oid="j6abfu:" />
         </TouchableOpacity>
       </View>
 
       <ScrollView
         style={styles.scrollView}
         showsVerticalScrollIndicator={false}
+        data-oid="mwrhmud"
       >
-        <View style={styles.timeframeSelector}>
+        <View style={styles.timeframeSelector} data-oid="qaykreg">
           {(['24H', '7D', '30D', '1Y'] as const).map((period) => (
             <TouchableOpacity
               key={period}
@@ -142,12 +147,14 @@ export default function AnalyticsScreen() {
                 selectedTimeframe === period && styles.timeframeButtonActive,
               ]}
               onPress={() => setSelectedTimeframe(period)}
+              data-oid="2:gg1f7"
             >
               <Text
                 style={[
                   styles.timeframeText,
                   selectedTimeframe === period && styles.timeframeTextActive,
                 ]}
+                data-oid="602ez5j"
               >
                 {period}
               </Text>
@@ -155,11 +162,15 @@ export default function AnalyticsScreen() {
           ))}
         </View>
 
-        <View style={styles.metricsGrid}>
+        <View style={styles.metricsGrid} data-oid="-5i0dgr">
           {performanceMetrics.map((metric, index) => (
-            <View key={index} style={styles.metricCard}>
-              <View style={styles.metricHeader}>
-                <metric.icon size={20} color={metric.color} />
+            <View key={index} style={styles.metricCard} data-oid="bwnprvc">
+              <View style={styles.metricHeader} data-oid="0i92-yk">
+                <metric.icon
+                  size={20}
+                  color={metric.color}
+                  data-oid="262-6uh"
+                />
                 <View
                   style={[
                     styles.changeIndicator,
@@ -170,58 +181,80 @@ export default function AnalyticsScreen() {
                           : '#EF4444' + '20',
                     },
                   ]}
+                  data-oid="8.xpgrt"
                 >
                   {metric.change >= 0 ? (
-                    <TrendingUp size={12} color="#10B981" />
+                    <TrendingUp size={12} color="#10B981" data-oid="l1p1cse" />
                   ) : (
-                    <TrendingDown size={12} color="#EF4444" />
+                    <TrendingDown
+                      size={12}
+                      color="#EF4444"
+                      data-oid="g5i1mm2"
+                    />
                   )}
                   <Text
                     style={[
                       styles.changeText,
                       { color: metric.change >= 0 ? '#10B981' : '#EF4444' },
                     ]}
+                    data-oid="4dfcmup"
                   >
                     {metric.change >= 0 ? '+' : ''}
                     {metric.change.toFixed(1)}%
                   </Text>
                 </View>
               </View>
-              <Text style={styles.metricValue}>{metric.value}</Text>
-              <Text style={styles.metricLabel}>{metric.label}</Text>
+              <Text style={styles.metricValue} data-oid="3182l-r">
+                {metric.value}
+              </Text>
+              <Text style={styles.metricLabel} data-oid="01s:yvu">
+                {metric.label}
+              </Text>
             </View>
           ))}
         </View>
 
-        <View style={styles.chartPlaceholder}>
-          <PieChart size={80} color="#4B5563" />
-          <View style={styles.chartInfo}>
-            <Text style={styles.chartTitle}>Portfolio Performance</Text>
-            <Text style={styles.chartDescription}>
+        <View style={styles.chartPlaceholder} data-oid="y13vper">
+          <PieChart size={80} color="#4B5563" data-oid="xyn:bhn" />
+          <View style={styles.chartInfo} data-oid="ibv3ksf">
+            <Text style={styles.chartTitle} data-oid="j7a1m39">
+              Portfolio Performance
+            </Text>
+            <Text style={styles.chartDescription} data-oid=":6ixttw">
               {selectedTimeframe} period analysis
             </Text>
           </View>
         </View>
 
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Top Performers</Text>
-          <View style={styles.performersList}>
+        <View style={styles.section} data-oid="6h8zqx.">
+          <Text style={styles.sectionTitle} data-oid="bxx6o67">
+            Top Performers
+          </Text>
+          <View style={styles.performersList} data-oid="-fu9ec5">
             {topPerformers.map((performer, index) => (
-              <View key={performer.symbol} style={styles.performerCard}>
-                <View style={styles.performerRank}>
-                  <Text style={styles.rankNumber}>{index + 1}</Text>
+              <View
+                key={performer.symbol}
+                style={styles.performerCard}
+                data-oid="bj2pvt8"
+              >
+                <View style={styles.performerRank} data-oid="3q:nahm">
+                  <Text style={styles.rankNumber} data-oid="c:m1sm_">
+                    {index + 1}
+                  </Text>
                 </View>
-                <View style={styles.performerInfo}>
-                  <Text style={styles.performerSymbol}>{performer.symbol}</Text>
-                  <Text style={styles.performerTrades}>
+                <View style={styles.performerInfo} data-oid="30-ee0i">
+                  <Text style={styles.performerSymbol} data-oid=":9jp9jb">
+                    {performer.symbol}
+                  </Text>
+                  <Text style={styles.performerTrades} data-oid="rb7fr90">
                     {performer.trades} trades
                   </Text>
                 </View>
-                <View style={styles.performerMetrics}>
-                  <Text style={styles.performerPnL}>
+                <View style={styles.performerMetrics} data-oid="7r9nx86">
+                  <Text style={styles.performerPnL} data-oid="zqtr-jx">
                     +${performer.pnl.toLocaleString()}
                   </Text>
-                  <Text style={styles.performerPercent}>
+                  <Text style={styles.performerPercent} data-oid="hxuy:s6">
                     +{performer.pnlPercent}%
                   </Text>
                 </View>
@@ -230,27 +263,34 @@ export default function AnalyticsScreen() {
           </View>
         </View>
 
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Recent Alert Trades</Text>
-          <View style={styles.alertsList}>
+        <View style={styles.section} data-oid="8588pcz">
+          <Text style={styles.sectionTitle} data-oid="y2:sv1n">
+            Recent Alert Trades
+          </Text>
+          <View style={styles.alertsList} data-oid="7p79g9z">
             {recentAlerts.map((alert, index) => (
-              <View key={index} style={styles.alertCard}>
-                <View style={styles.alertHeader}>
-                  <View style={styles.alertSymbol}>
-                    <Text style={styles.alertSymbolText}>{alert.symbol}</Text>
+              <View key={index} style={styles.alertCard} data-oid="qguavmt">
+                <View style={styles.alertHeader} data-oid="34_7u5-">
+                  <View style={styles.alertSymbol} data-oid="g-28kfu">
+                    <Text style={styles.alertSymbolText} data-oid="nn-6a_5">
+                      {alert.symbol}
+                    </Text>
                     <Text
                       style={[
                         styles.alertType,
                         { color: alert.type === 'BUY' ? '#10B981' : '#EF4444' },
                       ]}
+                      data-oid="mezxfs-"
                     >
                       {alert.type}
                     </Text>
                   </View>
-                  <Text style={styles.alertTime}>{alert.triggered}</Text>
+                  <Text style={styles.alertTime} data-oid="tcbffws">
+                    {alert.triggered}
+                  </Text>
                 </View>
-                <View style={styles.alertProfit}>
-                  <Text style={styles.alertProfitValue}>
+                <View style={styles.alertProfit} data-oid="-ymlez.">
+                  <Text style={styles.alertProfitValue} data-oid="8rjoc14">
                     +${alert.profit.toFixed(2)}
                   </Text>
                 </View>
@@ -259,40 +299,48 @@ export default function AnalyticsScreen() {
           </View>
         </View>
 
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Trading Insights</Text>
-          <View style={styles.insightsList}>
-            <View style={styles.insightCard}>
-              <View style={styles.insightIcon}>
-                <TrendingUp size={20} color="#10B981" />
+        <View style={styles.section} data-oid="yzhnyud">
+          <Text style={styles.sectionTitle} data-oid="l3mcbnw">
+            Trading Insights
+          </Text>
+          <View style={styles.insightsList} data-oid="7ub68iw">
+            <View style={styles.insightCard} data-oid="ay7283k">
+              <View style={styles.insightIcon} data-oid="zqcn2k.">
+                <TrendingUp size={20} color="#10B981" data-oid=":m19qbe" />
               </View>
-              <View style={styles.insightContent}>
-                <Text style={styles.insightTitle}>Strong Performance</Text>
-                <Text style={styles.insightDescription}>
+              <View style={styles.insightContent} data-oid="4yjjco_">
+                <Text style={styles.insightTitle} data-oid="l004pp5">
+                  Strong Performance
+                </Text>
+                <Text style={styles.insightDescription} data-oid="l6wy26q">
                   Your win rate improved by 8% this week
                 </Text>
               </View>
             </View>
 
-            <View style={styles.insightCard}>
-              <View style={styles.insightIcon}>
-                <Target size={20} color="#3B82F6" />
+            <View style={styles.insightCard} data-oid="dqxiqf4">
+              <View style={styles.insightIcon} data-oid=".:fp.50">
+                <Target size={20} color="#3B82F6" data-oid="lu7_j7a" />
               </View>
-              <View style={styles.insightContent}>
-                <Text style={styles.insightTitle}>Alert Accuracy</Text>
-                <Text style={styles.insightDescription}>
+              <View style={styles.insightContent} data-oid="z9171yg">
+                <Text style={styles.insightTitle} data-oid="ycgpuur">
+                  Alert Accuracy
+                </Text>
+                <Text style={styles.insightDescription} data-oid="5_3c4.t">
                   85% of your alerts resulted in profitable trades
                 </Text>
               </View>
             </View>
 
-            <View style={styles.insightCard}>
-              <View style={styles.insightIcon}>
-                <BarChart3 size={20} color="#F59E0B" />
+            <View style={styles.insightCard} data-oid="r.v3u38">
+              <View style={styles.insightIcon} data-oid="dks1-h7">
+                <BarChart3 size={20} color="#F59E0B" data-oid="0io4.rh" />
               </View>
-              <View style={styles.insightContent}>
-                <Text style={styles.insightTitle}>Best Trading Hour</Text>
-                <Text style={styles.insightDescription}>
+              <View style={styles.insightContent} data-oid="9symsgs">
+                <Text style={styles.insightTitle} data-oid="f8h2uh9">
+                  Best Trading Hour
+                </Text>
+                <Text style={styles.insightDescription} data-oid="m2wg5.2">
                   Most profitable trades happen at 10:00 AM
                 </Text>
               </View>

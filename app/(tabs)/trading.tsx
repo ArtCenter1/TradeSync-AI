@@ -140,68 +140,84 @@ export default function TradingScreen() {
     .reduce((sum, t) => sum + t.total, 0);
 
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <View>
-          <Text style={styles.title}>Trading</Text>
-          <Text style={styles.subtitle}>
+    <View style={styles.container} data-oid="zfmu-qw">
+      <View style={styles.header} data-oid="pxme3tl">
+        <View data-oid="v_zwenv">
+          <Text style={styles.title} data-oid="11n9-9x">
+            Trading
+          </Text>
+          <Text style={styles.subtitle} data-oid=".odmgdu">
             {completedTrades} completed • {pendingCount} pending
           </Text>
         </View>
         <TouchableOpacity
           style={styles.tradeButton}
           onPress={() => setShowTradeModal(true)}
+          data-oid="ny:wa1m"
         >
-          <Plus size={20} color="#FFFFFF" />
+          <Plus size={20} color="#FFFFFF" data-oid="v:5wj6q" />
         </TouchableOpacity>
       </View>
 
-      <View style={styles.statsContainer}>
-        <View style={styles.statCard}>
-          <Activity size={20} color="#10B981" />
-          <Text style={styles.statValue}>{completedTrades}</Text>
-          <Text style={styles.statLabel}>Completed</Text>
+      <View style={styles.statsContainer} data-oid="0_fzwp:">
+        <View style={styles.statCard} data-oid="x2ulpz5">
+          <Activity size={20} color="#10B981" data-oid="vp9ky50" />
+          <Text style={styles.statValue} data-oid="6el7o2i">
+            {completedTrades}
+          </Text>
+          <Text style={styles.statLabel} data-oid="5_srl-j">
+            Completed
+          </Text>
         </View>
-        <View style={styles.statCard}>
-          <Clock size={20} color="#F59E0B" />
-          <Text style={styles.statValue}>{pendingCount}</Text>
-          <Text style={styles.statLabel}>Pending</Text>
+        <View style={styles.statCard} data-oid="5w:i02a">
+          <Clock size={20} color="#F59E0B" data-oid="3j61xgj" />
+          <Text style={styles.statValue} data-oid="kt5b-h3">
+            {pendingCount}
+          </Text>
+          <Text style={styles.statLabel} data-oid="gayc7n6">
+            Pending
+          </Text>
         </View>
-        <View style={styles.statCard}>
-          <TrendingUp size={20} color="#3B82F6" />
-          <Text style={styles.statValue}>
+        <View style={styles.statCard} data-oid="pcy_bug">
+          <TrendingUp size={20} color="#3B82F6" data-oid="gktex.." />
+          <Text style={styles.statValue} data-oid="p:laeul">
             ${(totalVolume / 1000).toFixed(1)}K
           </Text>
-          <Text style={styles.statLabel}>Volume</Text>
+          <Text style={styles.statLabel} data-oid="guzmhh4">
+            Volume
+          </Text>
         </View>
       </View>
 
-      <View style={styles.searchContainer}>
-        <View style={styles.searchBar}>
-          <Search size={20} color="#9CA3AF" />
+      <View style={styles.searchContainer} data-oid="8hgs09y">
+        <View style={styles.searchBar} data-oid="igriwwq">
+          <Search size={20} color="#9CA3AF" data-oid="ee8mtc6" />
           <TextInput
             style={styles.searchInput}
             placeholder="Search trades..."
             placeholderTextColor="#6B7280"
             value={searchQuery}
             onChangeText={setSearchQuery}
+            data-oid="oybyhd-"
           />
         </View>
-        <TouchableOpacity style={styles.filterButton}>
-          <Filter size={20} color="#9CA3AF" />
+        <TouchableOpacity style={styles.filterButton} data-oid="2._0bz.">
+          <Filter size={20} color="#9CA3AF" data-oid="k6vis.0" />
         </TouchableOpacity>
       </View>
 
-      <View style={styles.tabContainer}>
+      <View style={styles.tabContainer} data-oid="6i9l0tz">
         <TouchableOpacity
           style={[styles.tab, activeTab === 'history' && styles.tabActive]}
           onPress={() => setActiveTab('history')}
+          data-oid="swac-nv"
         >
           <Text
             style={[
               styles.tabText,
               activeTab === 'history' && styles.tabTextActive,
             ]}
+            data-oid="048247g"
           >
             History
           </Text>
@@ -209,12 +225,14 @@ export default function TradingScreen() {
         <TouchableOpacity
           style={[styles.tab, activeTab === 'orders' && styles.tabActive]}
           onPress={() => setActiveTab('orders')}
+          data-oid="98paj5f"
         >
           <Text
             style={[
               styles.tabText,
               activeTab === 'orders' && styles.tabTextActive,
             ]}
+            data-oid="7d3xg:m"
           >
             Open Orders
           </Text>
@@ -224,13 +242,16 @@ export default function TradingScreen() {
       <ScrollView
         style={styles.tradesList}
         showsVerticalScrollIndicator={false}
+        data-oid="qmjj1ov"
       >
         {activeTab === 'history' ? (
           filteredTrades.length === 0 ? (
-            <View style={styles.emptyState}>
-              <Activity size={48} color="#4B5563" />
-              <Text style={styles.emptyTitle}>No trades found</Text>
-              <Text style={styles.emptyDescription}>
+            <View style={styles.emptyState} data-oid="eh9.nju">
+              <Activity size={48} color="#4B5563" data-oid="hjsju7f" />
+              <Text style={styles.emptyTitle} data-oid="g:3dm_e">
+                No trades found
+              </Text>
+              <Text style={styles.emptyDescription} data-oid="zoeo225">
                 Your trading history will appear here
               </Text>
             </View>
@@ -247,14 +268,17 @@ export default function TradingScreen() {
                 timestamp={trade.timestamp}
                 pnl={trade.pnl}
                 status={trade.status}
+                data-oid="vkz6cgw"
               />
             ))
           )
         ) : filteredOrders.length === 0 ? (
-          <View style={styles.emptyState}>
-            <Clock size={48} color="#4B5563" />
-            <Text style={styles.emptyTitle}>No open orders</Text>
-            <Text style={styles.emptyDescription}>
+          <View style={styles.emptyState} data-oid="o0lv7uj">
+            <Clock size={48} color="#4B5563" data-oid="9o4gqa-" />
+            <Text style={styles.emptyTitle} data-oid="k3dx-9u">
+              No open orders
+            </Text>
+            <Text style={styles.emptyDescription} data-oid="lf6-751">
               Your pending orders will appear here
             </Text>
           </View>
@@ -270,6 +294,7 @@ export default function TradingScreen() {
               total={order.total}
               timestamp={order.timestamp}
               status={order.status}
+              data-oid="tql9rtg"
             />
           ))
         )}
@@ -285,6 +310,7 @@ export default function TradingScreen() {
           );
           setShowTradeModal(false);
         }}
+        data-oid=":.pdcw3"
       />
     </View>
   );
@@ -333,22 +359,31 @@ function TradeModal({ visible, onClose, onExecuteTrade }: TradeModalProps) {
       animationType="slide"
       presentationStyle="pageSheet"
       onRequestClose={onClose}
+      data-oid="jcgwdef"
     >
-      <View style={styles.modalContainer}>
-        <View style={styles.modalHeader}>
-          <TouchableOpacity onPress={onClose}>
-            <Text style={styles.modalCancel}>Cancel</Text>
+      <View style={styles.modalContainer} data-oid="b69yy81">
+        <View style={styles.modalHeader} data-oid="29w9z:y">
+          <TouchableOpacity onPress={onClose} data-oid="j_nyx2n">
+            <Text style={styles.modalCancel} data-oid="2yoryca">
+              Cancel
+            </Text>
           </TouchableOpacity>
-          <Text style={styles.modalTitle}>New Trade</Text>
-          <TouchableOpacity onPress={handleExecute}>
-            <Text style={styles.modalExecute}>Execute</Text>
+          <Text style={styles.modalTitle} data-oid="r3qtg6j">
+            New Trade
+          </Text>
+          <TouchableOpacity onPress={handleExecute} data-oid="lz-:ole">
+            <Text style={styles.modalExecute} data-oid="on4gino">
+              Execute
+            </Text>
           </TouchableOpacity>
         </View>
 
-        <ScrollView style={styles.modalContent}>
-          <View style={styles.inputGroup}>
-            <Text style={styles.inputLabel}>Symbol</Text>
-            <View style={styles.symbolSelector}>
+        <ScrollView style={styles.modalContent} data-oid="lkiw5ed">
+          <View style={styles.inputGroup} data-oid="fb9:eoz">
+            <Text style={styles.inputLabel} data-oid="22kz:ky">
+              Symbol
+            </Text>
+            <View style={styles.symbolSelector} data-oid="o4.2:st">
               {['BTC', 'ETH', 'SOL', 'ADA'].map((s) => (
                 <TouchableOpacity
                   key={s}
@@ -357,12 +392,14 @@ function TradeModal({ visible, onClose, onExecuteTrade }: TradeModalProps) {
                     symbol === s && styles.symbolButtonActive,
                   ]}
                   onPress={() => setSymbol(s)}
+                  data-oid="j33drxb"
                 >
                   <Text
                     style={[
                       styles.symbolText,
                       symbol === s && styles.symbolTextActive,
                     ]}
+                    data-oid="_axqywl"
                   >
                     {s}
                   </Text>
@@ -371,19 +408,23 @@ function TradeModal({ visible, onClose, onExecuteTrade }: TradeModalProps) {
             </View>
           </View>
 
-          <View style={styles.inputGroup}>
-            <Text style={styles.inputLabel}>Trade Type</Text>
-            <View style={styles.typeSelector}>
+          <View style={styles.inputGroup} data-oid="5nw:ez0">
+            <Text style={styles.inputLabel} data-oid="j.kgiex">
+              Trade Type
+            </Text>
+            <View style={styles.typeSelector} data-oid="oz46:ts">
               <TouchableOpacity
                 style={[
                   styles.typeButton,
                   type === 'BUY' && styles.buyButtonActive,
                 ]}
                 onPress={() => setType('BUY')}
+                data-oid="4h.1s1d"
               >
                 <TrendingUp
                   size={16}
                   color={type === 'BUY' ? '#FFFFFF' : '#10B981'}
+                  data-oid="a4hq7ew"
                 />
 
                 <Text
@@ -391,6 +432,7 @@ function TradeModal({ visible, onClose, onExecuteTrade }: TradeModalProps) {
                     styles.typeText,
                     type === 'BUY' && styles.typeTextActive,
                   ]}
+                  data-oid="n6vxy9-"
                 >
                   BUY
                 </Text>
@@ -401,10 +443,12 @@ function TradeModal({ visible, onClose, onExecuteTrade }: TradeModalProps) {
                   type === 'SELL' && styles.sellButtonActive,
                 ]}
                 onPress={() => setType('SELL')}
+                data-oid="tbircm:"
               >
                 <TrendingDown
                   size={16}
                   color={type === 'SELL' ? '#FFFFFF' : '#EF4444'}
+                  data-oid="pzb8kn."
                 />
 
                 <Text
@@ -412,6 +456,7 @@ function TradeModal({ visible, onClose, onExecuteTrade }: TradeModalProps) {
                     styles.typeText,
                     type === 'SELL' && styles.typeTextActive,
                   ]}
+                  data-oid="ueanyis"
                 >
                   SELL
                 </Text>
@@ -419,21 +464,25 @@ function TradeModal({ visible, onClose, onExecuteTrade }: TradeModalProps) {
             </View>
           </View>
 
-          <View style={styles.inputGroup}>
-            <Text style={styles.inputLabel}>Order Type</Text>
-            <View style={styles.orderTypeSelector}>
+          <View style={styles.inputGroup} data-oid="ft.i-dm">
+            <Text style={styles.inputLabel} data-oid="5ckyu9_">
+              Order Type
+            </Text>
+            <View style={styles.orderTypeSelector} data-oid="8hi3slr">
               <TouchableOpacity
                 style={[
                   styles.orderTypeButton,
                   orderType === 'MARKET' && styles.orderTypeButtonActive,
                 ]}
                 onPress={() => setOrderType('MARKET')}
+                data-oid="15jj0k9"
               >
                 <Text
                   style={[
                     styles.orderTypeText,
                     orderType === 'MARKET' && styles.orderTypeTextActive,
                   ]}
+                  data-oid="ky:mkmd"
                 >
                   Market
                 </Text>
@@ -444,12 +493,14 @@ function TradeModal({ visible, onClose, onExecuteTrade }: TradeModalProps) {
                   orderType === 'LIMIT' && styles.orderTypeButtonActive,
                 ]}
                 onPress={() => setOrderType('LIMIT')}
+                data-oid="wm4asla"
               >
                 <Text
                   style={[
                     styles.orderTypeText,
                     orderType === 'LIMIT' && styles.orderTypeTextActive,
                   ]}
+                  data-oid="iro1wii"
                 >
                   Limit
                 </Text>
@@ -457,8 +508,10 @@ function TradeModal({ visible, onClose, onExecuteTrade }: TradeModalProps) {
             </View>
           </View>
 
-          <View style={styles.inputGroup}>
-            <Text style={styles.inputLabel}>Amount</Text>
+          <View style={styles.inputGroup} data-oid="3gt2def">
+            <Text style={styles.inputLabel} data-oid="v34pe.2">
+              Amount
+            </Text>
             <TextInput
               style={styles.input}
               value={amount}
@@ -466,12 +519,15 @@ function TradeModal({ visible, onClose, onExecuteTrade }: TradeModalProps) {
               placeholder="0.1"
               placeholderTextColor="#6B7280"
               keyboardType="numeric"
+              data-oid="pzmu_hy"
             />
           </View>
 
           {orderType === 'LIMIT' && (
-            <View style={styles.inputGroup}>
-              <Text style={styles.inputLabel}>Price</Text>
+            <View style={styles.inputGroup} data-oid="qhho0_c">
+              <Text style={styles.inputLabel} data-oid="jxs1rsw">
+                Price
+              </Text>
               <TextInput
                 style={styles.input}
                 value={price}
@@ -479,13 +535,16 @@ function TradeModal({ visible, onClose, onExecuteTrade }: TradeModalProps) {
                 placeholder="70000"
                 placeholderTextColor="#6B7280"
                 keyboardType="numeric"
+                data-oid="eef.cn0"
               />
             </View>
           )}
 
-          <View style={styles.estimateContainer}>
-            <Text style={styles.estimateLabel}>Estimated Total</Text>
-            <Text style={styles.estimateValue}>
+          <View style={styles.estimateContainer} data-oid="z:g:l:_">
+            <Text style={styles.estimateLabel} data-oid="otoxemz">
+              Estimated Total
+            </Text>
+            <Text style={styles.estimateValue} data-oid="towa-qf">
               $
               {amount && orderType === 'MARKET'
                 ? (parseFloat(amount || '0') * 71200).toLocaleString()

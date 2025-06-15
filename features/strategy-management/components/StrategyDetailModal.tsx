@@ -81,61 +81,89 @@ export default function StrategyDetailModal({
   };
 
   const renderOverviewTab = () => (
-    <ScrollView style={styles.tabContent} showsVerticalScrollIndicator={false}>
+    <ScrollView
+      style={styles.tabContent}
+      showsVerticalScrollIndicator={false}
+      data-oid=":dm_w2p"
+    >
       {/* Description */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Description</Text>
-        <Text style={styles.description}>{strategy.description}</Text>
+      <View style={styles.section} data-oid=":lrbk1l">
+        <Text style={styles.sectionTitle} data-oid="4gkh.pu">
+          Description
+        </Text>
+        <Text style={styles.description} data-oid="76aeieh">
+          {strategy.description}
+        </Text>
       </View>
 
       {/* Performance Metrics */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Performance Metrics</Text>
-        <View style={styles.metricsGrid}>
-          <View style={styles.metricCard}>
-            <TrendingUp size={20} color="#10B981" />
-            <Text style={styles.metricLabel}>Total Return</Text>
-            <Text style={[styles.metricValue, { color: '#10B981' }]}>
+      <View style={styles.section} data-oid="81n1akb">
+        <Text style={styles.sectionTitle} data-oid="ol9r:8c">
+          Performance Metrics
+        </Text>
+        <View style={styles.metricsGrid} data-oid="lp_oz91">
+          <View style={styles.metricCard} data-oid="q81fvf3">
+            <TrendingUp size={20} color="#10B981" data-oid="7_zt08." />
+            <Text style={styles.metricLabel} data-oid="s5k4skf">
+              Total Return
+            </Text>
+            <Text
+              style={[styles.metricValue, { color: '#10B981' }]}
+              data-oid="os3w9v2"
+            >
               {formatPercentage(strategy.performance.totalReturn)}
             </Text>
           </View>
 
-          <View style={styles.metricCard}>
-            <Target size={20} color="#3B82F6" />
-            <Text style={styles.metricLabel}>Win Rate</Text>
-            <Text style={styles.metricValue}>
+          <View style={styles.metricCard} data-oid="1xx68np">
+            <Target size={20} color="#3B82F6" data-oid="6tpoo:f" />
+            <Text style={styles.metricLabel} data-oid="pjmcacx">
+              Win Rate
+            </Text>
+            <Text style={styles.metricValue} data-oid="k1xz9q3">
               {strategy.performance.winRate.toFixed(1)}%
             </Text>
           </View>
 
-          <View style={styles.metricCard}>
-            <TrendingDown size={20} color="#EF4444" />
-            <Text style={styles.metricLabel}>Max Drawdown</Text>
-            <Text style={[styles.metricValue, { color: '#EF4444' }]}>
+          <View style={styles.metricCard} data-oid="fwcexhy">
+            <TrendingDown size={20} color="#EF4444" data-oid="ee6os.i" />
+            <Text style={styles.metricLabel} data-oid="bpir0gb">
+              Max Drawdown
+            </Text>
+            <Text
+              style={[styles.metricValue, { color: '#EF4444' }]}
+              data-oid="3:pet9q"
+            >
               {formatPercentage(strategy.performance.maxDrawdown)}
             </Text>
           </View>
 
-          <View style={styles.metricCard}>
-            <BarChart3 size={20} color="#F59E0B" />
-            <Text style={styles.metricLabel}>Sharpe Ratio</Text>
-            <Text style={styles.metricValue}>
+          <View style={styles.metricCard} data-oid="mzh9yj8">
+            <BarChart3 size={20} color="#F59E0B" data-oid="w08b8pr" />
+            <Text style={styles.metricLabel} data-oid="42c:td3">
+              Sharpe Ratio
+            </Text>
+            <Text style={styles.metricValue} data-oid="hex31g.">
               {strategy.performance.sharpeRatio.toFixed(2)}
             </Text>
           </View>
 
-          <View style={styles.metricCard}>
-            <Clock size={20} color="#8B5CF6" />
-            <Text style={styles.metricLabel}>Avg Duration</Text>
-            <Text style={styles.metricValue}>
+          <View style={styles.metricCard} data-oid="lui.l_m">
+            <Clock size={20} color="#8B5CF6" data-oid=".dnmp:b" />
+            <Text style={styles.metricLabel} data-oid="g-xmww0">
+              Avg Duration
+            </Text>
+            <Text style={styles.metricValue} data-oid="2idb:17">
               {formatDuration(strategy.performance.avgTradeDuration)}
             </Text>
           </View>
 
-          <View style={styles.metricCard}>
-            <Calendar size={20} color="#06B6D4" />
-            <Text style={styles.metricLabel}>Total Trades</Text>
-            <Text style={styles.metricValue}>
+          <View style={styles.metricCard} data-oid="6k4o-k4">
+            <Calendar size={20} color="#06B6D4" data-oid="diem7bw" />
+            <Text style={styles.metricLabel} data-oid="hpu46c0">
+              Total Trades
+            </Text>
+            <Text style={styles.metricValue} data-oid="fqxqxvu">
               {strategy.performance.totalTrades}
             </Text>
           </View>
@@ -143,33 +171,43 @@ export default function StrategyDetailModal({
       </View>
 
       {/* Timeframes */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Supported Timeframes</Text>
-        <View style={styles.timeframes}>
+      <View style={styles.section} data-oid="y2twq.-">
+        <Text style={styles.sectionTitle} data-oid="3cftqe5">
+          Supported Timeframes
+        </Text>
+        <View style={styles.timeframes} data-oid="8v42:p_">
           {strategy.timeframe.map((tf, index) => (
-            <View key={index} style={styles.timeframeBadge}>
-              <Text style={styles.timeframeText}>{tf}</Text>
+            <View key={index} style={styles.timeframeBadge} data-oid="lbzh_ws">
+              <Text style={styles.timeframeText} data-oid="8z8m6.8">
+                {tf}
+              </Text>
             </View>
           ))}
         </View>
       </View>
 
       {/* Tags */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Tags</Text>
-        <View style={styles.tags}>
+      <View style={styles.section} data-oid="qs:bn8y">
+        <Text style={styles.sectionTitle} data-oid="yag07hs">
+          Tags
+        </Text>
+        <View style={styles.tags} data-oid="u4j03wp">
           {strategy.tags.map((tag, index) => (
-            <View key={index} style={styles.tag}>
-              <Text style={styles.tagText}>{tag}</Text>
+            <View key={index} style={styles.tag} data-oid="gtm771p">
+              <Text style={styles.tagText} data-oid="r86d8x6">
+                {tag}
+              </Text>
             </View>
           ))}
         </View>
       </View>
 
       {/* Backtest Period */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Backtest Period</Text>
-        <Text style={styles.backtestPeriod}>
+      <View style={styles.section} data-oid="7pah-w.">
+        <Text style={styles.sectionTitle} data-oid=".xzakoa">
+          Backtest Period
+        </Text>
+        <Text style={styles.backtestPeriod} data-oid="fz080nf">
           {strategy.performance.backtestPeriod}
         </Text>
       </View>
@@ -177,83 +215,120 @@ export default function StrategyDetailModal({
   );
 
   const renderScriptTab = () => (
-    <ScrollView style={styles.tabContent} showsVerticalScrollIndicator={false}>
-      <View style={styles.section}>
-        <View style={styles.scriptHeader}>
-          <Text style={styles.sectionTitle}>Pine Script Code</Text>
+    <ScrollView
+      style={styles.tabContent}
+      showsVerticalScrollIndicator={false}
+      data-oid="64-79x0"
+    >
+      <View style={styles.section} data-oid="8u9yiey">
+        <View style={styles.scriptHeader} data-oid=".6w1fr9">
+          <Text style={styles.sectionTitle} data-oid="tobiaox">
+            Pine Script Code
+          </Text>
           <TouchableOpacity
             style={styles.copyScriptButton}
             onPress={() => onCopy(strategy.script)}
+            data-oid="wggnrbj"
           >
-            <Copy size={16} color="#FFFFFF" />
-            <Text style={styles.copyScriptText}>Copy Script</Text>
+            <Copy size={16} color="#FFFFFF" data-oid="i65yz9s" />
+            <Text style={styles.copyScriptText} data-oid="cvom.yb">
+              Copy Script
+            </Text>
           </TouchableOpacity>
         </View>
-        <View style={styles.codeContainer}>
-          <Text style={styles.codeText}>{strategy.script}</Text>
+        <View style={styles.codeContainer} data-oid="3ww4im:">
+          <Text style={styles.codeText} data-oid="bl89klu">
+            {strategy.script}
+          </Text>
         </View>
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Alert Template</Text>
-        <View style={styles.alertTemplateContainer}>
-          <Text style={styles.alertTemplateText}>{strategy.alertTemplate}</Text>
+      <View style={styles.section} data-oid="3kjnwj_">
+        <Text style={styles.sectionTitle} data-oid="dbdz74t">
+          Alert Template
+        </Text>
+        <View style={styles.alertTemplateContainer} data-oid="pr_o8yk">
+          <Text style={styles.alertTemplateText} data-oid="23y15d_">
+            {strategy.alertTemplate}
+          </Text>
         </View>
       </View>
     </ScrollView>
   );
 
   const renderSetupTab = () => (
-    <ScrollView style={styles.tabContent} showsVerticalScrollIndicator={false}>
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Setup Instructions</Text>
-        <View style={styles.setupSteps}>
-          <View style={styles.setupStep}>
-            <View style={styles.stepNumber}>
-              <Text style={styles.stepNumberText}>1</Text>
+    <ScrollView
+      style={styles.tabContent}
+      showsVerticalScrollIndicator={false}
+      data-oid="0o4g6q2"
+    >
+      <View style={styles.section} data-oid="jhhy-dd">
+        <Text style={styles.sectionTitle} data-oid="7ogngx:">
+          Setup Instructions
+        </Text>
+        <View style={styles.setupSteps} data-oid="u6o0wnr">
+          <View style={styles.setupStep} data-oid="sme9eed">
+            <View style={styles.stepNumber} data-oid="_hcssiy">
+              <Text style={styles.stepNumberText} data-oid="p7p2lge">
+                1
+              </Text>
             </View>
-            <View style={styles.stepContent}>
-              <Text style={styles.stepTitle}>Copy Pine Script</Text>
-              <Text style={styles.stepDescription}>
+            <View style={styles.stepContent} data-oid="4wmw7fm">
+              <Text style={styles.stepTitle} data-oid="nssgfe1">
+                Copy Pine Script
+              </Text>
+              <Text style={styles.stepDescription} data-oid="rmepv0:">
                 Copy the Pine Script code and paste it into TradingView's Pine
                 Editor
               </Text>
             </View>
           </View>
 
-          <View style={styles.setupStep}>
-            <View style={styles.stepNumber}>
-              <Text style={styles.stepNumberText}>2</Text>
+          <View style={styles.setupStep} data-oid="3goohev">
+            <View style={styles.stepNumber} data-oid="88vbj7m">
+              <Text style={styles.stepNumberText} data-oid="dqsoqm1">
+                2
+              </Text>
             </View>
-            <View style={styles.stepContent}>
-              <Text style={styles.stepTitle}>Add to Chart</Text>
-              <Text style={styles.stepDescription}>
+            <View style={styles.stepContent} data-oid="j0jajjd">
+              <Text style={styles.stepTitle} data-oid="fa7w923">
+                Add to Chart
+              </Text>
+              <Text style={styles.stepDescription} data-oid="g6ozov-">
                 Save and add the strategy to your chart with your preferred
                 settings
               </Text>
             </View>
           </View>
 
-          <View style={styles.setupStep}>
-            <View style={styles.stepNumber}>
-              <Text style={styles.stepNumberText}>3</Text>
+          <View style={styles.setupStep} data-oid="kjqz:13">
+            <View style={styles.stepNumber} data-oid="6q5n_67">
+              <Text style={styles.stepNumberText} data-oid="3vq2lwl">
+                3
+              </Text>
             </View>
-            <View style={styles.stepContent}>
-              <Text style={styles.stepTitle}>Create Alerts</Text>
-              <Text style={styles.stepDescription}>
+            <View style={styles.stepContent} data-oid="tpltq4n">
+              <Text style={styles.stepTitle} data-oid="a5ib4kh">
+                Create Alerts
+              </Text>
+              <Text style={styles.stepDescription} data-oid="86pw7ff">
                 Set up alerts using the provided template to receive
                 notifications
               </Text>
             </View>
           </View>
 
-          <View style={styles.setupStep}>
-            <View style={styles.stepNumber}>
-              <Text style={styles.stepNumberText}>4</Text>
+          <View style={styles.setupStep} data-oid="6:qzbk:">
+            <View style={styles.stepNumber} data-oid="r5-mng9">
+              <Text style={styles.stepNumberText} data-oid="vdq6cad">
+                4
+              </Text>
             </View>
-            <View style={styles.stepContent}>
-              <Text style={styles.stepTitle}>Configure Automation</Text>
-              <Text style={styles.stepDescription}>
+            <View style={styles.stepContent} data-oid="5__p1m:">
+              <Text style={styles.stepTitle} data-oid="kpye62p">
+                Configure Automation
+              </Text>
+              <Text style={styles.stepDescription} data-oid="a-w4-ny">
                 Connect alerts to TradeSync-AI for automated trading (optional)
               </Text>
             </View>
@@ -261,9 +336,11 @@ export default function StrategyDetailModal({
         </View>
       </View>
 
-      <TouchableOpacity style={styles.setupButton}>
-        <Zap size={20} color="#FFFFFF" />
-        <Text style={styles.setupButtonText}>Setup Automated Trading</Text>
+      <TouchableOpacity style={styles.setupButton} data-oid="-ruo9ez">
+        <Zap size={20} color="#FFFFFF" data-oid="27o.dpx" />
+        <Text style={styles.setupButtonText} data-oid="2l_z9qi">
+          Setup Automated Trading
+        </Text>
       </TouchableOpacity>
     </ScrollView>
   );
@@ -273,47 +350,60 @@ export default function StrategyDetailModal({
       visible={visible}
       animationType="slide"
       presentationStyle="fullScreen"
+      data-oid="42r9_am"
     >
-      <View style={styles.container}>
+      <View style={styles.container} data-oid="m66x4ie">
         {/* Header */}
-        <View style={styles.header}>
-          <View style={styles.headerLeft}>
-            <Text style={styles.title}>{strategy.name}</Text>
-            <View style={styles.headerInfo}>
+        <View style={styles.header} data-oid="kj5250t">
+          <View style={styles.headerLeft} data-oid="ug-.u92">
+            <Text style={styles.title} data-oid=":qn_0m3">
+              {strategy.name}
+            </Text>
+            <View style={styles.headerInfo} data-oid="m-jf__8">
               <View
                 style={[
                   styles.riskBadge,
                   { backgroundColor: getRiskBgColor(strategy.riskLevel) },
                 ]}
+                data-oid="vc3m773"
               >
                 <Text
                   style={[
                     styles.riskText,
                     { color: getRiskColor(strategy.riskLevel) },
                   ]}
+                  data-oid=".wnfc5."
                 >
                   {strategy.riskLevel.toUpperCase()}
                 </Text>
               </View>
-              <Text style={styles.category}>{strategy.category}</Text>
+              <Text style={styles.category} data-oid="7bpcfjn">
+                {strategy.category}
+              </Text>
             </View>
           </View>
-          <TouchableOpacity style={styles.closeButton} onPress={onClose}>
-            <X size={24} color="#9CA3AF" />
+          <TouchableOpacity
+            style={styles.closeButton}
+            onPress={onClose}
+            data-oid="i6invqz"
+          >
+            <X size={24} color="#9CA3AF" data-oid="oh6.aie" />
           </TouchableOpacity>
         </View>
 
         {/* Tabs */}
-        <View style={styles.tabs}>
+        <View style={styles.tabs} data-oid="g6woary">
           <TouchableOpacity
             style={[styles.tab, activeTab === 'overview' && styles.activeTab]}
             onPress={() => setActiveTab('overview')}
+            data-oid="vh09na4"
           >
             <Text
               style={[
                 styles.tabText,
                 activeTab === 'overview' && styles.activeTabText,
               ]}
+              data-oid="fdv0jiy"
             >
               Overview
             </Text>
@@ -321,12 +411,14 @@ export default function StrategyDetailModal({
           <TouchableOpacity
             style={[styles.tab, activeTab === 'script' && styles.activeTab]}
             onPress={() => setActiveTab('script')}
+            data-oid="klf2-bt"
           >
             <Text
               style={[
                 styles.tabText,
                 activeTab === 'script' && styles.activeTabText,
               ]}
+              data-oid="ft:p71x"
             >
               Script
             </Text>
@@ -334,12 +426,14 @@ export default function StrategyDetailModal({
           <TouchableOpacity
             style={[styles.tab, activeTab === 'setup' && styles.activeTab]}
             onPress={() => setActiveTab('setup')}
+            data-oid="an1k5u6"
           >
             <Text
               style={[
                 styles.tabText,
                 activeTab === 'setup' && styles.activeTabText,
               ]}
+              data-oid="qaoqcpo"
             >
               Setup
             </Text>
