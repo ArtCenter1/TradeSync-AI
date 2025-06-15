@@ -23,13 +23,13 @@ export default function PriceCard({
   const changeColor = isPositive ? '#10B981' : '#EF4444';
 
   return (
-    <View style={styles.container} data-oid="o88:kgs">
-      <View style={styles.header} data-oid=":9h:g_u">
-        <View style={styles.symbolContainer} data-oid="02eumzq">
-          <Text style={styles.symbol} data-oid="j6h-xl:">
+    <View style={styles.container} data-oid="dm4tp9s">
+      <View style={styles.header} data-oid="t4vsqgn">
+        <View style={styles.symbolContainer} data-oid="eek5vlg">
+          <Text style={styles.symbol} data-oid="o2j0hm_">
             {symbol}
           </Text>
-          <Text style={styles.name} data-oid="hb4ac72">
+          <Text style={styles.name} data-oid="j8xt0jy">
             {name}
           </Text>
         </View>
@@ -38,36 +38,36 @@ export default function PriceCard({
             styles.changeContainer,
             { backgroundColor: changeColor + '20' },
           ]}
-          data-oid="_negh3u"
+          data-oid="f6ublxt"
         >
           {isPositive ? (
-            <TrendingUp size={16} color={changeColor} data-oid="_cobzfk" />
+            <TrendingUp size={16} color={changeColor} data-oid="dlh:jzb" />
           ) : (
-            <TrendingDown size={16} color={changeColor} data-oid="az9pr3r" />
+            <TrendingDown size={16} color={changeColor} data-oid="8mplemr" />
           )}
           <Text
             style={[styles.changePercent, { color: changeColor }]}
-            data-oid="-6xlyhl"
+            data-oid="_:kteg-"
           >
             {changePercent.toFixed(2)}%
           </Text>
         </View>
       </View>
 
-      <View style={styles.priceContainer} data-oid="-s.y4g3">
-        <Text style={styles.price} data-oid="ze942-9">
+      <View style={styles.priceContainer} data-oid="1hmph:c">
+        <Text style={styles.price} data-oid="nb-b5qr">
           ${price.toLocaleString()}
         </Text>
         <Text
           style={[styles.change, { color: changeColor }]}
-          data-oid="3ekcg6a"
+          data-oid="8orl:f0"
         >
           {isPositive ? '+' : ''}${change.toFixed(2)}
         </Text>
       </View>
 
       {volume && (
-        <Text style={styles.volume} data-oid="zntsgpz">
+        <Text style={styles.volume} data-oid="7l-1tdo">
           Vol: {volume}
         </Text>
       )}

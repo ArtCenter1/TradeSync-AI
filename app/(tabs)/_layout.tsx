@@ -29,17 +29,17 @@ export default function TabLayout() {
           marginTop: 4,
         },
       }}
-      data-oid="h8ik603"
+      data-oid="cek77tl"
     >
       <Tabs.Screen
         name="index"
         options={{
           title: 'Portfolio',
           tabBarIcon: ({ size, color }) => (
-            <TrendingUp size={size} color={color} data-oid="8qh-a83" />
+            <TrendingUp size={size} color={color} data-oid="805qa-s" />
           ),
         }}
-        data-oid="d6eepom"
+        data-oid="6i66vay"
       />
 
       <Tabs.Screen
@@ -47,10 +47,10 @@ export default function TabLayout() {
         options={{
           title: 'Alerts',
           tabBarIcon: ({ size, color }) => (
-            <Bell size={size} color={color} data-oid="7sdbl21" />
+            <Bell size={size} color={color} data-oid="7-nrwem" />
           ),
         }}
-        data-oid="ul6rccg"
+        data-oid=":k78igj"
       />
 
       <Tabs.Screen
@@ -58,10 +58,10 @@ export default function TabLayout() {
         options={{
           title: 'Trading',
           tabBarIcon: ({ size, color }) => (
-            <Activity size={size} color={color} data-oid="8ua41uf" />
+            <Activity size={size} color={color} data-oid="8efi8:b" />
           ),
         }}
-        data-oid="extgri8"
+        data-oid="1q0wipn"
       />
 
       <Tabs.Screen
@@ -69,10 +69,10 @@ export default function TabLayout() {
         options={{
           title: 'Strategies',
           tabBarIcon: ({ size, color }) => (
-            <Brain size={size} color={color} data-oid="th36bm2" />
+            <Brain size={size} color={color} data-oid="yhxxtk-" />
           ),
         }}
-        data-oid="dsyy1pc"
+        data-oid="53sksql"
       />
 
       <Tabs.Screen
@@ -80,10 +80,10 @@ export default function TabLayout() {
         options={{
           title: 'Analytics',
           tabBarIcon: ({ size, color }) => (
-            <BarChart3 size={size} color={color} data-oid="cc17vrp" />
+            <BarChart3 size={size} color={color} data-oid="6j6xv:s" />
           ),
         }}
-        data-oid="5oize9o"
+        data-oid="-plh3d8"
       />
 
       <Tabs.Screen
@@ -91,10 +91,10 @@ export default function TabLayout() {
         options={{
           title: 'Settings',
           tabBarIcon: ({ size, color }) => (
-            <Settings size={size} color={color} data-oid="b.3il05" />
+            <Settings size={size} color={color} data-oid="u5ic6o2" />
           ),
         }}
-        data-oid="ovkmvq6"
+        data-oid="-i:crvm"
       />
     </Tabs>
   );

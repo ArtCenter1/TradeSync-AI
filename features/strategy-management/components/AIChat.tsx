@@ -149,19 +149,19 @@ export default function AIChat({
       <View
         key={message.id}
         style={[styles.messageContainer, isUser && styles.userMessageContainer]}
-        data-oid="7thf8ln"
+        data-oid="9hh_ba7"
       >
         <View
           style={[
             styles.messageAvatar,
             isUser ? styles.userAvatar : styles.aiAvatar,
           ]}
-          data-oid="0mf8:os"
+          data-oid="-9u88ua"
         >
           {isUser ? (
-            <User size={16} color="#FFFFFF" data-oid="a9h7ezh" />
+            <User size={16} color="#FFFFFF" data-oid="9suudxk" />
           ) : (
-            <Bot size={16} color="#FFFFFF" data-oid="r:vk38o" />
+            <Bot size={16} color="#FFFFFF" data-oid="yrfg8qt" />
           )}
         </View>
         <View
@@ -169,15 +169,15 @@ export default function AIChat({
             styles.messageBubble,
             isUser ? styles.userBubble : styles.aiBubble,
           ]}
-          data-oid="2bkqs14"
+          data-oid="bn-yu_4"
         >
           <Text
             style={[styles.messageText, isUser && styles.userMessageText]}
-            data-oid="50sc99z"
+            data-oid="ce387jg"
           >
             {message.content}
           </Text>
-          <Text style={styles.messageTime} data-oid="_y6gijh">
+          <Text style={styles.messageTime} data-oid="jx9o95s">
             {message.timestamp.toLocaleTimeString([], {
               hour: '2-digit',
               minute: '2-digit',
@@ -189,17 +189,17 @@ export default function AIChat({
   };
 
   const renderTypingIndicator = () => (
-    <View style={styles.messageContainer} data-oid="rvbijs-">
-      <View style={[styles.messageAvatar, styles.aiAvatar]} data-oid="tdlwcc1">
-        <Bot size={16} color="#FFFFFF" data-oid="jh5jb6z" />
+    <View style={styles.messageContainer} data-oid="qd7ifzl">
+      <View style={[styles.messageAvatar, styles.aiAvatar]} data-oid="2bu6.c:">
+        <Bot size={16} color="#FFFFFF" data-oid=":l40t_o" />
       </View>
       <View
         style={[styles.messageBubble, styles.aiBubble, styles.typingBubble]}
-        data-oid="1f12aqx"
+        data-oid="40su7qj"
       >
-        <View style={styles.typingIndicator} data-oid="883pjqp">
-          <ActivityIndicator size="small" color="#9CA3AF" data-oid="8a-udpt" />
-          <Text style={styles.typingText} data-oid=".uize9.">
+        <View style={styles.typingIndicator} data-oid="j.88w_c">
+          <ActivityIndicator size="small" color="#9CA3AF" data-oid="jyb78w1" />
+          <Text style={styles.typingText} data-oid="6bv995f">
             AI is thinking...
           </Text>
         </View>
@@ -211,19 +211,19 @@ export default function AIChat({
     <KeyboardAvoidingView
       style={styles.container}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      data-oid="jszy8d7"
+      data-oid="x9rs558"
     >
       {/* Header */}
-      <View style={styles.header} data-oid="ascyoh7">
-        <View style={styles.headerLeft} data-oid="f6dakh0">
-          <View style={styles.aiIndicator} data-oid="as9tqh_">
-            <Bot size={20} color="#FFFFFF" data-oid="a0_76t4" />
+      <View style={styles.header} data-oid="t3_s4nv">
+        <View style={styles.headerLeft} data-oid="jxi--g_">
+          <View style={styles.aiIndicator} data-oid="xtdh_tt">
+            <Bot size={20} color="#FFFFFF" data-oid=".oqx4rq" />
           </View>
-          <View data-oid="i5aa6y1">
-            <Text style={styles.title} data-oid="lbew3i2">
+          <View data-oid="9bpqwis">
+            <Text style={styles.title} data-oid="i931x7f">
               AI Strategy Assistant
             </Text>
-            <Text style={styles.subtitle} data-oid="85x3odv">
+            <Text style={styles.subtitle} data-oid="j7wdnvu">
               Get personalized trading advice
             </Text>
           </View>
@@ -231,9 +231,9 @@ export default function AIChat({
         <TouchableOpacity
           style={styles.closeButton}
           onPress={onClose}
-          data-oid="ajr9zy-"
+          data-oid="-glc2vl"
         >
-          <X size={24} color="#9CA3AF" data-oid="gc74b-8" />
+          <X size={24} color="#9CA3AF" data-oid="i9-k6-i" />
         </TouchableOpacity>
       </View>
 
@@ -243,7 +243,7 @@ export default function AIChat({
         style={styles.messagesContainer}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.messagesContent}
-        data-oid="wskjrtc"
+        data-oid="kn_cdfl"
       >
         {messages.map(renderMessage)}
         {isTyping && renderTypingIndicator()}
@@ -251,27 +251,27 @@ export default function AIChat({
 
       {/* Suggestions */}
       {messages.length <= 2 && (
-        <View style={styles.suggestionsContainer} data-oid="u_czvty">
-          <View style={styles.suggestionsHeader} data-oid="f-4pdlj">
-            <Lightbulb size={16} color="#F59E0B" data-oid="2wgbh5s" />
-            <Text style={styles.suggestionsTitle} data-oid="qm928kw">
+        <View style={styles.suggestionsContainer} data-oid="q-54x1x">
+          <View style={styles.suggestionsHeader} data-oid="owldlr4">
+            <Lightbulb size={16} color="#F59E0B" data-oid="hy1jwhb" />
+            <Text style={styles.suggestionsTitle} data-oid="sd0:mba">
               Try asking:
             </Text>
           </View>
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
-            data-oid="c3wia.n"
+            data-oid=":q2hta4"
           >
-            <View style={styles.suggestions} data-oid="2c7k8o_">
+            <View style={styles.suggestions} data-oid="iwog1zo">
               {suggestions.map((suggestion, index) => (
                 <TouchableOpacity
                   key={index}
                   style={styles.suggestionChip}
                   onPress={() => handleSuggestionPress(suggestion)}
-                  data-oid="b0nh94:"
+                  data-oid="36q95qy"
                 >
-                  <Text style={styles.suggestionText} data-oid="zhep9_g">
+                  <Text style={styles.suggestionText} data-oid="b4fv-mw">
                     {suggestion}
                   </Text>
                 </TouchableOpacity>
@@ -282,7 +282,7 @@ export default function AIChat({
       )}
 
       {/* Input */}
-      <View style={styles.inputContainer} data-oid="wtwo_x4">
+      <View style={styles.inputContainer} data-oid="fkbk3ts">
         <TextInput
           style={styles.textInput}
           placeholder="Ask about trading strategies..."
@@ -291,7 +291,7 @@ export default function AIChat({
           onChangeText={setInputText}
           multiline
           maxLength={500}
-          data-oid="3:zg3-d"
+          data-oid="eq85jpd"
         />
 
         <TouchableOpacity
@@ -301,12 +301,12 @@ export default function AIChat({
           ]}
           onPress={handleSendMessage}
           disabled={!inputText.trim() || isTyping}
-          data-oid="4e5mm:s"
+          data-oid="efw1t59"
         >
           <Send
             size={20}
             color={!inputText.trim() ? '#6B7280' : '#FFFFFF'}
-            data-oid="wbzgibd"
+            data-oid="2gtc:4a"
           />
         </TouchableOpacity>
       </View>

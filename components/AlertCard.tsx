@@ -41,94 +41,94 @@ export default function AlertCard({
     <TouchableOpacity
       style={[styles.container, { borderLeftColor: typeColor }]}
       onPress={() => onToggle(id)}
-      data-oid="5k2:d20"
+      data-oid="0r:8cee"
     >
-      <View style={styles.header} data-oid="wc45h87">
-        <View style={styles.symbolContainer} data-oid="7g5_s0n">
+      <View style={styles.header} data-oid="ca.:xwr">
+        <View style={styles.symbolContainer} data-oid="i:defc7">
           <View
             style={[styles.typeIndicator, { backgroundColor: typeColor }]}
-            data-oid="-7.eq1w"
+            data-oid="i8kh:js"
           >
             {isBuy ? (
-              <TrendingUp size={14} color="#FFFFFF" data-oid="tw7fo:t" />
+              <TrendingUp size={14} color="#FFFFFF" data-oid="b4e6n:v" />
             ) : (
-              <TrendingDown size={14} color="#FFFFFF" data-oid="n:b5ft6" />
+              <TrendingDown size={14} color="#FFFFFF" data-oid="cof6f3d" />
             )}
           </View>
-          <View data-oid="0sl7f_c">
-            <Text style={styles.symbol} data-oid="bfvz-db">
+          <View data-oid="jmbs.az">
+            <Text style={styles.symbol} data-oid="wrh0xws">
               {symbol}
             </Text>
-            <Text style={styles.type} data-oid="s:l7-p1">
+            <Text style={styles.type} data-oid="k1l-mz_">
               {type} SIGNAL
             </Text>
           </View>
         </View>
 
-        <View style={styles.statusContainer} data-oid="q3_t64s">
+        <View style={styles.statusContainer} data-oid="uc7sr3l">
           <View
             style={[
               styles.statusIndicator,
               { backgroundColor: isActive ? '#10B981' : '#6B7280' },
             ]}
-            data-oid="_507:e-"
+            data-oid=".by5tzr"
           />
 
-          <TouchableOpacity onPress={() => onOptions(id)} data-oid="4yi7dit">
-            <MoreHorizontal size={20} color="#9CA3AF" data-oid="ah1jesm" />
+          <TouchableOpacity onPress={() => onOptions(id)} data-oid="4ebgv.r">
+            <MoreHorizontal size={20} color="#9CA3AF" data-oid="tlug:bb" />
           </TouchableOpacity>
         </View>
       </View>
 
-      <View style={styles.conditionContainer} data-oid="seppvva">
-        <Text style={styles.conditionLabel} data-oid="8619p3m">
+      <View style={styles.conditionContainer} data-oid="ak_w0sw">
+        <Text style={styles.conditionLabel} data-oid="z3i2.:.">
           Condition
         </Text>
-        <Text style={styles.condition} data-oid="iz11zyn">
+        <Text style={styles.condition} data-oid="44ezeb6">
           {condition}
         </Text>
       </View>
 
-      <View style={styles.priceContainer} data-oid="xvmz:s9">
-        <View style={styles.priceRow} data-oid="1kdahn2">
-          <Text style={styles.priceLabel} data-oid="3ir5dya">
+      <View style={styles.priceContainer} data-oid="idc0rr.">
+        <View style={styles.priceRow} data-oid="vgqkl93">
+          <Text style={styles.priceLabel} data-oid=".irw:j1">
             Target
           </Text>
-          <Text style={styles.targetPrice} data-oid="h3i.8n8">
+          <Text style={styles.targetPrice} data-oid="6ibz_od">
             ${targetPrice.toLocaleString()}
           </Text>
         </View>
-        <View style={styles.priceRow} data-oid="kxze9p4">
-          <Text style={styles.priceLabel} data-oid="zq81y71">
+        <View style={styles.priceRow} data-oid="noavu1w">
+          <Text style={styles.priceLabel} data-oid="5_24f1l">
             Current
           </Text>
-          <Text style={styles.currentPrice} data-oid="f-e2mly">
+          <Text style={styles.currentPrice} data-oid="zp2p9c2">
             ${currentPrice.toLocaleString()}
           </Text>
         </View>
       </View>
 
       {!isTriggered && (
-        <View style={styles.progressContainer} data-oid="o9e.ox5">
-          <View style={styles.progressBar} data-oid="9y:olgo">
+        <View style={styles.progressContainer} data-oid="-0zx822">
+          <View style={styles.progressBar} data-oid="b72.ar_">
             <View
               style={[
                 styles.progressFill,
                 { width: `${progress}%`, backgroundColor: typeColor },
               ]}
-              data-oid="9-ag16y"
+              data-oid="s6c9e-a"
             />
           </View>
-          <Text style={styles.progressText} data-oid="_mmf2ua">
+          <Text style={styles.progressText} data-oid="e4z:t7d">
             {progress.toFixed(1)}%
           </Text>
         </View>
       )}
 
       {isTriggered && (
-        <View style={styles.triggeredContainer} data-oid="8ju8md.">
-          <Bell size={16} color="#10B981" data-oid="-7plen_" />
-          <Text style={styles.triggeredText} data-oid="jybrp_.">
+        <View style={styles.triggeredContainer} data-oid="jk74jku">
+          <Bell size={16} color="#10B981" data-oid="3kk9dl0" />
+          <Text style={styles.triggeredText} data-oid="oesq916">
             Triggered on {triggeredAt.toLocaleDateString()}
           </Text>
         </View>

@@ -124,36 +124,36 @@ export default function StrategiesScreen() {
   };
 
   return (
-    <View style={styles.container} data-oid="orazd3y">
+    <View style={styles.container} data-oid="6kr-d7y">
       {/* Header */}
-      <View style={styles.header} data-oid="vfqhbtp">
-        <View data-oid="2cf_a30">
-          <Text style={styles.title} data-oid="xn6_y7t">
+      <View style={styles.header} data-oid="amfam87">
+        <View data-oid=":ilawsd">
+          <Text style={styles.title} data-oid="p.ju6.r">
             Trading Strategies
           </Text>
-          <Text style={styles.subtitle} data-oid="oju1x6s">
+          <Text style={styles.subtitle} data-oid=":h9k920">
             {getFilteredCount()} of {strategies.length} strategies
           </Text>
         </View>
         <TouchableOpacity
           style={styles.aiChatButton}
           onPress={() => setShowAIChat(true)}
-          data-oid="yplhu6_"
+          data-oid="y4tmr4j"
         >
-          <Brain size={20} color="#FFFFFF" data-oid="kedbrbp" />
+          <Brain size={20} color="#FFFFFF" data-oid="dxtgisr" />
         </TouchableOpacity>
       </View>
 
       {/* Search Bar */}
-      <View style={styles.searchContainer} data-oid="mnymxv1">
-        <Search size={20} color="#9CA3AF" data-oid="-mb8cav" />
+      <View style={styles.searchContainer} data-oid="z.v752z">
+        <Search size={20} color="#9CA3AF" data-oid="6ew4en." />
         <TextInput
           style={styles.searchInput}
           placeholder="Search strategies, tags, or categories..."
           placeholderTextColor="#6B7280"
           value={searchQuery}
           onChangeText={setSearchQuery}
-          data-oid="0m4n__w"
+          data-oid="9gwkeg6"
         />
       </View>
 
@@ -162,7 +162,7 @@ export default function StrategiesScreen() {
         filters={filters}
         onFiltersChange={handleFiltersChange}
         onClear={handleClearFilters}
-        data-oid="nqk5ajb"
+        data-oid="rfdsxne"
       />
 
       {/* Strategy List */}
@@ -173,28 +173,28 @@ export default function StrategiesScreen() {
             refreshing={refreshing}
             onRefresh={handleRefresh}
             tintColor="#10B981"
-            data-oid="8axy.nr"
+            data-oid="yk.mq97"
           />
         }
         showsVerticalScrollIndicator={false}
-        data-oid="vhbzne3"
+        data-oid="979jcfo"
       >
         {filteredStrategies.length === 0 ? (
-          <View style={styles.emptyState} data-oid="qjl64sv">
-            <Brain size={48} color="#4B5563" data-oid="sff.3ca" />
-            <Text style={styles.emptyTitle} data-oid="qg-p56e">
+          <View style={styles.emptyState} data-oid="ttf-mck">
+            <Brain size={48} color="#4B5563" data-oid="6215j7d" />
+            <Text style={styles.emptyTitle} data-oid="vjb5.tu">
               No strategies found
             </Text>
-            <Text style={styles.emptyDescription} data-oid="i981jag">
+            <Text style={styles.emptyDescription} data-oid="192mzaz">
               Try adjusting your search or filters to find strategies
             </Text>
             <TouchableOpacity
               style={styles.aiSuggestButton}
               onPress={() => setShowAIChat(true)}
-              data-oid="sf.wzxf"
+              data-oid=":pehh2f"
             >
-              <MessageCircle size={16} color="#FFFFFF" data-oid="knibads" />
-              <Text style={styles.aiSuggestText} data-oid="qpr1j0n">
+              <MessageCircle size={16} color="#FFFFFF" data-oid="sqj6--u" />
+              <Text style={styles.aiSuggestText} data-oid="-6a5qw0">
                 Ask AI for recommendations
               </Text>
             </TouchableOpacity>
@@ -206,13 +206,13 @@ export default function StrategiesScreen() {
               strategy={strategy}
               onPress={handleStrategyPress}
               onCopy={handleCopyScript}
-              data-oid=":l3g72f"
+              data-oid="7.6801_"
             />
           ))
         )}
 
         {/* Bottom spacing */}
-        <View style={styles.bottomSpacing} data-oid="3yujyp8" />
+        <View style={styles.bottomSpacing} data-oid="-xokt5w" />
       </ScrollView>
 
       {/* Strategy Detail Modal */}
@@ -222,7 +222,7 @@ export default function StrategiesScreen() {
           visible={!!selectedStrategy}
           onClose={() => setSelectedStrategy(null)}
           onCopy={handleCopyScript}
-          data-oid="n2-jg.-"
+          data-oid="v5l1h5r"
         />
       )}
 
@@ -231,14 +231,14 @@ export default function StrategiesScreen() {
         visible={showAIChat}
         animationType="slide"
         presentationStyle="fullScreen"
-        data-oid="vrw-h83"
+        data-oid="7--t1xr"
       >
         <AIChat
           isVisible={showAIChat}
           onClose={() => setShowAIChat(false)}
           strategies={strategies}
           onStrategyRecommend={handleStrategyPress}
-          data-oid="4me-cjm"
+          data-oid="8.71yjq"
         />
       </Modal>
     </View>
