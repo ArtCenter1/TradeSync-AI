@@ -50,12 +50,12 @@ export default function SettingsScreen() {
   };
 
   return (
-    <View style={styles.container} data-oid="jy6l7is">
-      <View style={styles.header} data-oid="okvgjw4">
-        <Text style={styles.title} data-oid="gwdh7.r">
+    <View style={styles.container} data-oid="w2.i-xs">
+      <View style={styles.header} data-oid="h54iz_u">
+        <Text style={styles.title} data-oid="j_2uk6m">
           Settings
         </Text>
-        <Text style={styles.subtitle} data-oid="yi35rh2">
+        <Text style={styles.subtitle} data-oid="bq463dg">
           Configure auto-trading and alerts
         </Text>
       </View>
@@ -63,20 +63,20 @@ export default function SettingsScreen() {
       <ScrollView
         style={styles.scrollView}
         showsVerticalScrollIndicator={false}
-        data-oid="y94ej7v"
+        data-oid=".sr1:9u"
       >
         {/* TradingView Integration */}
-        <View style={styles.section} data-oid="4z_.9l.">
-          <View style={styles.sectionHeader} data-oid="xc:pfz1">
-            <TrendingUp size={20} color="#10B981" data-oid="ukk1d-l" />
-            <Text style={styles.sectionTitle} data-oid="iogtz.k">
+        <View style={styles.section} data-oid="xd2uf4f">
+          <View style={styles.sectionHeader} data-oid="p2ivnjx">
+            <TrendingUp size={20} color="#10B981" data-oid=".9d8kvg" />
+            <Text style={styles.sectionTitle} data-oid="ou6nqwl">
               TradingView Integration
             </Text>
           </View>
 
-          <View style={styles.card} data-oid="81hqqw7">
-            <View style={styles.cardHeader} data-oid="nitsr:1">
-              <Text style={styles.cardTitle} data-oid="pootftf">
+          <View style={styles.card} data-oid="1-.oa00">
+            <View style={styles.cardHeader} data-oid="0o7vxz1">
+              <Text style={styles.cardTitle} data-oid="5qm:8i.">
                 Auto-Trading
               </Text>
               <Switch
@@ -84,49 +84,49 @@ export default function SettingsScreen() {
                 onValueChange={setAutoTradingEnabled}
                 trackColor={{ false: '#374151', true: '#10B981' }}
                 thumbColor="#FFFFFF"
-                data-oid="2_-2eyh"
+                data-oid="igjp_iw"
               />
             </View>
-            <Text style={styles.cardDescription} data-oid="r1jen1o">
+            <Text style={styles.cardDescription} data-oid="-.z2rd9">
               Automatically execute trades based on TradingView alerts
             </Text>
           </View>
 
-          <View style={styles.card} data-oid="a3-z-:p">
-            <View style={styles.cardHeader} data-oid="9k0uns:">
-              <Webhook size={18} color="#3B82F6" data-oid="i9vupz4" />
-              <Text style={styles.cardTitle} data-oid="9z2emp:">
+          <View style={styles.card} data-oid="yb8a.95">
+            <View style={styles.cardHeader} data-oid="l-fyeag">
+              <Webhook size={18} color="#3B82F6" data-oid="cq5gzp1" />
+              <Text style={styles.cardTitle} data-oid="gn3q9lv">
                 Webhook URL
               </Text>
               <TouchableOpacity
                 onPress={copyWebhookUrl}
                 style={styles.copyButton}
-                data-oid="tw72wbz"
+                data-oid="4r2z7q5"
               >
-                <Copy size={16} color="#9CA3AF" data-oid="65kykf8" />
+                <Copy size={16} color="#9CA3AF" data-oid="f5hf.x9" />
               </TouchableOpacity>
             </View>
-            <Text style={styles.webhookUrl} data-oid="pvngjg6">
+            <Text style={styles.webhookUrl} data-oid="kiwq9hl">
               {webhookUrl}
             </Text>
-            <Text style={styles.cardDescription} data-oid="q.lylya">
+            <Text style={styles.cardDescription} data-oid="8t2lxq9">
               Use this URL in your TradingView alert webhook settings
             </Text>
             <TouchableOpacity
               style={styles.instructionsButton}
-              data-oid="dn1uwtx"
+              data-oid="n1_e9lm"
             >
-              <ExternalLink size={16} color="#10B981" data-oid="hx1v.._" />
-              <Text style={styles.instructionsText} data-oid="fiq8y5g">
+              <ExternalLink size={16} color="#10B981" data-oid="yadh1le" />
+              <Text style={styles.instructionsText} data-oid="utfb.v3">
                 Setup Instructions
               </Text>
             </TouchableOpacity>
           </View>
 
-          <View style={styles.card} data-oid="2j01jq_">
-            <View style={styles.cardHeader} data-oid="71_jrkk">
-              <Key size={18} color="#F59E0B" data-oid="gm7pm16" />
-              <Text style={styles.cardTitle} data-oid="2pz.mqs">
+          <View style={styles.card} data-oid="liiukmr">
+            <View style={styles.cardHeader} data-oid="04afkxf">
+              <Key size={18} color="#F59E0B" data-oid="-gf8vf4" />
+              <Text style={styles.cardTitle} data-oid="nkq9si8">
                 API Key
               </Text>
             </View>
@@ -137,30 +137,30 @@ export default function SettingsScreen() {
               placeholder="Enter your API key"
               placeholderTextColor="#6B7280"
               secureTextEntry
-              data-oid="tukqkyt"
+              data-oid="sf9m-h4"
             />
 
-            <Text style={styles.cardDescription} data-oid="u4i32un">
+            <Text style={styles.cardDescription} data-oid=":m19a7n">
               Your secure API key for trade execution
             </Text>
           </View>
         </View>
 
         {/* Risk Management */}
-        <View style={styles.section} data-oid="8c1k.lg">
-          <View style={styles.sectionHeader} data-oid="vdupygt">
-            <Shield size={20} color="#EF4444" data-oid="yaf:2vs" />
-            <Text style={styles.sectionTitle} data-oid="xz8c3rm">
+        <View style={styles.section} data-oid="fxcu:6w">
+          <View style={styles.sectionHeader} data-oid="x-9eudo">
+            <Shield size={20} color="#EF4444" data-oid="c.gjj3f" />
+            <Text style={styles.sectionTitle} data-oid="1q1t26.">
               Risk Management
             </Text>
           </View>
 
-          <View style={styles.card} data-oid="3aqzt2x">
-            <Text style={styles.cardTitle} data-oid="7-87smg">
+          <View style={styles.card} data-oid="l130hc4">
+            <Text style={styles.cardTitle} data-oid="doezhy_">
               Trade Limits
             </Text>
-            <View style={styles.inputGroup} data-oid=".xx4:xh">
-              <Text style={styles.inputLabel} data-oid="-g:qery">
+            <View style={styles.inputGroup} data-oid="e68k1n3">
+              <Text style={styles.inputLabel} data-oid="_meoj4a">
                 Max Trade Amount ($)
               </Text>
               <TextInput
@@ -170,11 +170,11 @@ export default function SettingsScreen() {
                 placeholder="1000"
                 placeholderTextColor="#6B7280"
                 keyboardType="numeric"
-                data-oid="3m7zggt"
+                data-oid="lv0_700"
               />
             </View>
-            <View style={styles.inputGroup} data-oid="kvthsjh">
-              <Text style={styles.inputLabel} data-oid=":.jb_3l">
+            <View style={styles.inputGroup} data-oid="p::b:7o">
+              <Text style={styles.inputLabel} data-oid="5z8:fxn">
                 Max Daily Trades
               </Text>
               <TextInput
@@ -184,18 +184,18 @@ export default function SettingsScreen() {
                 placeholder="10"
                 placeholderTextColor="#6B7280"
                 keyboardType="numeric"
-                data-oid="sjxxj_y"
+                data-oid="gzm6o2t"
               />
             </View>
           </View>
 
-          <View style={styles.card} data-oid="_bdu6w7">
-            <View style={styles.switchRow} data-oid="lv7hil_">
-              <View style={styles.switchInfo} data-oid="s9zmm1-">
-                <Text style={styles.cardTitle} data-oid="i0nnlww">
+          <View style={styles.card} data-oid="bwu2c0g">
+            <View style={styles.switchRow} data-oid="2tf8ja7">
+              <View style={styles.switchInfo} data-oid="bwwlx9j">
+                <Text style={styles.cardTitle} data-oid="oo545p6">
                   Stop Loss
                 </Text>
-                <Text style={styles.cardDescription} data-oid="s_srjj6">
+                <Text style={styles.cardDescription} data-oid="g.z9svk">
                   Automatically close losing positions
                 </Text>
               </View>
@@ -204,12 +204,12 @@ export default function SettingsScreen() {
                 onValueChange={setEnableStopLoss}
                 trackColor={{ false: '#374151', true: '#10B981' }}
                 thumbColor="#FFFFFF"
-                data-oid="ldiy.e6"
+                data-oid="0mv2e-a"
               />
             </View>
             {enableStopLoss && (
-              <View style={styles.inputGroup} data-oid="c4lzeep">
-                <Text style={styles.inputLabel} data-oid="vz_0jfw">
+              <View style={styles.inputGroup} data-oid="a.fd5st">
+                <Text style={styles.inputLabel} data-oid="3qjnwh0">
                   Stop Loss Percentage (%)
                 </Text>
                 <TextInput
@@ -219,19 +219,19 @@ export default function SettingsScreen() {
                   placeholder="5"
                   placeholderTextColor="#6B7280"
                   keyboardType="numeric"
-                  data-oid="3lq5ok1"
+                  data-oid="8t4u69q"
                 />
               </View>
             )}
           </View>
 
-          <View style={styles.card} data-oid="9gblmh7">
-            <View style={styles.switchRow} data-oid="rh_mfdq">
-              <View style={styles.switchInfo} data-oid="vtzwrho">
-                <Text style={styles.cardTitle} data-oid="flyja4p">
+          <View style={styles.card} data-oid="v_1kd-a">
+            <View style={styles.switchRow} data-oid="gkdy8p.">
+              <View style={styles.switchInfo} data-oid="btkw32r">
+                <Text style={styles.cardTitle} data-oid="jd818-r">
                   Take Profit
                 </Text>
-                <Text style={styles.cardDescription} data-oid="n20_4h.">
+                <Text style={styles.cardDescription} data-oid="3e1ptxc">
                   Automatically close winning positions
                 </Text>
               </View>
@@ -240,12 +240,12 @@ export default function SettingsScreen() {
                 onValueChange={setEnableTakeProfit}
                 trackColor={{ false: '#374151', true: '#10B981' }}
                 thumbColor="#FFFFFF"
-                data-oid="_g3zmuk"
+                data-oid="z:kqpsy"
               />
             </View>
             {enableTakeProfit && (
-              <View style={styles.inputGroup} data-oid="o:qopsf">
-                <Text style={styles.inputLabel} data-oid="bkpk.p9">
+              <View style={styles.inputGroup} data-oid="9so:9pz">
+                <Text style={styles.inputLabel} data-oid="pvu5-61">
                   Take Profit Percentage (%)
                 </Text>
                 <TextInput
@@ -255,7 +255,7 @@ export default function SettingsScreen() {
                   placeholder="10"
                   placeholderTextColor="#6B7280"
                   keyboardType="numeric"
-                  data-oid="h.q1xvi"
+                  data-oid="z7t.cvi"
                 />
               </View>
             )}
@@ -263,22 +263,22 @@ export default function SettingsScreen() {
         </View>
 
         {/* Enabled Symbols */}
-        <View style={styles.section} data-oid="obmatea">
-          <View style={styles.sectionHeader} data-oid="4l6sszu">
-            <Zap size={20} color="#3B82F6" data-oid="7k-k0t9" />
-            <Text style={styles.sectionTitle} data-oid="3rfdel0">
+        <View style={styles.section} data-oid="p42lbkn">
+          <View style={styles.sectionHeader} data-oid="wvdg8k_">
+            <Zap size={20} color="#3B82F6" data-oid="tmhoh4h" />
+            <Text style={styles.sectionTitle} data-oid="ps.jbpf">
               Enabled Symbols
             </Text>
           </View>
 
-          <View style={styles.card} data-oid="u814bk.">
-            <Text style={styles.cardTitle} data-oid="obd:dhv">
+          <View style={styles.card} data-oid="o2j9pjp">
+            <Text style={styles.cardTitle} data-oid="60_57uq">
               Trading Pairs
             </Text>
-            <Text style={styles.cardDescription} data-oid="9mquxst">
+            <Text style={styles.cardDescription} data-oid="1n_glg:">
               Select which cryptocurrencies to auto-trade
             </Text>
-            <View style={styles.symbolGrid} data-oid="phyjwv3">
+            <View style={styles.symbolGrid} data-oid="91z6iub">
               {['BTC', 'ETH', 'SOL', 'ADA', 'DOT', 'AVAX', 'MATIC', 'LINK'].map(
                 (symbol) => (
                   <TouchableOpacity
@@ -289,7 +289,7 @@ export default function SettingsScreen() {
                         styles.symbolChipActive,
                     ]}
                     onPress={() => toggleSymbol(symbol)}
-                    data-oid="v.9d8th"
+                    data-oid="k-.u8t."
                   >
                     <Text
                       style={[
@@ -297,7 +297,7 @@ export default function SettingsScreen() {
                         enabledSymbols.includes(symbol) &&
                           styles.symbolChipTextActive,
                       ]}
-                      data-oid="m7ebllj"
+                      data-oid="yzbdtiy"
                     >
                       {symbol}
                     </Text>
@@ -309,42 +309,42 @@ export default function SettingsScreen() {
         </View>
 
         {/* Alert Configuration */}
-        <View style={styles.section} data-oid="x_yh5xr">
-          <View style={styles.sectionHeader} data-oid=":a:b_ef">
-            <Bell size={20} color="#F59E0B" data-oid="azjx-uk" />
-            <Text style={styles.sectionTitle} data-oid="ofog2xw">
+        <View style={styles.section} data-oid="vl98grl">
+          <View style={styles.sectionHeader} data-oid="b-lv80z">
+            <Bell size={20} color="#F59E0B" data-oid="e_z8vai" />
+            <Text style={styles.sectionTitle} data-oid="yo3y17n">
               Alert Configuration
             </Text>
           </View>
 
-          <View style={styles.card} data-oid="xcuyqng">
-            <Text style={styles.cardTitle} data-oid=".l0yue0">
+          <View style={styles.card} data-oid="pwemc1d">
+            <Text style={styles.cardTitle} data-oid="xkqovjy">
               Supported Alert Formats
             </Text>
-            <View style={styles.formatList} data-oid="q3:008d">
-              <View style={styles.formatItem} data-oid="oo59k2h">
-                <Text style={styles.formatTitle} data-oid="5jggubr">
+            <View style={styles.formatList} data-oid="5uelgmm">
+              <View style={styles.formatItem} data-oid="872al83">
+                <Text style={styles.formatTitle} data-oid="fn0ju_u">
                   Simple Format
                 </Text>
-                <Text style={styles.formatExample} data-oid="h:9d0s8">
+                <Text style={styles.formatExample} data-oid="3p717si">
                   BUY BTCUSDT
                 </Text>
               </View>
-              <View style={styles.formatItem} data-oid="lluezxp">
-                <Text style={styles.formatTitle} data-oid="sr:y7bu">
+              <View style={styles.formatItem} data-oid="v_86jx.">
+                <Text style={styles.formatTitle} data-oid="wpnyom5">
                   Detailed Format
                 </Text>
-                <Text style={styles.formatExample} data-oid="c7k1b0.">
+                <Text style={styles.formatExample} data-oid="mz8duj3">
                   {
                     '{{strategy.order.action}} {{ticker}} price={{close}} sl={{strategy.position_avg_price*0.95}}'
                   }
                 </Text>
               </View>
-              <View style={styles.formatItem} data-oid="1l.5-fy">
-                <Text style={styles.formatTitle} data-oid="wniym1i">
+              <View style={styles.formatItem} data-oid="9s3u8mv">
+                <Text style={styles.formatTitle} data-oid="vjxut:m">
                   JSON Format
                 </Text>
-                <Text style={styles.formatExample} data-oid=":9ydhd5">
+                <Text style={styles.formatExample} data-oid="xc5ttvn">
                   {'{"action":"BUY","symbol":"BTCUSDT","price":71200}'}
                 </Text>
               </View>
@@ -353,9 +353,9 @@ export default function SettingsScreen() {
         </View>
 
         {/* Status */}
-        <View style={styles.section} data-oid="xgjmzg2">
-          <View style={styles.statusCard} data-oid="lwdk89j">
-            <View style={styles.statusHeader} data-oid="cy0uq96">
+        <View style={styles.section} data-oid="5.gwgzk">
+          <View style={styles.statusCard} data-oid="dw531:f">
+            <View style={styles.statusHeader} data-oid="hto9yq3">
               <View
                 style={[
                   styles.statusIndicator,
@@ -363,22 +363,22 @@ export default function SettingsScreen() {
                     backgroundColor: autoTradingEnabled ? '#10B981' : '#6B7280',
                   },
                 ]}
-                data-oid="5dec-0v"
+                data-oid="6zwd24u"
               />
 
-              <Text style={styles.statusTitle} data-oid="58sh.-_">
+              <Text style={styles.statusTitle} data-oid="uu-o8bu">
                 Auto-Trading {autoTradingEnabled ? 'Active' : 'Inactive'}
               </Text>
             </View>
-            <Text style={styles.statusDescription} data-oid="aehcnr.">
+            <Text style={styles.statusDescription} data-oid="rc9pjcu">
               {autoTradingEnabled
                 ? 'Ready to receive and execute TradingView alerts'
                 : 'Enable auto-trading to start receiving alerts'}
             </Text>
             {autoTradingEnabled && (
-              <View style={styles.warningContainer} data-oid="p9xsxs9">
-                <AlertTriangle size={16} color="#F59E0B" data-oid="zln0mva" />
-                <Text style={styles.warningText} data-oid="k62fd-r">
+              <View style={styles.warningContainer} data-oid="rcd2:22">
+                <AlertTriangle size={16} color="#F59E0B" data-oid="t_tc1f-" />
+                <Text style={styles.warningText} data-oid="77uv4pr">
                   Auto-trading is active. Monitor your positions regularly.
                 </Text>
               </View>

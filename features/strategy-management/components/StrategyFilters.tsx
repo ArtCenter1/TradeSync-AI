@@ -69,11 +69,11 @@ export default function StrategyFilters({
   };
 
   return (
-    <View style={styles.container} data-oid="c9dnp2z">
-      <View style={styles.header} data-oid="rx9i453">
-        <View style={styles.titleContainer} data-oid="e_h80oe">
-          <Filter size={16} color="#9CA3AF" data-oid="-nv3fl:" />
-          <Text style={styles.title} data-oid="9-y9tv.">
+    <View style={styles.container} data-oid="d-88wg4">
+      <View style={styles.header} data-oid=":wha44i">
+        <View style={styles.titleContainer} data-oid="s6huz.g">
+          <Filter size={16} color="#9CA3AF" data-oid="p7dlwdj" />
+          <Text style={styles.title} data-oid="oynyliw">
             Filters
           </Text>
         </View>
@@ -81,10 +81,10 @@ export default function StrategyFilters({
           <TouchableOpacity
             onPress={onClear}
             style={styles.clearButton}
-            data-oid="xgrz366"
+            data-oid="b4b3nfa"
           >
-            <X size={16} color="#9CA3AF" data-oid="o2ih6:9" />
-            <Text style={styles.clearText} data-oid="v8u662q">
+            <X size={16} color="#9CA3AF" data-oid="yacrw5e" />
+            <Text style={styles.clearText} data-oid="8ob4s_a">
               Clear
             </Text>
           </TouchableOpacity>
@@ -95,15 +95,15 @@ export default function StrategyFilters({
         horizontal
         showsHorizontalScrollIndicator={false}
         style={styles.scrollView}
-        data-oid="hpmj9ki"
+        data-oid="9t699pt"
       >
-        <View style={styles.filtersContainer} data-oid="73st-dn">
+        <View style={styles.filtersContainer} data-oid="h96w54:">
           {/* Risk Level Filters */}
-          <View style={styles.filterGroup} data-oid="u24v_73">
-            <Text style={styles.filterGroupTitle} data-oid="3f03hzv">
+          <View style={styles.filterGroup} data-oid="m-:lqa0">
+            <Text style={styles.filterGroupTitle} data-oid="ojl2st9">
               Risk Level
             </Text>
-            <View style={styles.filterOptions} data-oid="m18wz8l">
+            <View style={styles.filterOptions} data-oid="79mw:y7">
               {RISK_LEVELS.map((risk) => (
                 <TouchableOpacity
                   key={risk.value}
@@ -119,14 +119,14 @@ export default function StrategyFilters({
                       risk.value as 'low' | 'medium' | 'high',
                     )
                   }
-                  data-oid="x.jc36j"
+                  data-oid="1fyu8p_"
                 >
                   <Text
                     style={[
                       styles.filterOptionText,
                       filters.riskLevel === risk.value && { color: risk.color },
                     ]}
-                    data-oid="upbwdr."
+                    data-oid="_4r._gh"
                   >
                     {risk.label}
                   </Text>
@@ -136,11 +136,11 @@ export default function StrategyFilters({
           </View>
 
           {/* Timeframe Filters */}
-          <View style={styles.filterGroup} data-oid="mq4b7v1">
-            <Text style={styles.filterGroupTitle} data-oid="lqi8g.c">
+          <View style={styles.filterGroup} data-oid="hbo790n">
+            <Text style={styles.filterGroupTitle} data-oid="g3hc2wd">
               Timeframe
             </Text>
-            <View style={styles.filterOptions} data-oid="za2p1:m">
+            <View style={styles.filterOptions} data-oid="i084qg0">
               {TIMEFRAMES.map((tf) => (
                 <TouchableOpacity
                   key={tf.value}
@@ -149,7 +149,7 @@ export default function StrategyFilters({
                     filters.timeframe === tf.value && styles.filterOptionActive,
                   ]}
                   onPress={() => handleTimeframeChange(tf.value)}
-                  data-oid="q66kgjy"
+                  data-oid="_-9yqdb"
                 >
                   <Text
                     style={[
@@ -157,7 +157,7 @@ export default function StrategyFilters({
                       filters.timeframe === tf.value &&
                         styles.filterOptionActiveText,
                     ]}
-                    data-oid="70xufi1"
+                    data-oid="r:8--h3"
                   >
                     {tf.label}
                   </Text>
@@ -167,11 +167,11 @@ export default function StrategyFilters({
           </View>
 
           {/* Category Filters */}
-          <View style={styles.filterGroup} data-oid="5fo_ctp">
-            <Text style={styles.filterGroupTitle} data-oid="cbydo-v">
+          <View style={styles.filterGroup} data-oid="b1f_:ee">
+            <Text style={styles.filterGroupTitle} data-oid="xn.6dkr">
               Category
             </Text>
-            <View style={styles.filterOptions} data-oid="loiol29">
+            <View style={styles.filterOptions} data-oid="p-m.u7c">
               {CATEGORIES.map((cat) => (
                 <TouchableOpacity
                   key={cat.value}
@@ -180,7 +180,7 @@ export default function StrategyFilters({
                     filters.category === cat.value && styles.filterOptionActive,
                   ]}
                   onPress={() => handleCategoryChange(cat.value)}
-                  data-oid="-tcicr_"
+                  data-oid="fuei3h9"
                 >
                   <Text
                     style={[
@@ -188,7 +188,7 @@ export default function StrategyFilters({
                       filters.category === cat.value &&
                         styles.filterOptionActiveText,
                     ]}
-                    data-oid="pb:z2fm"
+                    data-oid=":i6zenc"
                   >
                     {cat.label}
                   </Text>

@@ -138,7 +138,7 @@ export default function PortfolioScreen() {
   };
 
   return (
-    <View style={styles.container} data-oid="4zay6p2">
+    <View style={styles.container} data-oid="kbr2v2p">
       <ScrollView
         style={styles.scrollView}
         refreshControl={
@@ -146,31 +146,31 @@ export default function PortfolioScreen() {
             refreshing={refreshing}
             onRefresh={onRefresh}
             tintColor="#10B981"
-            data-oid="9219z0v"
+            data-oid="idlvwza"
           />
         }
         showsVerticalScrollIndicator={false}
-        data-oid="7_bxp:d"
+        data-oid=".2fyv:6"
       >
-        <View style={styles.header} data-oid="e0pyd3g">
-          <View data-oid="sdpru8k">
-            <Text style={styles.greeting} data-oid="63rwt2w">
+        <View style={styles.header} data-oid="m8qu661">
+          <View data-oid="q.hfupe">
+            <Text style={styles.greeting} data-oid="jmk-szp">
               Good morning
             </Text>
-            <Text style={styles.title} data-oid="krf3r6v">
+            <Text style={styles.title} data-oid="f2-6z6m">
               Portfolio Overview
             </Text>
           </View>
-          <View style={styles.headerActions} data-oid="au-e-e-">
+          <View style={styles.headerActions} data-oid="e77_wbx">
             <TouchableOpacity
               style={styles.autoTradeButton}
               onPress={() => setShowAutoTradeMonitor(true)}
-              data-oid="y8twjhp"
+              data-oid=":ua68g4"
             >
-              <Zap size={18} color="#10B981" data-oid="tq0f4v4" />
+              <Zap size={18} color="#10B981" data-oid="3h.quw8" />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.refreshButton} data-oid="ypppip6">
-              <RefreshCw size={20} color="#9CA3AF" data-oid="sejig64" />
+            <TouchableOpacity style={styles.refreshButton} data-oid="pdn8t2_">
+              <RefreshCw size={20} color="#9CA3AF" data-oid="4hva:3w" />
             </TouchableOpacity>
           </View>
         </View>
@@ -181,17 +181,17 @@ export default function PortfolioScreen() {
           dayChangePercent={dayChangePercent}
           totalPnL={totalPnL}
           activeAlerts={12}
-          data-oid="afvdt-g"
+          data-oid="2a.dmzv"
         />
 
-        <View style={styles.section} data-oid="wg1mfcr">
-          <View style={styles.sectionHeader} data-oid="uzmk.r1">
-            <Text style={styles.sectionTitle} data-oid="dln-w8j">
+        <View style={styles.section} data-oid=".v4um-w">
+          <View style={styles.sectionHeader} data-oid="axv0vhd">
+            <Text style={styles.sectionTitle} data-oid="4n9cemp">
               Your Holdings
             </Text>
-            <TouchableOpacity style={styles.addButton} data-oid="ohk-3xa">
-              <Plus size={18} color="#10B981" data-oid="b6llg61" />
-              <Text style={styles.addButtonText} data-oid="yfowcav">
+            <TouchableOpacity style={styles.addButton} data-oid="36hovlr">
+              <Plus size={18} color="#10B981" data-oid=":r5i5pd" />
+              <Text style={styles.addButtonText} data-oid="azcg_53">
                 Add
               </Text>
             </TouchableOpacity>
@@ -201,7 +201,7 @@ export default function PortfolioScreen() {
             horizontal
             showsHorizontalScrollIndicator={false}
             style={styles.holdingsScroll}
-            data-oid="xg2j7bu"
+            data-oid="r.af3ux"
           >
             {holdings.map((holding, index) => (
               <View
@@ -210,10 +210,10 @@ export default function PortfolioScreen() {
                   styles.holdingCard,
                   { marginLeft: index === 0 ? 16 : 0 },
                 ]}
-                data-oid="qba1wfx"
+                data-oid="asb3ok3"
               >
-                <View style={styles.holdingHeader} data-oid="2:jytz_">
-                  <Text style={styles.holdingSymbol} data-oid="hjim.ls">
+                <View style={styles.holdingHeader} data-oid="ql.doz1">
+                  <Text style={styles.holdingSymbol} data-oid="xeo43s0">
                     {holding.symbol}
                   </Text>
                   <Text
@@ -221,18 +221,18 @@ export default function PortfolioScreen() {
                       styles.holdingPnL,
                       { color: holding.pnl >= 0 ? '#10B981' : '#EF4444' },
                     ]}
-                    data-oid="t.wp9jz"
+                    data-oid="y3.p_vm"
                   >
                     {holding.pnl >= 0 ? '+' : ''}${holding.pnl.toFixed(2)}
                   </Text>
                 </View>
-                <Text style={styles.holdingName} data-oid="h1:n22_">
+                <Text style={styles.holdingName} data-oid="owb7p2e">
                   {holding.name}
                 </Text>
-                <Text style={styles.holdingAmount} data-oid="d2:4nsr">
+                <Text style={styles.holdingAmount} data-oid="pp5:3vq">
                   {holding.amount} {holding.symbol}
                 </Text>
-                <Text style={styles.holdingValue} data-oid="t_0uhv-">
+                <Text style={styles.holdingValue} data-oid="4szster">
                   ${holding.value.toLocaleString()}
                 </Text>
                 <Text
@@ -240,7 +240,7 @@ export default function PortfolioScreen() {
                     styles.holdingPercent,
                     { color: holding.pnlPercent >= 0 ? '#10B981' : '#EF4444' },
                   ]}
-                  data-oid="zyuqo78"
+                  data-oid="jtv4w6c"
                 >
                   {holding.pnlPercent >= 0 ? '+' : ''}
                   {holding.pnlPercent.toFixed(2)}%
@@ -250,24 +250,24 @@ export default function PortfolioScreen() {
           </ScrollView>
         </View>
 
-        <View style={styles.section} data-oid="t0hs6cd">
-          <View style={styles.sectionHeader} data-oid="on.b9lv">
-            <Text style={styles.sectionTitle} data-oid="3:90pr9">
+        <View style={styles.section} data-oid="xr0znjt">
+          <View style={styles.sectionHeader} data-oid="q2r3ife">
+            <Text style={styles.sectionTitle} data-oid="9zlpd8r">
               Market Watch
             </Text>
-            <TouchableOpacity data-oid="0aj:qml">
-              <Text style={styles.viewAllText} data-oid="0s7koi7">
+            <TouchableOpacity data-oid="j9ttknl">
+              <Text style={styles.viewAllText} data-oid="c1tbjno">
                 View All
               </Text>
             </TouchableOpacity>
           </View>
 
-          <View style={styles.watchlistGrid} data-oid="hdfq-cw">
+          <View style={styles.watchlistGrid} data-oid="bohbslb">
             {watchlist.map((coin) => (
               <View
                 key={coin.symbol}
                 style={styles.watchlistItem}
-                data-oid="xaffwlu"
+                data-oid="bcx:zva"
               >
                 <PriceCard
                   symbol={coin.symbol}
@@ -276,31 +276,31 @@ export default function PortfolioScreen() {
                   change={coin.change}
                   changePercent={coin.changePercent}
                   volume={coin.volume}
-                  data-oid="127niah"
+                  data-oid="ayy.ep0"
                 />
               </View>
             ))}
           </View>
         </View>
 
-        <View style={styles.quickActions} data-oid="zywy3f0">
-          <Text style={styles.sectionTitle} data-oid="nj5fogu">
+        <View style={styles.quickActions} data-oid="-rk6_lf">
+          <Text style={styles.sectionTitle} data-oid="f8846z0">
             Quick Actions
           </Text>
-          <View style={styles.actionGrid} data-oid="1vr.z7m">
-            <TouchableOpacity style={styles.actionCard} data-oid="a4vh10q">
-              <Activity size={24} color="#10B981" data-oid="n9ys4km" />
-              <Text style={styles.actionText} data-oid="t-qcn7o">
+          <View style={styles.actionGrid} data-oid="jcfr4lt">
+            <TouchableOpacity style={styles.actionCard} data-oid="urvhb0x">
+              <Activity size={24} color="#10B981" data-oid="p:rf-e-" />
+              <Text style={styles.actionText} data-oid="1zt33m9">
                 Start Trading
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.actionCard}
               onPress={() => setShowAutoTradeMonitor(true)}
-              data-oid="dgoxv45"
+              data-oid="t.ynat:"
             >
-              <Zap size={24} color="#3B82F6" data-oid="gir_v0p" />
-              <Text style={styles.actionText} data-oid="ola9k-a">
+              <Zap size={24} color="#3B82F6" data-oid="37bq7bw" />
+              <Text style={styles.actionText} data-oid="o-bz7kg">
                 Auto-Trades
               </Text>
             </TouchableOpacity>
@@ -312,12 +312,12 @@ export default function PortfolioScreen() {
         visible={showAutoTradeMonitor}
         animationType="slide"
         presentationStyle="fullScreen"
-        data-oid="-i1mjba"
+        data-oid="e17bwdq"
       >
         <AutoTradeMonitor
           isVisible={showAutoTradeMonitor}
           onClose={() => setShowAutoTradeMonitor(false)}
-          data-oid="fwlws0k"
+          data-oid="aklhv.3"
         />
       </Modal>
     </View>

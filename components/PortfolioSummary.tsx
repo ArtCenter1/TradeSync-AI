@@ -23,64 +23,64 @@ export default function PortfolioSummary({
   const totalColor = isPositiveTotal ? '#10B981' : '#EF4444';
 
   return (
-    <View style={styles.container} data-oid=".-mw92h">
-      <View style={styles.mainCard} data-oid="wjmux.9">
-        <View style={styles.valueSection} data-oid="1hg5z0s">
-          <Text style={styles.label} data-oid="uvgz_6m">
+    <View style={styles.container} data-oid="rr--rc7">
+      <View style={styles.mainCard} data-oid="9csz7t3">
+        <View style={styles.valueSection} data-oid="m:9l0ik">
+          <Text style={styles.label} data-oid="7:mhstd">
             Total Portfolio Value
           </Text>
-          <Text style={styles.totalValue} data-oid="vii.av7">
+          <Text style={styles.totalValue} data-oid="v8-0wd9">
             ${totalValue.toLocaleString()}
           </Text>
 
-          <View style={styles.changeRow} data-oid="-891kik">
-            <TrendingUp size={16} color={dayColor} data-oid="3eu.v9d" />
+          <View style={styles.changeRow} data-oid="b:429vd">
+            <TrendingUp size={16} color={dayColor} data-oid="x3q-ch0" />
             <Text
               style={[styles.dayChange, { color: dayColor }]}
-              data-oid="9vhq6:i"
+              data-oid="98d.qo1"
             >
               {isPositiveDay ? '+' : ''}${dayChange.toFixed(2)} (
               {dayChangePercent.toFixed(2)}%)
             </Text>
-            <Text style={styles.timeframe} data-oid="6uy1v1y">
+            <Text style={styles.timeframe} data-oid="oq3z32t">
               Today
             </Text>
           </View>
         </View>
       </View>
 
-      <View style={styles.statsGrid} data-oid="stdtt:1">
-        <View style={styles.statCard} data-oid="mm:0_m8">
-          <DollarSign size={20} color="#10B981" data-oid="4y2zc7d" />
-          <Text style={styles.statLabel} data-oid="dafuqhj">
+      <View style={styles.statsGrid} data-oid="f46ww_o">
+        <View style={styles.statCard} data-oid="w80ma4r">
+          <DollarSign size={20} color="#10B981" data-oid="ykq7vp1" />
+          <Text style={styles.statLabel} data-oid="9cj9qox">
             Total P&L
           </Text>
           <Text
             style={[styles.statValue, { color: totalColor }]}
-            data-oid="uc272cz"
+            data-oid="gynucu1"
           >
             {isPositiveTotal ? '+' : ''}${totalPnL.toLocaleString()}
           </Text>
         </View>
 
-        <View style={styles.statCard} data-oid="bxx039s">
-          <Target size={20} color="#3B82F6" data-oid="wwfgpv4" />
-          <Text style={styles.statLabel} data-oid="ioss1_d">
+        <View style={styles.statCard} data-oid="_fqw:3d">
+          <Target size={20} color="#3B82F6" data-oid="11l9d1f" />
+          <Text style={styles.statLabel} data-oid="2sldmcy">
             Active Alerts
           </Text>
-          <Text style={styles.statValue} data-oid="co9-1op">
+          <Text style={styles.statValue} data-oid="bph7qfy">
             {activeAlerts}
           </Text>
         </View>
 
-        <View style={styles.statCard} data-oid=":vs1ilj">
-          <Zap size={20} color="#F59E0B" data-oid="ih:6zmq" />
-          <Text style={styles.statLabel} data-oid="2:bwxw6">
+        <View style={styles.statCard} data-oid=":ge2bij">
+          <Zap size={20} color="#F59E0B" data-oid="wmfw7.c" />
+          <Text style={styles.statLabel} data-oid="dfk7g_g">
             Auto Trading
           </Text>
           <Text
             style={[styles.statValue, { color: '#10B981' }]}
-            data-oid="-:1_n56"
+            data-oid="_3vpu1-"
           >
             ON
           </Text>

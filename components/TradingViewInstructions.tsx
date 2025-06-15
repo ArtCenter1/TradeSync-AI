@@ -22,17 +22,17 @@ export default function TradingViewInstructions({
   onClose,
 }: TradingViewInstructionsProps) {
   return (
-    <View style={styles.container} data-oid="b3fq:6g">
-      <View style={styles.header} data-oid="sbej.bb">
-        <Text style={styles.title} data-oid="2opluba">
+    <View style={styles.container} data-oid="a132j:j">
+      <View style={styles.header} data-oid="uhvd7iz">
+        <Text style={styles.title} data-oid=".:9ng4r">
           TradingView Setup Instructions
         </Text>
         <TouchableOpacity
           onPress={onClose}
           style={styles.closeButton}
-          data-oid="cxueclz"
+          data-oid="68lqscp"
         >
-          <Text style={styles.closeText} data-oid="txwxy0d">
+          <Text style={styles.closeText} data-oid="n7lj15u">
             Close
           </Text>
         </TouchableOpacity>
@@ -41,28 +41,28 @@ export default function TradingViewInstructions({
       <ScrollView
         style={styles.content}
         showsVerticalScrollIndicator={false}
-        data-oid="sz9thmi"
+        data-oid="ztucm:7"
       >
-        <View style={styles.section} data-oid="67m1sle">
-          <Text style={styles.sectionTitle} data-oid="ga7z7xh">
+        <View style={styles.section} data-oid="85f6koc">
+          <Text style={styles.sectionTitle} data-oid="thr3um6">
             Step 1: Create Your Trading Strategy
           </Text>
-          <Text style={styles.description} data-oid="ch_2lx8">
+          <Text style={styles.description} data-oid="f317x:0">
             First, create or open your trading strategy/indicator in TradingView
             Pine Script editor.
           </Text>
         </View>
 
-        <View style={styles.section} data-oid="tg-2io9">
-          <Text style={styles.sectionTitle} data-oid=":l6_szw">
+        <View style={styles.section} data-oid="wd:rl7n">
+          <Text style={styles.sectionTitle} data-oid="xcr9ht0">
             Step 2: Add Alert Conditions
           </Text>
-          <Text style={styles.description} data-oid="lt0z.zs">
+          <Text style={styles.description} data-oid="w4mwfj1">
             In your Pine Script, add alert conditions using the
             `alertcondition()` function:
           </Text>
-          <View style={styles.codeBlock} data-oid="k1v377v">
-            <Text style={styles.code} data-oid="d75:i7z">
+          <View style={styles.codeBlock} data-oid="h_y5796">
+            <Text style={styles.code} data-oid="swwse0f">
               {`// Example: RSI Buy Signal
 rsi = ta.rsi(close, 14)
 buy_signal = ta.crossover(rsi, 30)
@@ -75,97 +75,97 @@ alertcondition(sell_signal, "Sell Signal", "SELL {{ticker}}")`}
           </View>
         </View>
 
-        <View style={styles.section} data-oid="4lqmnbq">
-          <Text style={styles.sectionTitle} data-oid="g75ss4-">
+        <View style={styles.section} data-oid="q6z_u39">
+          <Text style={styles.sectionTitle} data-oid="9y85rds">
             Step 3: Create Alert
           </Text>
-          <View style={styles.stepList} data-oid="_syei-w">
-            <View style={styles.step} data-oid="b49-ti7">
-              <View style={styles.stepNumber} data-oid="pekp:v6">
-                <Text style={styles.stepNumberText} data-oid="et1mkkk">
+          <View style={styles.stepList} data-oid="51c35lb">
+            <View style={styles.step} data-oid="jbknms-">
+              <View style={styles.stepNumber} data-oid="zafuqjb">
+                <Text style={styles.stepNumberText} data-oid="ayh7w06">
                   1
                 </Text>
               </View>
-              <Text style={styles.stepText} data-oid="ij679dr">
+              <Text style={styles.stepText} data-oid="n4o:ubf">
                 Right-click on your chart and select "Add Alert"
               </Text>
             </View>
-            <View style={styles.step} data-oid="9b_2un8">
-              <View style={styles.stepNumber} data-oid="_dq08wo">
-                <Text style={styles.stepNumberText} data-oid="bkwuc:y">
+            <View style={styles.step} data-oid="2_jv.uu">
+              <View style={styles.stepNumber} data-oid="2j815vn">
+                <Text style={styles.stepNumberText} data-oid=":6i33sl">
                   2
                 </Text>
               </View>
-              <Text style={styles.stepText} data-oid="a81afto">
+              <Text style={styles.stepText} data-oid="q7lndn1">
                 Choose your indicator/strategy from the dropdown
               </Text>
             </View>
-            <View style={styles.step} data-oid="8wk5-.l">
-              <View style={styles.stepNumber} data-oid="jfu9zp:">
-                <Text style={styles.stepNumberText} data-oid="lb9qldu">
+            <View style={styles.step} data-oid="vqu8xtg">
+              <View style={styles.stepNumber} data-oid="e_tk73s">
+                <Text style={styles.stepNumberText} data-oid="exfszmt">
                   3
                 </Text>
               </View>
-              <Text style={styles.stepText} data-oid="5:24me5">
+              <Text style={styles.stepText} data-oid="e.081t4">
                 Select the alert condition (Buy Signal, Sell Signal, etc.)
               </Text>
             </View>
           </View>
         </View>
 
-        <View style={styles.section} data-oid="fimhw6o">
-          <Text style={styles.sectionTitle} data-oid="aogqgzg">
+        <View style={styles.section} data-oid="4ekbi8g">
+          <Text style={styles.sectionTitle} data-oid="ygnu6-_">
             Step 4: Configure Webhook
           </Text>
-          <View style={styles.webhookSection} data-oid="shvb4fx">
-            <Text style={styles.description} data-oid="c-d36yr">
+          <View style={styles.webhookSection} data-oid="f11oeqe">
+            <Text style={styles.description} data-oid="dsj3tyx">
               In the "Notifications" tab of the alert dialog:
             </Text>
-            <View style={styles.webhookConfig} data-oid=".7kewvd">
-              <Text style={styles.configLabel} data-oid="mr092me">
+            <View style={styles.webhookConfig} data-oid="k_rgs77">
+              <Text style={styles.configLabel} data-oid="cuzo9d.">
                 Webhook URL:
               </Text>
-              <View style={styles.urlContainer} data-oid="zy540_j">
-                <Text style={styles.webhookUrl} data-oid="jjm70j8">
+              <View style={styles.urlContainer} data-oid="qzdv_4g">
+                <Text style={styles.webhookUrl} data-oid="ydp9mo9">
                   {webhookUrl}
                 </Text>
-                <TouchableOpacity style={styles.copyButton} data-oid="a0q7_12">
-                  <Copy size={16} color="#10B981" data-oid="yhezyq1" />
+                <TouchableOpacity style={styles.copyButton} data-oid="61lwnp6">
+                  <Copy size={16} color="#10B981" data-oid="qmu5g:v" />
                 </TouchableOpacity>
               </View>
             </View>
           </View>
         </View>
 
-        <View style={styles.section} data-oid="r8cs84e">
-          <Text style={styles.sectionTitle} data-oid="hytyr8g">
+        <View style={styles.section} data-oid="6spm1ei">
+          <Text style={styles.sectionTitle} data-oid="v43kn9z">
             Step 5: Alert Message Format
           </Text>
-          <Text style={styles.description} data-oid=":e-v7oq">
+          <Text style={styles.description} data-oid="69egr6h">
             Use one of these message formats in the alert message field:
           </Text>
 
-          <View style={styles.formatSection} data-oid="d_jflft">
-            <Text style={styles.formatTitle} data-oid="pg7ae.8">
+          <View style={styles.formatSection} data-oid="2bhnxn3">
+            <Text style={styles.formatTitle} data-oid="o4r4xyk">
               Simple Format (Recommended)
             </Text>
-            <View style={styles.codeBlock} data-oid="u6bbrfo">
-              <Text style={styles.code} data-oid="pjgd5.:">
+            <View style={styles.codeBlock} data-oid="h7684gh">
+              <Text style={styles.code} data-oid="r2l3y0z">
                 {'{{strategy.order.action}} {{ticker}}'}
               </Text>
             </View>
-            <Text style={styles.formatDescription} data-oid="6i0.es6">
+            <Text style={styles.formatDescription} data-oid=":555-5l">
               This will send "BUY BTCUSDT" or "SELL BTCUSDT" based on your
               signal.
             </Text>
           </View>
 
-          <View style={styles.formatSection} data-oid="pn-6zh2">
-            <Text style={styles.formatTitle} data-oid="jq_:wxj">
+          <View style={styles.formatSection} data-oid="yksbox5">
+            <Text style={styles.formatTitle} data-oid="--ta8bl">
               JSON Format (Advanced)
             </Text>
-            <View style={styles.codeBlock} data-oid="8zquxul">
-              <Text style={styles.code} data-oid="aovjr6o">
+            <View style={styles.codeBlock} data-oid="m9c31bd">
+              <Text style={styles.code} data-oid="1xkp130">
                 {`{
   "action": "{{strategy.order.action}}",
   "symbol": "{{ticker}}",
@@ -174,44 +174,44 @@ alertcondition(sell_signal, "Sell Signal", "SELL {{ticker}}")`}
 }`}
               </Text>
             </View>
-            <Text style={styles.formatDescription} data-oid="uesp1dl">
+            <Text style={styles.formatDescription} data-oid="l_vf34h">
               Provides more detailed information including current price and
               signal type.
             </Text>
           </View>
         </View>
 
-        <View style={styles.section} data-oid="6bfoanw">
-          <Text style={styles.sectionTitle} data-oid="klo0fa:">
+        <View style={styles.section} data-oid="p:ytb0y">
+          <Text style={styles.sectionTitle} data-oid="42omk5h">
             Step 6: Test Your Setup
           </Text>
-          <View style={styles.testSection} data-oid="2.xxwxf">
-            <View style={styles.testStep} data-oid="y8s2m1v">
-              <CheckCircle size={16} color="#10B981" data-oid="jzlsjum" />
-              <Text style={styles.testText} data-oid=".otevty">
+          <View style={styles.testSection} data-oid="gnw1xaw">
+            <View style={styles.testStep} data-oid="4bavh22">
+              <CheckCircle size={16} color="#10B981" data-oid="1ey8.n1" />
+              <Text style={styles.testText} data-oid="t06gma2">
                 Create a test alert with a simple condition
               </Text>
             </View>
-            <View style={styles.testStep} data-oid="uec.48t">
-              <CheckCircle size={16} color="#10B981" data-oid="2niqi-o" />
-              <Text style={styles.testText} data-oid="2nvan3q">
+            <View style={styles.testStep} data-oid="vhcoy92">
+              <CheckCircle size={16} color="#10B981" data-oid="2s2cjex" />
+              <Text style={styles.testText} data-oid="sb-77k.">
                 Trigger the alert manually to test webhook delivery
               </Text>
             </View>
-            <View style={styles.testStep} data-oid="i_b.yq0">
-              <CheckCircle size={16} color="#10B981" data-oid="-f1s::2" />
-              <Text style={styles.testText} data-oid="qv.pyd4">
+            <View style={styles.testStep} data-oid="t8gtzvm">
+              <CheckCircle size={16} color="#10B981" data-oid="ump7:a-" />
+              <Text style={styles.testText} data-oid="jkq0nt9">
                 Check the Auto-Trade Monitor for received signals
               </Text>
             </View>
           </View>
         </View>
 
-        <View style={styles.warningSection} data-oid="1x08jjc">
-          <Text style={styles.warningTitle} data-oid="7j3i7l1">
+        <View style={styles.warningSection} data-oid="8568t5j">
+          <Text style={styles.warningTitle} data-oid="nl7hzil">
             ⚠️ Important Notes
           </Text>
-          <Text style={styles.warningText} data-oid="fbosh.c">
+          <Text style={styles.warningText} data-oid="qs.8drc">
             • Always test with small amounts first{'\n'}• Monitor your trades
             regularly{'\n'}• Set appropriate stop-loss and take-profit levels
             {'\n'}• TradingView alerts require a Pro subscription for webhooks
